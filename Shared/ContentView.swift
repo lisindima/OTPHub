@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,7 +15,8 @@ struct ContentView: View {
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.passwordName, ascending: true)],
-        animation: .default)
+        animation: .default
+    )
     private var items: FetchedResults<Item>
     
     private func deleteItems(offsets: IndexSet) {

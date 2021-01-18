@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import SwiftUI
 import SwiftOTP
+import SwiftUI
 
 struct ListItem: View {
     @State private var otpString: String = ""
@@ -27,6 +27,7 @@ struct ListItem: View {
                 .font(.title)
                 .fontWeight(.bold)
         }
+        .padding(.vertical, 6)
         .onAppear(perform: generatePassword)
     }
 }

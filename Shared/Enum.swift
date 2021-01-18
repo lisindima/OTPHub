@@ -12,12 +12,12 @@ enum SizePassword: Int, CaseIterable, Identifiable {
     case sevenDigit = 7
     case eightDigit = 8
 
-    var id: Int { self.rawValue }
+    var id: Int { rawValue }
 }
 
 enum UpdateTime: Int, CaseIterable, Identifiable {
     case thirtySeconds = 30
     case sixtySeconds = 60
 
-    var id: Int { self.rawValue }
+    var id: Int { rawValue }
 }
