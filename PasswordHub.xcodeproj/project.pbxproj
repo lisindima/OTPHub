@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB168FDF25B5DE24000DC544 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB168FDE25B5DE24000DC544 /* SwiftOTP */; };
 		CB35695B25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */; };
 		CB35695C25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */; };
 		CB35695D25B53CEC00663B2E /* PasswordHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* PasswordHubApp.swift */; };
@@ -61,12 +62,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB168FDF25B5DE24000DC544 /* SwiftOTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB168FDD25B5DE24000DC544 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB35693F25B53CEB00663B2E = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +83,7 @@
 				CB35695125B53CEC00663B2E /* iOS */,
 				CB35695825B53CEC00663B2E /* macOS */,
 				CB35695025B53CEC00663B2E /* Products */,
+				CB168FDD25B5DE24000DC544 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +166,9 @@
 			dependencies = (
 			);
 			name = "PasswordHub (macOS)";
+			packageProductDependencies = (
+				CB168FDE25B5DE24000DC544 /* SwiftOTP */,
+			);
 			productName = "2FAapp (macOS)";
 			productReference = CB35695725B53CEC00663B2E /* PasswordHub.app */;
 			productType = "com.apple.product-type.application";
@@ -502,6 +515,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CB168FDE25B5DE24000DC544 /* SwiftOTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */;
+			productName = SwiftOTP;
+		};
 		CB35697025B53E5200663B2E /* SwiftOTP */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */;

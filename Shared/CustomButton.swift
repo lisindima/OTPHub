@@ -21,6 +21,7 @@ struct CustomButton: View {
             HStack {
                 Spacer()
                 Text(title)
+                    .font(.system(.body, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 Spacer()

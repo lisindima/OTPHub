@@ -66,8 +66,10 @@ struct AddPasswordView: View {
                     }
                 }
                 CustomButton("Добавить", action: savePassword)
+                    .shadow(radius: 6)
                     .padding()
             }
+            .navigationTitle("Новый аккаунт")
             .alert(isPresented: $isPresented) {
                 Alert(title: Text("Ошибка"), message: Text("Заполните все поля"), dismissButton: .cancel())
             }
@@ -79,7 +81,6 @@ struct AddPasswordView: View {
                     }
                 }
             }
-            .navigationTitle("Новый аккаунт")
         }
     }
 }
