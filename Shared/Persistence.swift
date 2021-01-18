@@ -17,7 +17,7 @@ struct PersistenceController {
             let newItem = Item(context: viewContext)
             newItem.passwordName = "Test Account"
             newItem.passwordSecret = "Test Secret"
-            newItem.passwordColor = "#00000"
+            newItem.passwordColor = "#ff0000"
             newItem.sizePassword = 6
             newItem.updateTime = 30
         }

@@ -15,7 +15,7 @@ struct AddPasswordView: View {
     @State private var passwordSecret: String = ""
     @State private var updateTime: UpdateTime = .thirtySeconds
     @State private var sizePassword: SizePassword = .eightDigit
-    @State private var accentColor: Color = .black
+    @State private var passwordColor: Color = .black
     @State private var isPresented: Bool = false
     
     private func savePassword() {
@@ -27,7 +27,7 @@ struct AddPasswordView: View {
             item.passwordSecret = passwordSecret
             item.updateTime = Int32(updateTime.rawValue)
             item.sizePassword = Int32(sizePassword.rawValue)
-            item.passwordColor = "#00000"
+            item.passwordColor = "#ff0000"
             do {
                 try moc.save()
                 presentationMode.wrappedValue.dismiss()
@@ -62,7 +62,7 @@ struct AddPasswordView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     Section(header: Text("Кастомизация"), footer: Text("Выберите цвет для пароля чтобы удобнее было его найти.")) {
-                        ColorPicker("Цвет пароля", selection: $accentColor)
+                        ColorPicker("Цвет пароля", selection: $passwordColor)
                     }
                 }
                 CustomButton("Добавить", action: savePassword)

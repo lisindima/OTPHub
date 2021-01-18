@@ -33,6 +33,7 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .modifier(ListStyle())
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: { isPresented = true }) {

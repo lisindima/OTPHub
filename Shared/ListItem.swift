@@ -6,17 +6,27 @@
 //
 
 import SwiftUI
+import SwiftOTP
 
 struct ListItem: View {
+    @State private var otpString: String = ""
+    
     var item: Item
+    
+    private func generatePassword() {
+        guard let data = base32DecodeToData("JBSWY3DPEHPK3PXP") else { return }
+        let totp = TOTP(secret: data, digits: Int(item.sizePassword), timeInterval: Int(item.updateTime), algorithm: .sha1)
+        otpString = totp!.generate(time: Date())!
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(item.passwordSecret!)
             Text(item.passwordName!)
-            Text(item.passwordColor!)
-            Text("\(item.sizePassword)")
-            Text("\(item.updateTime)")
+                .font(.footnote)
+            Text(otpString)
+                .font(.title)
+                .fontWeight(.bold)
         }
+        .onAppear(perform: generatePassword)
     }
 }

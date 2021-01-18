@@ -26,6 +26,8 @@
 		CB35699225B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
 		CB35699625B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
 		CB35699725B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
+		CB7A445125B5974C003CED6D /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A445025B5974C003CED6D /* ViewModifier.swift */; };
+		CB7A445225B5974C003CED6D /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A445025B5974C003CED6D /* ViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,7 @@
 		CB35697B25B55F1D00663B2E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CB35699025B566B900663B2E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		CB35699525B568A700663B2E /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		CB7A445025B5974C003CED6D /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 			children = (
 				CB35694725B53CEB00663B2E /* PasswordHubApp.swift */,
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
+				CB7A445025B5974C003CED6D /* ViewModifier.swift */,
 				CB35699025B566B900663B2E /* ListItem.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
 				CB35697B25B55F1D00663B2E /* CustomButton.swift */,
@@ -220,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB35695D25B53CEC00663B2E /* PasswordHubApp.swift in Sources */,
+				CB7A445125B5974C003CED6D /* ViewModifier.swift in Sources */,
 				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
 				CB35699625B568A700663B2E /* Enum.swift in Sources */,
 				CB35696125B53CEC00663B2E /* Persistence.swift in Sources */,
@@ -235,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB35695E25B53CEC00663B2E /* PasswordHubApp.swift in Sources */,
+				CB7A445225B5974C003CED6D /* ViewModifier.swift in Sources */,
 				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
 				CB35699725B568A700663B2E /* Enum.swift in Sources */,
 				CB35696225B53CEC00663B2E /* Persistence.swift in Sources */,
@@ -373,7 +379,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darkfox.-FAapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.passwordhub;
 				PRODUCT_NAME = PasswordHub;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -395,7 +401,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darkfox.-FAapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.passwordhub;
 				PRODUCT_NAME = PasswordHub;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -421,7 +427,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darkfox.-FAapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.passwordhub;
 				PRODUCT_NAME = PasswordHub;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -445,7 +451,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darkfox.-FAapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.passwordhub;
 				PRODUCT_NAME = PasswordHub;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
