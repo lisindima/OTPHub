@@ -28,13 +28,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    ListItem(item: item)
+            LoadingView(items, title: "Пусто", subTitle: "Добавьте свой первый аккаунт.") { items in
+                List {
+                    ForEach(items) { item in
+                        ListItem(item: item)
+                    }
+                    .onDelete(perform: deleteItems)
                 }
-                .onDelete(perform: deleteItems)
+                .modifier(ListStyle())
             }
-            .modifier(ListStyle())
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: { isPresented = true }) {
@@ -46,7 +48,7 @@ struct ContentView: View {
             .sheet(isPresented: $isPresented) {
                 AddPasswordView()
             }
-            .navigationTitle("Аккаунты")
+            .navigationTitle("PasswordHub")
         }
     }
 }
