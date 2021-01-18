@@ -71,22 +71,15 @@ struct AddPasswordView: View {
             .alert(isPresented: $isPresented) {
                 Alert(title: Text("Ошибка"), message: Text("Заполните все поля"), dismissButton: .cancel())
             }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Image(systemName: "xmark")
+                            .imageScale(.large)
+                    }
+                }
+            }
             .navigationTitle("Новый аккаунт")
         }
     }
-}
-
-enum SizePassword: Int, CaseIterable, Identifiable {
-    case sixDigit = 6
-    case sevenDigit = 7
-    case eightDigit = 8
-
-    var id: Int { self.rawValue }
-}
-
-enum UpdateTime: Int, CaseIterable, Identifiable {
-    case thirtySeconds = 30
-    case sixtySeconds = 60
-
-    var id: Int { self.rawValue }
 }

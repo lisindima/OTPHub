@@ -24,6 +24,8 @@
 		CB35697D25B55F1D00663B2E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697B25B55F1D00663B2E /* CustomButton.swift */; };
 		CB35699125B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
 		CB35699225B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
+		CB35699625B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
+		CB35699725B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		CB35697425B5423500663B2E /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
 		CB35697B25B55F1D00663B2E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CB35699025B566B900663B2E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		CB35699525B568A700663B2E /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 				CB35699025B566B900663B2E /* ListItem.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
 				CB35697B25B55F1D00663B2E /* CustomButton.swift */,
+				CB35699525B568A700663B2E /* Enum.swift */,
 				CB35694925B53CEB00663B2E /* Persistence.swift */,
 				CB35694A25B53CEC00663B2E /* Assets.xcassets */,
 				CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */,
@@ -217,6 +221,7 @@
 			files = (
 				CB35695D25B53CEC00663B2E /* PasswordHubApp.swift in Sources */,
 				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
+				CB35699625B568A700663B2E /* Enum.swift in Sources */,
 				CB35696125B53CEC00663B2E /* Persistence.swift in Sources */,
 				CB35697C25B55F1D00663B2E /* CustomButton.swift in Sources */,
 				CB35695B25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */,
@@ -231,6 +236,7 @@
 			files = (
 				CB35695E25B53CEC00663B2E /* PasswordHubApp.swift in Sources */,
 				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
+				CB35699725B568A700663B2E /* Enum.swift in Sources */,
 				CB35696225B53CEC00663B2E /* Persistence.swift in Sources */,
 				CB35697D25B55F1D00663B2E /* CustomButton.swift in Sources */,
 				CB35695C25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */,
