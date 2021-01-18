@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB35695B25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */; };
+		CB35695C25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */; };
+		CB35695D25B53CEC00663B2E /* PasswordHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* PasswordHubApp.swift */; };
+		CB35695E25B53CEC00663B2E /* PasswordHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* PasswordHubApp.swift */; };
+		CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
+		CB35696025B53CEC00663B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
+		CB35696125B53CEC00663B2E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694925B53CEB00663B2E /* Persistence.swift */; };
+		CB35696225B53CEC00663B2E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694925B53CEB00663B2E /* Persistence.swift */; };
+		CB35696325B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
+		CB35696425B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
+		CB35697125B53E5200663B2E /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB35697025B53E5200663B2E /* SwiftOTP */; };
+		CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddPasswordView.swift */; };
+		CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddPasswordView.swift */; };
+		CB35697C25B55F1D00663B2E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697B25B55F1D00663B2E /* CustomButton.swift */; };
+		CB35697D25B55F1D00663B2E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697B25B55F1D00663B2E /* CustomButton.swift */; };
+		CB35699125B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
+		CB35699225B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CB35694625B53CEB00663B2E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		CB35694725B53CEB00663B2E /* PasswordHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordHubApp.swift; sourceTree = "<group>"; };
+		CB35694825B53CEB00663B2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB35694925B53CEB00663B2E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		CB35694A25B53CEC00663B2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB35694F25B53CEC00663B2E /* PasswordHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB35695225B53CEC00663B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB35695725B53CEC00663B2E /* PasswordHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB35695925B53CEC00663B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB35695A25B53CEC00663B2E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		CB35697425B5423500663B2E /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
+		CB35697B25B55F1D00663B2E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CB35699025B566B900663B2E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB35694C25B53CEC00663B2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB35697125B53E5200663B2E /* SwiftOTP in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB35695425B53CEC00663B2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB35693F25B53CEB00663B2E = {
+			isa = PBXGroup;
+			children = (
+				CB35694425B53CEB00663B2E /* Shared */,
+				CB35695125B53CEC00663B2E /* iOS */,
+				CB35695825B53CEC00663B2E /* macOS */,
+				CB35695025B53CEC00663B2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB35694425B53CEB00663B2E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CB35694725B53CEB00663B2E /* PasswordHubApp.swift */,
+				CB35694825B53CEB00663B2E /* ContentView.swift */,
+				CB35699025B566B900663B2E /* ListItem.swift */,
+				CB35697425B5423500663B2E /* AddPasswordView.swift */,
+				CB35697B25B55F1D00663B2E /* CustomButton.swift */,
+				CB35694925B53CEB00663B2E /* Persistence.swift */,
+				CB35694A25B53CEC00663B2E /* Assets.xcassets */,
+				CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CB35695025B53CEC00663B2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB35694F25B53CEC00663B2E /* PasswordHub.app */,
+				CB35695725B53CEC00663B2E /* PasswordHub.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB35695125B53CEC00663B2E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB35695225B53CEC00663B2E /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		CB35695825B53CEC00663B2E /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB35695925B53CEC00663B2E /* Info.plist */,
+				CB35695A25B53CEC00663B2E /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB35694E25B53CEC00663B2E /* PasswordHub (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB35696725B53CEC00663B2E /* Build configuration list for PBXNativeTarget "PasswordHub (iOS)" */;
+			buildPhases = (
+				CB35694B25B53CEC00663B2E /* Sources */,
+				CB35694C25B53CEC00663B2E /* Frameworks */,
+				CB35694D25B53CEC00663B2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PasswordHub (iOS)";
+			packageProductDependencies = (
+				CB35697025B53E5200663B2E /* SwiftOTP */,
+			);
+			productName = "2FAapp (iOS)";
+			productReference = CB35694F25B53CEC00663B2E /* PasswordHub.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB35695625B53CEC00663B2E /* PasswordHub (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB35696A25B53CEC00663B2E /* Build configuration list for PBXNativeTarget "PasswordHub (macOS)" */;
+			buildPhases = (
+				CB35695325B53CEC00663B2E /* Sources */,
+				CB35695425B53CEC00663B2E /* Frameworks */,
+				CB35695525B53CEC00663B2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PasswordHub (macOS)";
+			productName = "2FAapp (macOS)";
+			productReference = CB35695725B53CEC00663B2E /* PasswordHub.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB35694025B53CEB00663B2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					CB35694E25B53CEC00663B2E = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					CB35695625B53CEC00663B2E = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = CB35694325B53CEB00663B2E /* Build configuration list for PBXProject "PasswordHub" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB35693F25B53CEB00663B2E;
+			packageReferences = (
+				CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */,
+			);
+			productRefGroup = CB35695025B53CEC00663B2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB35694E25B53CEC00663B2E /* PasswordHub (iOS) */,
+				CB35695625B53CEC00663B2E /* PasswordHub (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB35694D25B53CEC00663B2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB35696325B53CEC00663B2E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB35695525B53CEC00663B2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB35696425B53CEC00663B2E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB35694B25B53CEC00663B2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB35695D25B53CEC00663B2E /* PasswordHubApp.swift in Sources */,
+				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
+				CB35696125B53CEC00663B2E /* Persistence.swift in Sources */,
+				CB35697C25B55F1D00663B2E /* CustomButton.swift in Sources */,
+				CB35695B25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */,
+				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
+				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB35695325B53CEC00663B2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB35695E25B53CEC00663B2E /* PasswordHubApp.swift in Sources */,
+				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
+				CB35696225B53CEC00663B2E /* Persistence.swift in Sources */,
+				CB35697D25B55F1D00663B2E /* CustomButton.swift in Sources */,
+				CB35695C25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */,
+				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
+				CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CB35696525B53CEC00663B2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB35696625B53CEC00663B2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CB35696825B53CEC00663B2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darkfox.-FAapp";
+				PRODUCT_NAME = PasswordHub;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB35696925B53CEC00663B2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darkfox.-FAapp";
+				PRODUCT_NAME = PasswordHub;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB35696B25B53CEC00663B2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darkfox.-FAapp";
+				PRODUCT_NAME = PasswordHub;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CB35696C25B53CEC00663B2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darkfox.-FAapp";
+				PRODUCT_NAME = PasswordHub;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB35694325B53CEB00663B2E /* Build configuration list for PBXProject "PasswordHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB35696525B53CEC00663B2E /* Debug */,
+				CB35696625B53CEC00663B2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB35696725B53CEC00663B2E /* Build configuration list for PBXNativeTarget "PasswordHub (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB35696825B53CEC00663B2E /* Debug */,
+				CB35696925B53CEC00663B2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB35696A25B53CEC00663B2E /* Build configuration list for PBXNativeTarget "PasswordHub (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB35696B25B53CEC00663B2E /* Debug */,
+				CB35696C25B53CEC00663B2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lachlanbell/SwiftOTP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB35697025B53E5200663B2E /* SwiftOTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */;
+			productName = SwiftOTP;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB35694625B53CEB00663B2E /* Shared.xcdatamodel */,
+			);
+			currentVersion = CB35694625B53CEB00663B2E /* Shared.xcdatamodel */;
+			path = PasswordHub.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CB35694025B53CEB00663B2E /* Project object */;
+}

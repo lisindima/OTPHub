@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20B28" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="passwordColor" optional="YES" attributeType="String"/>
+        <attribute name="passwordName" optional="YES" attributeType="String"/>
+        <attribute name="passwordSecret" optional="YES" attributeType="String"/>
+        <attribute name="sizePassword" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" customClassName="Int"/>
+        <attribute name="updateTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" customClassName="Int"/>
+    </entity>
+    <elements>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="104"/>
+    </elements>
+</model>
