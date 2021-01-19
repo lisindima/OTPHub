@@ -35,6 +35,7 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
             }
             .modifier(ListStyle())
+            .environment(\.defaultMinListRowHeight, 70)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: { isPresented = true }) {
@@ -49,6 +50,7 @@ struct ContentView: View {
             }
             .navigationTitle("OTPHub")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

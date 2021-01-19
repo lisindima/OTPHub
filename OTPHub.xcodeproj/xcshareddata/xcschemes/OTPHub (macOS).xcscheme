@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CB35695625B53CEC00663B2E"
-               BuildableName = "PasswordHub.app"
+               BuildableName = "OTPHub.app"
                BlueprintName = "OTPHub (macOS)"
                ReferencedContainer = "container:OTPHub.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB35695625B53CEC00663B2E"
-            BuildableName = "PasswordHub.app"
+            BuildableName = "OTPHub.app"
             BlueprintName = "OTPHub (macOS)"
             ReferencedContainer = "container:OTPHub.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB35695625B53CEC00663B2E"
-            BuildableName = "PasswordHub.app"
+            BuildableName = "OTPHub.app"
             BlueprintName = "OTPHub (macOS)"
             ReferencedContainer = "container:OTPHub.xcodeproj">
          </BuildableReference>

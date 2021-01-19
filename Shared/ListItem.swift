@@ -40,7 +40,6 @@ struct ListItem: View {
                 .fontWeight(.bold)
                 .animation(.interactiveSpring())
         }
-        .padding(.vertical, 6)
         .onReceive(timer) { _ in
             generatePassword()
         }

@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import SwiftUI
 import CodeScanner
+import SwiftUI
 
 struct AddPasswordView: View {
     @Environment(\.managedObjectContext) private var moc
