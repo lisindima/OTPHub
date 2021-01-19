@@ -31,6 +31,7 @@
 		CB35699725B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
 		CB7A445125B5974C003CED6D /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A445025B5974C003CED6D /* ViewModifier.swift */; };
 		CB7A445225B5974C003CED6D /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A445025B5974C003CED6D /* ViewModifier.swift */; };
+		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */,
 				CB35697125B53E5200663B2E /* SwiftOTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +154,7 @@
 			name = "PasswordHub (iOS)";
 			packageProductDependencies = (
 				CB35697025B53E5200663B2E /* SwiftOTP */,
+				CBBE8A6C25B6969300CE1DE8 /* CodeScanner */,
 			);
 			productName = "2FAapp (iOS)";
 			productReference = CB35694F25B53CEC00663B2E /* PasswordHub.app */;
@@ -205,6 +208,7 @@
 			mainGroup = CB35693F25B53CEB00663B2E;
 			packageReferences = (
 				CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */,
+				CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = CB35695025B53CEC00663B2E /* Products */;
 			projectDirPath = "";
@@ -518,6 +522,14 @@
 				minimumVersion = 2.0.3;
 			};
 		};
+		CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -530,6 +542,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */;
 			productName = SwiftOTP;
+		};
+		CBBE8A6C25B6969300CE1DE8 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 
