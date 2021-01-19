@@ -14,6 +14,7 @@ struct PasswordHubApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .accentColor(.purple)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

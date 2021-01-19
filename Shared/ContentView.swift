@@ -45,6 +45,7 @@ struct ContentView: View {
             }
             .sheet(isPresented: $isPresented) {
                 AddPasswordView()
+                    .accentColor(.purple)
             }
             .navigationTitle("PasswordHub")
         }

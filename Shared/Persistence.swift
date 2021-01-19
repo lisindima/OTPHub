@@ -17,7 +17,7 @@ struct PersistenceController {
             let newItem = Item(context: viewContext)
             newItem.passwordName = "Test Account"
             newItem.passwordSecret = "Test Secret"
-            newItem.passwordColor = "#ff0000"
+            newItem.passwordColor = "#000000"
             newItem.passwordAlgorithm = "SHA1"
             newItem.sizePassword = 6
             newItem.updateTime = 30
@@ -33,6 +33,7 @@ struct PersistenceController {
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+        container.viewContext.automaticallyMergesChangesFromParent = true
         container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
