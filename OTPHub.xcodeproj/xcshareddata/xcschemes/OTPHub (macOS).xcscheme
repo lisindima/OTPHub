@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB35694E25B53CEC00663B2E"
+               BlueprintIdentifier = "CB35695625B53CEC00663B2E"
                BuildableName = "PasswordHub.app"
-               BlueprintName = "PasswordHub (iOS)"
-               ReferencedContainer = "container:PasswordHub.xcodeproj">
+               BlueprintName = "OTPHub (macOS)"
+               ReferencedContainer = "container:OTPHub.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,10 +44,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB35694E25B53CEC00663B2E"
+            BlueprintIdentifier = "CB35695625B53CEC00663B2E"
             BuildableName = "PasswordHub.app"
-            BlueprintName = "PasswordHub (iOS)"
-            ReferencedContainer = "container:PasswordHub.xcodeproj">
+            BlueprintName = "OTPHub (macOS)"
+            ReferencedContainer = "container:OTPHub.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB35694E25B53CEC00663B2E"
+            BlueprintIdentifier = "CB35695625B53CEC00663B2E"
             BuildableName = "PasswordHub.app"
-            BlueprintName = "PasswordHub (iOS)"
-            ReferencedContainer = "container:PasswordHub.xcodeproj">
+            BlueprintName = "OTPHub (macOS)"
+            ReferencedContainer = "container:OTPHub.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

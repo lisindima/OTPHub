@@ -47,7 +47,7 @@ struct ContentView: View {
                 AddPasswordView()
                     .accentColor(.purple)
             }
-            .navigationTitle("PasswordHub")
+            .navigationTitle("OTPHub")
         }
     }
 }

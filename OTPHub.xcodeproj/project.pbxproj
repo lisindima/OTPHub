@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CB168FDF25B5DE24000DC544 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB168FDE25B5DE24000DC544 /* SwiftOTP */; };
-		CB35695B25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */; };
-		CB35695C25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */; };
-		CB35695D25B53CEC00663B2E /* PasswordHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* PasswordHubApp.swift */; };
-		CB35695E25B53CEC00663B2E /* PasswordHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* PasswordHubApp.swift */; };
+		CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */; };
+		CB35695C25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */; };
+		CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* OTPHubApp.swift */; };
+		CB35695E25B53CEC00663B2E /* OTPHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* OTPHubApp.swift */; };
 		CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
 		CB35696025B53CEC00663B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
 		CB35696125B53CEC00663B2E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694925B53CEB00663B2E /* Persistence.swift */; };
@@ -38,13 +38,13 @@
 
 /* Begin PBXFileReference section */
 		CB35694625B53CEB00663B2E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
-		CB35694725B53CEB00663B2E /* PasswordHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordHubApp.swift; sourceTree = "<group>"; };
+		CB35694725B53CEB00663B2E /* OTPHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPHubApp.swift; sourceTree = "<group>"; };
 		CB35694825B53CEB00663B2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB35694925B53CEB00663B2E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CB35694A25B53CEC00663B2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CB35694F25B53CEC00663B2E /* PasswordHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB35694F25B53CEC00663B2E /* OTPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB35695225B53CEC00663B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB35695725B53CEC00663B2E /* PasswordHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB35695725B53CEC00663B2E /* OTPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB35695925B53CEC00663B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB35695A25B53CEC00663B2E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		CB35697425B5423500663B2E /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		CB35694425B53CEB00663B2E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CB35694725B53CEB00663B2E /* PasswordHubApp.swift */,
+				CB35694725B53CEB00663B2E /* OTPHubApp.swift */,
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
 				CB7A445025B5974C003CED6D /* ViewModifier.swift */,
 				CB35699025B566B900663B2E /* ListItem.swift */,
@@ -114,7 +114,7 @@
 				CB35699525B568A700663B2E /* Enum.swift */,
 				CB35694925B53CEB00663B2E /* Persistence.swift */,
 				CB35694A25B53CEC00663B2E /* Assets.xcassets */,
-				CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */,
+				CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */,
 				CB89B18E25B6C6B100B61B68 /* Localizable.strings */,
 			);
 			path = Shared;
@@ -123,8 +123,8 @@
 		CB35695025B53CEC00663B2E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB35694F25B53CEC00663B2E /* PasswordHub.app */,
-				CB35695725B53CEC00663B2E /* PasswordHub.app */,
+				CB35694F25B53CEC00663B2E /* OTPHub.app */,
+				CB35695725B53CEC00663B2E /* OTPHub.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,9 +150,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB35694E25B53CEC00663B2E /* PasswordHub (iOS) */ = {
+		CB35694E25B53CEC00663B2E /* OTPHub (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB35696725B53CEC00663B2E /* Build configuration list for PBXNativeTarget "PasswordHub (iOS)" */;
+			buildConfigurationList = CB35696725B53CEC00663B2E /* Build configuration list for PBXNativeTarget "OTPHub (iOS)" */;
 			buildPhases = (
 				CB35694B25B53CEC00663B2E /* Sources */,
 				CB35694C25B53CEC00663B2E /* Frameworks */,
@@ -162,18 +162,18 @@
 			);
 			dependencies = (
 			);
-			name = "PasswordHub (iOS)";
+			name = "OTPHub (iOS)";
 			packageProductDependencies = (
 				CB35697025B53E5200663B2E /* SwiftOTP */,
 				CBBE8A6C25B6969300CE1DE8 /* CodeScanner */,
 			);
 			productName = "2FAapp (iOS)";
-			productReference = CB35694F25B53CEC00663B2E /* PasswordHub.app */;
+			productReference = CB35694F25B53CEC00663B2E /* OTPHub.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CB35695625B53CEC00663B2E /* PasswordHub (macOS) */ = {
+		CB35695625B53CEC00663B2E /* OTPHub (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB35696A25B53CEC00663B2E /* Build configuration list for PBXNativeTarget "PasswordHub (macOS)" */;
+			buildConfigurationList = CB35696A25B53CEC00663B2E /* Build configuration list for PBXNativeTarget "OTPHub (macOS)" */;
 			buildPhases = (
 				CB35695325B53CEC00663B2E /* Sources */,
 				CB35695425B53CEC00663B2E /* Frameworks */,
@@ -183,12 +183,12 @@
 			);
 			dependencies = (
 			);
-			name = "PasswordHub (macOS)";
+			name = "OTPHub (macOS)";
 			packageProductDependencies = (
 				CB168FDE25B5DE24000DC544 /* SwiftOTP */,
 			);
 			productName = "2FAapp (macOS)";
-			productReference = CB35695725B53CEC00663B2E /* PasswordHub.app */;
+			productReference = CB35695725B53CEC00663B2E /* OTPHub.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -208,7 +208,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CB35694325B53CEB00663B2E /* Build configuration list for PBXProject "PasswordHub" */;
+			buildConfigurationList = CB35694325B53CEB00663B2E /* Build configuration list for PBXProject "OTPHub" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -225,8 +225,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB35694E25B53CEC00663B2E /* PasswordHub (iOS) */,
-				CB35695625B53CEC00663B2E /* PasswordHub (macOS) */,
+				CB35694E25B53CEC00663B2E /* OTPHub (iOS) */,
+				CB35695625B53CEC00663B2E /* OTPHub (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -257,13 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB35695D25B53CEC00663B2E /* PasswordHubApp.swift in Sources */,
+				CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
 				CB7A445125B5974C003CED6D /* ViewModifier.swift in Sources */,
 				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
 				CB35699625B568A700663B2E /* Enum.swift in Sources */,
 				CB35696125B53CEC00663B2E /* Persistence.swift in Sources */,
 				CB35697C25B55F1D00663B2E /* CustomButton.swift in Sources */,
-				CB35695B25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */,
+				CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
@@ -273,13 +273,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB35695E25B53CEC00663B2E /* PasswordHubApp.swift in Sources */,
+				CB35695E25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
 				CB7A445225B5974C003CED6D /* ViewModifier.swift in Sources */,
 				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
 				CB35699725B568A700663B2E /* Enum.swift in Sources */,
 				CB35696225B53CEC00663B2E /* Persistence.swift in Sources */,
 				CB35697D25B55F1D00663B2E /* CustomButton.swift in Sources */,
-				CB35695C25B53CEC00663B2E /* PasswordHub.xcdatamodeld in Sources */,
+				CB35695C25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
@@ -427,8 +427,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.passwordhub;
-				PRODUCT_NAME = PasswordHub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
+				PRODUCT_NAME = OTPHub;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -451,8 +451,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.passwordhub;
-				PRODUCT_NAME = PasswordHub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
+				PRODUCT_NAME = OTPHub;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,8 +478,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.passwordhub;
-				PRODUCT_NAME = PasswordHub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
+				PRODUCT_NAME = OTPHub;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -503,8 +503,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.passwordhub;
-				PRODUCT_NAME = PasswordHub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
+				PRODUCT_NAME = OTPHub;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -513,7 +513,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB35694325B53CEB00663B2E /* Build configuration list for PBXProject "PasswordHub" */ = {
+		CB35694325B53CEB00663B2E /* Build configuration list for PBXProject "OTPHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB35696525B53CEC00663B2E /* Debug */,
@@ -522,7 +522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB35696725B53CEC00663B2E /* Build configuration list for PBXNativeTarget "PasswordHub (iOS)" */ = {
+		CB35696725B53CEC00663B2E /* Build configuration list for PBXNativeTarget "OTPHub (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB35696825B53CEC00663B2E /* Debug */,
@@ -531,7 +531,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB35696A25B53CEC00663B2E /* Build configuration list for PBXNativeTarget "PasswordHub (macOS)" */ = {
+		CB35696A25B53CEC00663B2E /* Build configuration list for PBXNativeTarget "OTPHub (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB35696B25B53CEC00663B2E /* Debug */,
@@ -580,13 +580,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		CB35694525B53CEB00663B2E /* PasswordHub.xcdatamodeld */ = {
+		CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				CB35694625B53CEB00663B2E /* Shared.xcdatamodel */,
 			);
 			currentVersion = CB35694625B53CEB00663B2E /* Shared.xcdatamodel */;
-			path = PasswordHub.xcdatamodeld;
+			path = OTPHub.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

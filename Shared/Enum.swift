@@ -1,6 +1,6 @@
 //
 //  Enum.swift
-//  PasswordHub
+//  OTPHub
 //
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
