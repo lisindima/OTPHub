@@ -28,15 +28,13 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            LoadingView(items, title: "Пусто", subTitle: "Добавьте свой первый аккаунт.") { items in
-                List {
-                    ForEach(items) { item in
-                        ListItem(item: item)
-                    }
-                    .onDelete(perform: deleteItems)
+            List {
+                ForEach(items) { item in
+                    ListItem(item: item)
                 }
-                .modifier(ListStyle())
+                .onDelete(perform: deleteItems)
             }
+            .modifier(ListStyle())
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: { isPresented = true }) {

@@ -16,6 +16,7 @@ struct AddPasswordView: View {
     @State private var passwordSecret: String = ""
     @State private var updateTime: UpdateTime = .thirtySeconds
     @State private var sizePassword: SizePassword = .sixDigit
+    @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
     @State private var passwordColor: Color = .black
     @State private var isPresented: Bool = false
     @State private var showQRView: Bool = false
@@ -27,9 +28,10 @@ struct AddPasswordView: View {
             let item = Item(context: moc)
             item.passwordName = passwordName
             item.passwordSecret = passwordSecret
+            item.passwordAlgorithm = passwordAlgorithm.rawValue
             item.updateTime = Int32(updateTime.rawValue)
             item.sizePassword = Int32(sizePassword.rawValue)
-            item.passwordColor = "#ff0000"
+            item.passwordColor = "#000000"
             do {
                 try moc.save()
                 presentationMode.wrappedValue.dismiss()
@@ -37,6 +39,26 @@ struct AddPasswordView: View {
                 let nsError = error as NSError
                 print("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+        }
+    }
+    
+    private func getURLComponents(_ url: URL) {
+        passwordSecret = url["secret"]
+        let algorithm = url["algorithm"]
+        if algorithm == "SHA1" {
+            passwordAlgorithm = .sha1
+        } else if algorithm == "SHA256" {
+            passwordAlgorithm = .sha256
+        } else if algorithm == "SHA512" {
+            passwordAlgorithm = .sha512
+        }
+        let digit = url["digits"]
+        if digit == "6" {
+            sizePassword = .sixDigit
+        } else if digit == "7" {
+            sizePassword = .sevenDigit
+        } else if digit == "8" {
+            sizePassword = .eightDigit
         }
     }
     
@@ -60,6 +82,14 @@ struct AddPasswordView: View {
                         Picker("Время обновления", selection: $updateTime) {
                             Text("30 секунд").tag(UpdateTime.thirtySeconds)
                             Text("60 секунд").tag(UpdateTime.sixtySeconds)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    Section(header: Text("Шифрование")) {
+                        Picker("Шифрование", selection: $passwordAlgorithm) {
+                            Text("SHA1").tag(PasswordAlgorithm.sha1)
+                            Text("SHA256").tag(PasswordAlgorithm.sha256)
+                            Text("SHA512").tag(PasswordAlgorithm.sha512)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -92,11 +122,13 @@ struct AddPasswordView: View {
             .sheet(isPresented: $showQRView) {
                 CodeScannerView(
                     codeTypes: [.qr],
-                    simulatedData: "otpauth://totp/VK:lisindima?secret=P6WV3X36LTK756DL&issuer=VK"
+                    simulatedData: "otpauth://totp/foo?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA====&algorithm=SHA256&digits=8"
                 ) { result in
                     switch result {
                     case let .success(code):
                         print("Found code: \(code)")
+                        getURLComponents(URL(string: code)!)
+                        showQRView = false
                     case let .failure(error):
                         print(error.localizedDescription)
                     }
@@ -104,5 +136,12 @@ struct AddPasswordView: View {
                 .ignoresSafeArea(edges: .bottom)
             }
         }
+    }
+}
+
+extension URL {
+    subscript(queryParam: String) -> String {
+        guard let url = URLComponents(string: absoluteString) else { return "" }
+        return url.queryItems?.first(where: { $0.name == queryParam })?.value ?? ""
     }
 }

@@ -18,6 +18,7 @@ struct PersistenceController {
             newItem.passwordName = "Test Account"
             newItem.passwordSecret = "Test Secret"
             newItem.passwordColor = "#ff0000"
+            newItem.passwordAlgorithm = "SHA1"
             newItem.sizePassword = 6
             newItem.updateTime = 30
         }

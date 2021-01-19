@@ -16,9 +16,18 @@ struct ListItem: View {
     let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
     
     private func generatePassword() {
+        var algorithm: OTPAlgorithm = .sha1
+        if item.passwordAlgorithm == "SHA1" {
+            algorithm = .sha1
+        } else if item.passwordAlgorithm == "SHA256" {
+            algorithm = .sha256
+        } else if item.passwordAlgorithm == "SHA512" {
+            algorithm = .sha512
+        }
+        
         guard let secret = item.passwordSecret else { return }
         guard let data = base32DecodeToData(secret) else { return }
-        let totp = TOTP(secret: data, digits: Int(item.sizePassword), timeInterval: Int(item.updateTime), algorithm: .sha1)
+        let totp = TOTP(secret: data, digits: Int(item.sizePassword), timeInterval: Int(item.updateTime), algorithm: algorithm)
         otpString = totp!.generate(time: Date())!
     }
     
