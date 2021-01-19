@@ -66,44 +66,44 @@ struct AddPasswordView: View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("Основная информация")) {
-                        TextField("Имя", text: $passwordName)
-                        TextField("Секрет", text: $passwordSecret)
+                    Section(header: Text("section_header_basic_information")) {
+                        TextField("textfield_name", text: $passwordName)
+                        TextField("textfield_secret", text: $passwordSecret)
                     }
-                    Section(header: Text("Длина пароля")) {
-                        Picker("Длина пароля", selection: $sizePassword) {
-                            Text("6 знаков").tag(SizePassword.sixDigit)
-                            Text("7 знаков").tag(SizePassword.sevenDigit)
-                            Text("8 знаков").tag(SizePassword.eightDigit)
+                    Section(header: Text("section_header_password_length")) {
+                        Picker("section_header_password_length", selection: $sizePassword) {
+                            Text("6_digits").tag(SizePassword.sixDigit)
+                            Text("7_digits").tag(SizePassword.sevenDigit)
+                            Text("8_digits").tag(SizePassword.eightDigit)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    Section(header: Text("Время обновления")) {
-                        Picker("Время обновления", selection: $updateTime) {
-                            Text("30 секунд").tag(UpdateTime.thirtySeconds)
-                            Text("60 секунд").tag(UpdateTime.sixtySeconds)
+                    Section(header: Text("section_header_update_time")) {
+                        Picker("section_header_update_time", selection: $updateTime) {
+                            Text("30_seconds").tag(UpdateTime.thirtySeconds)
+                            Text("60_seconds").tag(UpdateTime.sixtySeconds)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    Section(header: Text("Шифрование")) {
-                        Picker("Шифрование", selection: $passwordAlgorithm) {
+                    Section(header: Text("section_header_encryption_type")) {
+                        Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
                             Text("SHA1").tag(PasswordAlgorithm.sha1)
                             Text("SHA256").tag(PasswordAlgorithm.sha256)
                             Text("SHA512").tag(PasswordAlgorithm.sha512)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    Section(header: Text("Кастомизация"), footer: Text("Выберите цвет для пароля чтобы удобнее было его найти.")) {
-                        ColorPicker("Цвет пароля", selection: $passwordColor)
+                    Section(header: Text("section_header_customization"), footer: Text("section_footer_customization")) {
+                        ColorPicker("colorpicker_title", selection: $passwordColor)
                     }
                 }
-                CustomButton("Добавить", action: savePassword)
+                CustomButton("button_title_add_account", action: savePassword)
                     .shadow(radius: 6)
                     .padding()
             }
-            .navigationTitle("Новый аккаунт")
+            .navigationTitle("navigation_title_new_account")
             .alert(isPresented: $isPresented) {
-                Alert(title: Text("Ошибка"), message: Text("Заполните все поля"), dismissButton: .cancel())
+                Alert(title: Text("alert_error_title"), message: Text("alert_error_message"), dismissButton: .cancel())
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

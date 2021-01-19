@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CustomButton: View {
-    var title: String
+    var title: LocalizedStringKey
     var action: () -> Void
     
-    init(_ title: String, action: @escaping () -> Void) {
+    init(_ title: LocalizedStringKey, action: @escaping () -> Void) {
         self.title = title
         self.action = action
     }
