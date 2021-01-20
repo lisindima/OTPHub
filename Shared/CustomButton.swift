@@ -32,3 +32,24 @@ struct CustomButton: View {
         .cornerRadius(8)
     }
 }
+
+struct ButtonModifier: ViewModifier {
+    var action: () -> Void
+    
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        #if os(watchOS)
+        content
+        #else
+        Button(action: action) {
+            content
+        }
+        #endif
+    }
+}
+
+extension View {
+    func button(action: @escaping () -> Void) -> some View {
+        modifier(ButtonModifier(action: action))
+    }
+}

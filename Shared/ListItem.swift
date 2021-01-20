@@ -9,11 +9,21 @@ import SwiftOTP
 import SwiftUI
 
 struct ListItem: View {
-    @State private var otpString: String = ""
-    
     var item: Item
     
-    let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
+    @Binding var showIndicator: Bool
+    @State private var otpString: String = ""
+    
+    private let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
+    
+    func copyPasteboard() {
+        #if os(macOS)
+        NSPasteboard.general.setString(otpString, forType: .string)
+        #else
+        UIPasteboard.general.string = otpString
+        #endif
+        showIndicator = true
+    }
     
     private func generatePassword() {
         var algorithm: OTPAlgorithm = .sha1
@@ -34,15 +44,18 @@ struct ListItem: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(item.passwordName!)
-                .font(.footnote)
+                .font(.system(.footnote, design: .rounded))
+                .foregroundColor(.secondary)
             Text(otpString)
-                .font(.title)
+                .font(.system(.title, design: .rounded))
                 .fontWeight(.bold)
+                .foregroundColor(.primary)
                 .animation(.interactiveSpring())
         }
+        .button(action: copyPasteboard)
+        .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in
             generatePassword()
         }
-        .onAppear(perform: generatePassword)
     }
 }

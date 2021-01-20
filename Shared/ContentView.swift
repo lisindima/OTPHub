@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @State private var isPresented: Bool = false
+    @State private var showIndicator: Bool = false
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.passwordName, ascending: true)],
@@ -30,7 +31,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(items) { item in
-                    ListItem(item: item)
+                    ListItem(item: item, showIndicator: $showIndicator)
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -48,6 +49,7 @@ struct ContentView: View {
                 AddPasswordView()
                     .accentColor(.purple)
             }
+            .pasteboardIndicator(isPresented: $showIndicator)
             .navigationTitle("OTPHub")
         }
         .navigationViewStyle(StackNavigationViewStyle())

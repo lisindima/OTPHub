@@ -5,7 +5,9 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
+#if os(iOS)
 import CodeScanner
+#endif
 import SwiftUI
 
 struct AddPasswordView: View {
@@ -64,77 +66,87 @@ struct AddPasswordView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Form {
-                    Section(header: Text("section_header_basic_information")) {
-                        TextField("textfield_name", text: $passwordName)
-                        TextField("textfield_secret", text: $passwordSecret)
-                    }
-                    Section(header: Text("section_header_password_length")) {
-                        Picker("section_header_password_length", selection: $sizePassword) {
-                            Text("6_digits").tag(SizePassword.sixDigit)
-                            Text("7_digits").tag(SizePassword.sevenDigit)
-                            Text("8_digits").tag(SizePassword.eightDigit)
+            #if os(iOS)
+            form
+                .sheet(isPresented: $showQRView) {
+                    CodeScannerView(
+                        codeTypes: [.qr],
+                        simulatedData: "otpauth://totp/foo?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA====&algorithm=SHA256&digits=8"
+                    ) { result in
+                        switch result {
+                        case let .success(code):
+                            print("Found code: \(code)")
+                            getURLComponents(URL(string: code)!)
+                            showQRView = false
+                        case let .failure(error):
+                            print(error.localizedDescription)
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    Section(header: Text("section_header_update_time")) {
-                        Picker("section_header_update_time", selection: $updateTime) {
-                            Text("30_seconds").tag(UpdateTime.thirtySeconds)
-                            Text("60_seconds").tag(UpdateTime.sixtySeconds)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    Section(header: Text("section_header_encryption_type")) {
-                        Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
-                            Text("SHA1").tag(PasswordAlgorithm.sha1)
-                            Text("SHA256").tag(PasswordAlgorithm.sha256)
-                            Text("SHA512").tag(PasswordAlgorithm.sha512)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    Section(header: Text("section_header_customization"), footer: Text("section_footer_customization")) {
-                        ColorPicker("colorpicker_title", selection: $passwordColor)
+                    .ignoresSafeArea(edges: .bottom)
+                }
+            #else
+            form
+            #endif
+        }
+    }
+    
+    var form: some View {
+        VStack {
+            Form {
+                Section(header: Text("section_header_basic_information")) {
+                    TextField("textfield_name", text: $passwordName)
+                    TextField("textfield_secret", text: $passwordSecret)
+                }
+                Section(header: Text("section_header_password_length")) {
+                    Picker("section_header_password_length", selection: $sizePassword) {
+                        Text("6_digits").tag(SizePassword.sixDigit)
+                        Text("7_digits").tag(SizePassword.sevenDigit)
+                        Text("8_digits").tag(SizePassword.eightDigit)
                     }
                 }
-                CustomButton("button_title_add_account", action: savePassword)
-                    .shadow(radius: 6)
-                    .padding()
-            }
-            .navigationTitle("navigation_title_new_account")
-            .alert(isPresented: $isPresented) {
-                Alert(title: Text("alert_error_title"), message: Text("alert_error_message"), dismissButton: .cancel())
-            }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                        Image(systemName: "xmark")
-                            .imageScale(.large)
+                .pickerStyle(SegmentedPickerStyle())
+                Section(header: Text("section_header_update_time")) {
+                    Picker("section_header_update_time", selection: $updateTime) {
+                        Text("30_seconds").tag(UpdateTime.thirtySeconds)
+                        Text("60_seconds").tag(UpdateTime.sixtySeconds)
                     }
                 }
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: { showQRView = true }) {
-                        Image(systemName: "qrcode")
-                            .imageScale(.large)
+                .pickerStyle(SegmentedPickerStyle())
+                Section(header: Text("section_header_encryption_type")) {
+                    Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
+                        Text("SHA1").tag(PasswordAlgorithm.sha1)
+                        Text("SHA256").tag(PasswordAlgorithm.sha256)
+                        Text("SHA512").tag(PasswordAlgorithm.sha512)
                     }
                 }
-            }
-            .sheet(isPresented: $showQRView) {
-                CodeScannerView(
-                    codeTypes: [.qr],
-                    simulatedData: "otpauth://totp/foo?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA====&algorithm=SHA256&digits=8"
-                ) { result in
-                    switch result {
-                    case let .success(code):
-                        print("Found code: \(code)")
-                        getURLComponents(URL(string: code)!)
-                        showQRView = false
-                    case let .failure(error):
-                        print(error.localizedDescription)
-                    }
+                .pickerStyle(SegmentedPickerStyle())
+                Section(header: Text("section_header_customization"), footer: Text("section_footer_customization")) {
+                    ColorPicker("colorpicker_title", selection: $passwordColor)
                 }
-                .ignoresSafeArea(edges: .bottom)
             }
+            CustomButton("button_title_add_account", action: savePassword)
+                .shadow(radius: 6)
+                .padding()
+        }
+        .navigationTitle("navigation_title_new_account")
+        .alert(isPresented: $isPresented) {
+            Alert(title: Text("alert_error_title"), message: Text("alert_error_message"), dismissButton: .cancel())
+        }
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                    Image(systemName: "xmark")
+                        .imageScale(.large)
+                }
+            }
+            #if os(iOS)
+            ToolbarItem(placement: .primaryAction) {
+                Button(action: { showQRView = true }) {
+                    Image(systemName: "qrcode")
+                        .imageScale(.large)
+                }
+            }
+            #endif
         }
     }
 }
