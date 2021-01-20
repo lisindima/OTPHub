@@ -49,9 +49,9 @@ struct ContentView: View {
                 AddPasswordView()
                     .accentColor(.purple)
             }
-            .pasteboardIndicator(isPresented: $showIndicator)
             .navigationTitle("OTPHub")
         }
+        .toast(isPresented: $showIndicator)
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
