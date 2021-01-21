@@ -37,10 +37,20 @@ struct ListItem: View {
             algorithm = .sha512
         }
         
-        guard let secret = item.passwordSecret else { return }
-        guard let data = base32DecodeToData(secret) else { return }
-        let totp = TOTP(secret: data, digits: Int(item.sizePassword), timeInterval: Int(item.updateTime), algorithm: algorithm)
-        otpString = totp!.generate(time: Date())!
+        guard let data = item.passwordSecret else { return }
+        guard let secret = base32DecodeToData(data) else { return }
+        
+        let digits = Int(item.sizePassword)
+        let timeInterval = Int(item.updateTime)
+        
+        if let totp = TOTP(
+            secret: secret,
+            digits: digits,
+            timeInterval: timeInterval,
+            algorithm: algorithm
+        ) {
+            otpString = totp.generate(time: Date())!
+        }
     }
     
     var body: some View {
