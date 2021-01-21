@@ -46,7 +46,7 @@ struct ListItem: View {
             Text(item.passwordName!)
                 .font(.system(.footnote, design: .rounded))
                 .foregroundColor(.secondary)
-            Text(otpString)
+            Text(otpString.separated())
                 .font(.system(.title, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.primary)
