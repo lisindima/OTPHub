@@ -17,6 +17,7 @@ struct CustomButton: View {
     }
     
     var body: some View {
+        #if os(iOS)
         Button(action: action) {
             HStack {
                 Spacer()
@@ -30,26 +31,10 @@ struct CustomButton: View {
         }
         .background(Color.accentColor)
         .cornerRadius(8)
-    }
-}
-
-struct ButtonModifier: ViewModifier {
-    var action: () -> Void
-    
-    @ViewBuilder
-    func body(content: Content) -> some View {
-        #if os(watchOS)
-        content
         #else
         Button(action: action) {
-            content
+            Text(title)
         }
         #endif
-    }
-}
-
-extension View {
-    func button(action: @escaping () -> Void) -> some View {
-        modifier(ButtonModifier(action: action))
     }
 }

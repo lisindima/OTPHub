@@ -17,3 +17,4 @@
 "alert_error_title" = "Error";
 "alert_error_message" = "Fill in all the fields";
 "toast_title_copy" = "Code copied to clipboard";
+"close_toolbar" = "Close";

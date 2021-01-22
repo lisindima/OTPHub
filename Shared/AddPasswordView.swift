@@ -65,8 +65,8 @@ struct AddPasswordView: View {
     }
     
     var body: some View {
+        #if os(iOS)
         NavigationView {
-            #if os(iOS)
             form
                 .sheet(isPresented: $showQRView) {
                     CodeScannerView(
@@ -75,7 +75,6 @@ struct AddPasswordView: View {
                     ) { result in
                         switch result {
                         case let .success(code):
-                            print("Found code: \(code)")
                             getURLComponents(URL(string: code)!)
                             showQRView = false
                         case let .failure(error):
@@ -84,10 +83,14 @@ struct AddPasswordView: View {
                     }
                     .ignoresSafeArea(edges: .bottom)
                 }
-            #else
-            form
-            #endif
         }
+        #elseif os(macOS)
+        form
+            .padding()
+            .frame(width: 350, height: 440)
+        #else
+        form
+        #endif
     }
     
     var form: some View {
@@ -103,6 +106,7 @@ struct AddPasswordView: View {
                         Text("7_digits").tag(SizePassword.sevenDigit)
                         Text("8_digits").tag(SizePassword.eightDigit)
                     }
+                    .labelsHidden()
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_update_time")) {
@@ -110,6 +114,7 @@ struct AddPasswordView: View {
                         Text("30_seconds").tag(UpdateTime.thirtySeconds)
                         Text("60_seconds").tag(UpdateTime.sixtySeconds)
                     }
+                    .labelsHidden()
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_encryption_type")) {
@@ -118,6 +123,7 @@ struct AddPasswordView: View {
                         Text("SHA256").tag(PasswordAlgorithm.sha256)
                         Text("SHA512").tag(PasswordAlgorithm.sha512)
                     }
+                    .labelsHidden()
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_customization"), footer: Text("section_footer_customization")) {
@@ -135,8 +141,7 @@ struct AddPasswordView: View {
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                    Image(systemName: "xmark")
-                        .imageScale(.large)
+                    Label("close_toolbar", systemImage: "xmark")
                 }
             }
             #if os(iOS)

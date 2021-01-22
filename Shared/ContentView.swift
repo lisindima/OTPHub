@@ -28,36 +28,37 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    ListItem(item: item, showIndicator: $showIndicator)
-                }
-                .onDelete(perform: deleteItems)
+        List {
+            ForEach(items) { item in
+                ListItem(item: item, showIndicator: $showIndicator)
             }
-            .modifier(ListStyle())
-            .environment(\.defaultMinListRowHeight, 70)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: { isPresented = true }) {
-                        Image(systemName: "plus.circle.fill")
-                            .imageScale(.large)
-                    }
-                }
-            }
-            .sheet(isPresented: $isPresented) {
-                AddPasswordView()
-                    .accentColor(.purple)
-            }
-            .navigationTitle("OTPHub")
+            .onDelete(perform: deleteItems)
         }
+        .modifier(ListStyle())
+        .environment(\.defaultMinListRowHeight, 70)
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button(action: { isPresented = true }) {
+                    Image(systemName: "plus.circle.fill")
+                        .imageScale(.large)
+                }
+            }
+        }
+        .sheet(isPresented: $isPresented) {
+            AddPasswordView()
+                .accentColor(.purple)
+        }
+        .navigationTitle("OTPHub")
+        .navigationView()
         .toast(isPresented: $showIndicator)
-        .navigationViewStyle(StackNavigationViewStyle())
+        .modifier(NavigationStyle())
+        .modifier(FrameModifier(width: 400, height: 440))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

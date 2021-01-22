@@ -18,3 +18,73 @@ struct ListStyle: ViewModifier {
         #endif
     }
 }
+
+struct NavigationStyle: ViewModifier {
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        #if os(iOS)
+        content
+            .navigationViewStyle(StackNavigationViewStyle())
+        #else
+        content
+        #endif
+    }
+}
+
+struct ButtonModifier: ViewModifier {
+    var action: () -> Void
+    
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        #if os(watchOS)
+        content
+        #elseif os(iOS)
+        Button(action: action) {
+            content
+        }
+        #elseif os(macOS)
+        content
+            .onTapGesture(perform: action)
+        #endif
+    }
+}
+
+extension View {
+    func button(action: @escaping () -> Void) -> some View {
+        modifier(ButtonModifier(action: action))
+    }
+}
+
+struct NavigationModifier: ViewModifier {
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        #if os(macOS)
+        content
+        #else
+        NavigationView {
+            content
+        }
+        #endif
+    }
+}
+
+extension View {
+    func navigationView() -> some View {
+        modifier(NavigationModifier())
+    }
+}
+
+struct FrameModifier: ViewModifier {
+    var width: CGFloat
+    var height: CGFloat
+    
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        #if os(macOS)
+        content
+            .frame(width: width, height: height)
+        #else
+        content
+        #endif
+    }
+}

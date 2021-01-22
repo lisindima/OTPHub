@@ -14,6 +14,30 @@ struct ToastView: View {
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey?
     
+    var secondarySystemBackground: Color {
+        #if os(iOS)
+        return Color(UIColor.secondarySystemBackground)
+        #else
+        return Color(NSColor.windowBackgroundColor)
+        #endif
+    }
+    
+    var systemBackground: Color {
+        #if os(iOS)
+        return Color(UIColor.systemBackground)
+        #else
+        return Color(NSColor.windowBackgroundColor)
+        #endif
+    }
+    
+    var black: Color {
+        #if os(iOS)
+        return Color(UIColor.black.withAlphaComponent(0.08))
+        #else
+        return Color(NSColor.black.withAlphaComponent(0.08))
+        #endif
+    }
+    
     var body: some View {
         HStack(spacing: 16) {
             if let image = image {
@@ -37,8 +61,8 @@ struct ToastView: View {
         }
         .padding(.horizontal)
         .frame(height: 56)
-        .background(Color(colorScheme == .dark ? UIColor.secondarySystemBackground : UIColor.systemBackground))
+        .background(colorScheme == .dark ? secondarySystemBackground : systemBackground)
         .cornerRadius(28)
-        .shadow(color: Color(UIColor.black.withAlphaComponent(0.08)), radius: 8, x: 0, y: 4)
+        .shadow(color: black, radius: 8, x: 0, y: 4)
     }
 }
