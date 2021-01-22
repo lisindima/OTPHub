@@ -16,3 +16,4 @@
 "navigation_title_new_account" = "Новый аккаунт";
 "alert_error_title" = "Ошибка";
 "alert_error_message" = "Заполните все поля";
+"toast_title_copy" = "Код скопирован";

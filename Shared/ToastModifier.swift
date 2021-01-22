@@ -12,7 +12,7 @@ struct ToastModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         ZStack(alignment: .top) {
-            ToastView(title: "Код скопирован")
+            ToastView(title: "toast_title_copy")
                 .offset(y: isPresented ? 0 : -128)
                 .zIndex(1)
                 .animation(

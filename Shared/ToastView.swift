@@ -11,8 +11,8 @@ struct ToastView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var image: String?
-    var title: String
-    var subtitle: String?
+    var title: LocalizedStringKey
+    var subtitle: LocalizedStringKey?
     
     var body: some View {
         HStack(spacing: 16) {
