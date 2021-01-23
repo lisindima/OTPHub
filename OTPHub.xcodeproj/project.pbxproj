@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB168FDF25B5DE24000DC544 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB168FDE25B5DE24000DC544 /* SwiftOTP */; };
 		CB351D8625B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
 		CB351D8725B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
 		CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */; };
@@ -20,7 +19,6 @@
 		CB35696225B53CEC00663B2E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694925B53CEB00663B2E /* Persistence.swift */; };
 		CB35696325B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
 		CB35696425B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
-		CB35697125B53E5200663B2E /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB35697025B53E5200663B2E /* SwiftOTP */; };
 		CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddPasswordView.swift */; };
 		CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddPasswordView.swift */; };
 		CB35697C25B55F1D00663B2E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697B25B55F1D00663B2E /* CustomButton.swift */; };
@@ -35,6 +33,8 @@
 		CB7A445225B5974C003CED6D /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A445025B5974C003CED6D /* ViewModifier.swift */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB89B18C25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
+		CBBD42F625BC1AEC0091028D /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CBBD42F525BC1AEC0091028D /* SwiftOTP */; };
+		CBBD42F825BC1AF40091028D /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CBBD42F725BC1AF40091028D /* SwiftOTP */; };
 		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
 		CBCC1E3D25B8300A00A87187 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC1E3C25B8300A00A87187 /* ToastModifier.swift */; };
 		CBCC1E4225B83BC500A87187 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC1E4125B83BC500A87187 /* ToastView.swift */; };
@@ -64,6 +64,7 @@
 		CB7A445025B5974C003CED6D /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
 		CB89B18D25B6C6B100B61B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB89B18F25B6C6B400B61B68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CBBD42F025BC18170091028D /* SwiftOTP */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftOTP; path = ../SwiftOTP; sourceTree = "<group>"; };
 		CBCC1E3C25B8300A00A87187 /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		CBCC1E4125B83BC500A87187 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,8 +75,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB6396FF25B7000700B7AAA0 /* CloudKit.framework in Frameworks */,
+				CBBD42F625BC1AEC0091028D /* SwiftOTP in Frameworks */,
 				CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */,
-				CB35697125B53E5200663B2E /* SwiftOTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB168FDF25B5DE24000DC544 /* SwiftOTP in Frameworks */,
+				CBBD42F825BC1AF40091028D /* SwiftOTP in Frameworks */,
 				CB63970125B7007800B7AAA0 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +104,7 @@
 		CB35693F25B53CEB00663B2E = {
 			isa = PBXGroup;
 			children = (
+				CBBD42F025BC18170091028D /* SwiftOTP */,
 				CB35694425B53CEB00663B2E /* Shared */,
 				CB35695125B53CEC00663B2E /* iOS */,
 				CB35695825B53CEC00663B2E /* macOS */,
@@ -176,8 +178,8 @@
 			);
 			name = "OTPHub (iOS)";
 			packageProductDependencies = (
-				CB35697025B53E5200663B2E /* SwiftOTP */,
 				CBBE8A6C25B6969300CE1DE8 /* CodeScanner */,
+				CBBD42F525BC1AEC0091028D /* SwiftOTP */,
 			);
 			productName = "2FAapp (iOS)";
 			productReference = CB35694F25B53CEC00663B2E /* OTPHub.app */;
@@ -197,7 +199,7 @@
 			);
 			name = "OTPHub (macOS)";
 			packageProductDependencies = (
-				CB168FDE25B5DE24000DC544 /* SwiftOTP */,
+				CBBD42F725BC1AF40091028D /* SwiftOTP */,
 			);
 			productName = "2FAapp (macOS)";
 			productReference = CB35695725B53CEC00663B2E /* OTPHub.app */;
@@ -231,7 +233,6 @@
 			);
 			mainGroup = CB35693F25B53CEB00663B2E;
 			packageReferences = (
-				CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */,
 				CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = CB35695025B53CEC00663B2E /* Products */;
@@ -566,14 +567,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lachlanbell/SwiftOTP";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.3;
-			};
-		};
 		CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -585,14 +578,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CB168FDE25B5DE24000DC544 /* SwiftOTP */ = {
+		CBBD42F525BC1AEC0091028D /* SwiftOTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */;
 			productName = SwiftOTP;
 		};
-		CB35697025B53E5200663B2E /* SwiftOTP */ = {
+		CBBD42F725BC1AF40091028D /* SwiftOTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CB35696F25B53E5200663B2E /* XCRemoteSwiftPackageReference "SwiftOTP" */;
 			productName = SwiftOTP;
 		};
 		CBBE8A6C25B6969300CE1DE8 /* CodeScanner */ = {
