@@ -28,6 +28,15 @@ struct ContentView: View {
     }
     
     var body: some View {
+        #if os(macOS)
+        list
+            .frame(minWidth: 300, idealWidth: 400, maxWidth: nil, minHeight: 340, idealHeight: 440, maxHeight: nil)
+        #else
+        list
+        #endif
+    }
+    
+    var list: some View {
         List {
             ForEach(items) { item in
                 ListItem(item: item, showIndicator: $showIndicator)
@@ -52,7 +61,6 @@ struct ContentView: View {
         .navigationView()
         .toast(isPresented: $showIndicator)
         .modifier(NavigationStyle())
-        .modifier(FrameModifier(width: 400, height: 440))
     }
 }
 

@@ -74,17 +74,21 @@ extension View {
     }
 }
 
-struct FrameModifier: ViewModifier {
-    var width: CGFloat
-    var height: CGFloat
-    
+struct ColorPickerMac: ViewModifier {
     @ViewBuilder
     func body(content: Content) -> some View {
         #if os(macOS)
         content
-            .frame(width: width, height: height)
+            .labelsHidden()
+            .frame(height: 50)
         #else
         content
         #endif
+    }
+}
+
+extension View {
+    func colorPickerMac() -> some View {
+        modifier(ColorPickerMac())
     }
 }

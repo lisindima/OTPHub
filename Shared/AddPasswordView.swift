@@ -87,7 +87,6 @@ struct AddPasswordView: View {
         #elseif os(macOS)
         form
             .padding()
-            .frame(width: 350, height: 440)
         #else
         form
         #endif
@@ -128,6 +127,7 @@ struct AddPasswordView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_customization"), footer: Text("section_footer_customization")) {
                     ColorPicker("colorpicker_title", selection: $passwordColor)
+                        .colorPickerMac()
                 }
             }
             CustomButton("button_title_add_account", action: savePassword)
