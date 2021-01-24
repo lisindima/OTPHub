@@ -130,9 +130,11 @@ struct AddPasswordView: View {
                         .colorPickerMac()
                 }
             }
+            #if os(iOS)
             CustomButton("button_title_add_account", action: savePassword)
                 .shadow(radius: 6)
                 .padding()
+            #endif
         }
         .navigationTitle("navigation_title_new_account")
         .alert(isPresented: $isPresented) {
@@ -141,7 +143,11 @@ struct AddPasswordView: View {
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                    Label("close_toolbar", systemImage: "xmark")
+                    #if os(iOS)
+                    Image(systemName: "xmark")
+                    #else
+                    Text("close_toolbar")
+                    #endif
                 }
             }
             #if os(iOS)
@@ -149,6 +155,12 @@ struct AddPasswordView: View {
                 Button(action: { showQRView = true }) {
                     Image(systemName: "qrcode")
                         .imageScale(.large)
+                }
+            }
+            #elseif os(macOS)
+            ToolbarItem(placement: .confirmationAction) {
+                Button(action: savePassword) {
+                    Text("button_title_add_account")
                 }
             }
             #endif

@@ -17,7 +17,6 @@ struct CustomButton: View {
     }
     
     var body: some View {
-        #if os(iOS)
         Button(action: action) {
             HStack {
                 Spacer()
@@ -31,10 +30,5 @@ struct CustomButton: View {
         }
         .background(Color.accentColor)
         .cornerRadius(8)
-        #else
-        Button(action: action) {
-            Text(title)
-        }
-        #endif
     }
 }
