@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CB2AA2AE25BF015200D317DE /* OTPHub (watchOS Extension).appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CB2AA2B725BF015200D317DE /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2AA2B625BF015200D317DE /* ComplicationController.swift */; };
 		CB2AA2B925BF015200D317DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2AA2B825BF015200D317DE /* Assets.xcassets */; };
 		CB2AA2BC25BF015200D317DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2AA2BB25BF015200D317DE /* Preview Assets.xcassets */; };
 		CB2AA2C025BF015300D317DE /* OTPHub (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -106,7 +105,6 @@
 		CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTPHub (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2AA2A825BF015100D317DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OTPHub (watchOS Extension).appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB2AA2B625BF015200D317DE /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		CB2AA2B825BF015200D317DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB2AA2BB25BF015200D317DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB2AA2BD25BF015200D317DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,7 +189,7 @@
 		CB2AA2B125BF015200D317DE /* watchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CB2AA2B625BF015200D317DE /* ComplicationController.swift */,
+				CB2AA36025BF139500D317DE /* OTPHub (watchOS Extension).entitlements */,
 				CB2AA2B825BF015200D317DE /* Assets.xcassets */,
 				CB2AA2BD25BF015200D317DE /* Info.plist */,
 				CB2AA2BA25BF015200D317DE /* Preview Content */,
@@ -210,7 +208,6 @@
 		CB35693F25B53CEB00663B2E = {
 			isa = PBXGroup;
 			children = (
-				CB2AA36025BF139500D317DE /* OTPHub (watchOS Extension).entitlements */,
 				CBBD42F025BC18170091028D /* SwiftOTP */,
 				CB35694425B53CEB00663B2E /* Shared */,
 				CB35695125B53CEC00663B2E /* iOS */,
@@ -450,7 +447,6 @@
 				CB2AA31525BF04ED00D317DE /* String.swift in Sources */,
 				CB2AA2F425BF04C400D317DE /* OTPHubApp.swift in Sources */,
 				CB2AA30625BF04E100D317DE /* OTPHub.xcdatamodeld in Sources */,
-				CB2AA2B725BF015200D317DE /* ComplicationController.swift in Sources */,
 				CB2AA32E25BF050900D317DE /* ListItem.swift in Sources */,
 				CB2AA31A25BF04F100D317DE /* Enum.swift in Sources */,
 				CB2AA30125BF04DE00D317DE /* ContentView.swift in Sources */,
@@ -575,7 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "OTPHub (watchOS Extension).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "watchOS Extension/OTPHub (watchOS Extension).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS Extension/Preview Content\"";
@@ -602,7 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "OTPHub (watchOS Extension).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "watchOS Extension/OTPHub (watchOS Extension).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS Extension/Preview Content\"";
