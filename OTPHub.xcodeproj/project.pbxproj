@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB2AA2AE25BF015200D317DE /* OTPHub (watchOS Extension).appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB2AA2AE25BF015200D317DE /* OTPHub.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB2AA2AD25BF015200D317DE /* OTPHub.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB2AA2B925BF015200D317DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2AA2B825BF015200D317DE /* Assets.xcassets */; };
 		CB2AA2BC25BF015200D317DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2AA2BB25BF015200D317DE /* Preview Assets.xcassets */; };
-		CB2AA2C025BF015300D317DE /* OTPHub (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB2AA2C025BF015300D317DE /* OTPHub.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB2AA2A425BF015100D317DE /* OTPHub.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB2AA2E125BF02C200D317DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
 		CB2AA2F425BF04C400D317DE /* OTPHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* OTPHubApp.swift */; };
 		CB2AA30125BF04DE00D317DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
@@ -83,7 +83,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				CB2AA2C025BF015300D317DE /* OTPHub (watchOS).app in Embed Watch Content */,
+				CB2AA2C025BF015300D317DE /* OTPHub.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +94,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CB2AA2AE25BF015200D317DE /* OTPHub (watchOS Extension).appex in Embed App Extensions */,
+				CB2AA2AE25BF015200D317DE /* OTPHub.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,9 +102,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTPHub (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2AA2A425BF015100D317DE /* OTPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2AA2A825BF015100D317DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OTPHub (watchOS Extension).appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2AA2AD25BF015200D317DE /* OTPHub.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OTPHub.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2AA2B825BF015200D317DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB2AA2BB25BF015200D317DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB2AA2BD25BF015200D317DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -245,8 +245,8 @@
 			children = (
 				CB35694F25B53CEC00663B2E /* OTPHub.app */,
 				CB35695725B53CEC00663B2E /* OTPHub.app */,
-				CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */,
-				CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */,
+				CB2AA2A425BF015100D317DE /* OTPHub.app */,
+				CB2AA2AD25BF015200D317DE /* OTPHub.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 			);
 			name = "OTPHub (watchOS)";
 			productName = "OTPHub watch";
-			productReference = CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */;
+			productReference = CB2AA2A425BF015100D317DE /* OTPHub.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		CB2AA2AC25BF015200D317DE /* OTPHub (watchOS Extension) */ = {
@@ -306,7 +306,7 @@
 				CB2AA33825BF052300D317DE /* SwiftOTP */,
 			);
 			productName = "OTPHub watch Extension";
-			productReference = CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */;
+			productReference = CB2AA2AD25BF015200D317DE /* OTPHub.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		CB35694E25B53CEC00663B2E /* OTPHub (iOS) */ = {
@@ -535,7 +535,7 @@
 				INFOPLIST_FILE = watchOS/Info.plist;
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OTPHub;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -557,7 +557,7 @@
 				INFOPLIST_FILE = watchOS/Info.plist;
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OTPHub;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -585,7 +585,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = OTPHub;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -612,7 +612,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = OTPHub;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
