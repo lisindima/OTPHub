@@ -20,7 +20,9 @@ struct ListItem: View {
     
     func copyPasteboard() {
         #if os(macOS)
-        NSPasteboard.general.setString(otpString, forType: .string)
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(otpString, forType: .string)
         #else
         UIPasteboard.general.string = otpString
         #endif
