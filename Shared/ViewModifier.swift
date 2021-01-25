@@ -92,3 +92,22 @@ extension View {
         modifier(ColorPickerMac())
     }
 }
+
+struct CustomPickerStyle: ViewModifier {
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        #if os(watchOS)
+        content
+            .pickerStyle(WheelPickerStyle())
+        #else
+        content
+            .pickerStyle(SegmentedPickerStyle())
+        #endif
+    }
+}
+
+extension View {
+    func customPickerStyle() -> some View {
+        modifier(CustomPickerStyle())
+    }
+}

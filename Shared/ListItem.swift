@@ -23,7 +23,7 @@ struct ListItem: View {
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
         pasteBoard.setString(otpString, forType: .string)
-        #else
+        #elseif os(iOS)
         UIPasteboard.general.string = otpString
         #endif
         showIndicator = true

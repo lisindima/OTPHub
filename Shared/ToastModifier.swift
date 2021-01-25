@@ -15,9 +15,7 @@ struct ToastModifier: ViewModifier {
             ToastView(title: "toast_title_copy")
                 .offset(y: isPresented ? 0 : -128)
                 .zIndex(1)
-                .animation(
-                    Animation.spring()
-                )
+                .animation(.spring())
                 .onChange(of: isPresented) { _ in
                     if isPresented {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {

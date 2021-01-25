@@ -28,11 +28,15 @@ struct ContentView: View {
     }
     
     var body: some View {
-        #if os(macOS)
+        #if os(watchOS)
         list
+        #elseif os(macOS)
+        list
+            .toast(isPresented: $showIndicator)
             .frame(minWidth: 300, idealWidth: 400, maxWidth: nil, minHeight: 340, idealHeight: 440, maxHeight: nil)
         #else
         list
+            .toast(isPresented: $showIndicator)
         #endif
     }
     
@@ -59,7 +63,6 @@ struct ContentView: View {
         }
         .navigationTitle("OTPHub")
         .navigationView()
-        .toast(isPresented: $showIndicator)
         .modifier(NavigationStyle())
     }
 }

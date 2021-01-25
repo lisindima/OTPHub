@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB2AA2AE25BF015200D317DE /* OTPHub (watchOS Extension).appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB2AA2B725BF015200D317DE /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2AA2B625BF015200D317DE /* ComplicationController.swift */; };
+		CB2AA2B925BF015200D317DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2AA2B825BF015200D317DE /* Assets.xcassets */; };
+		CB2AA2BC25BF015200D317DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2AA2BB25BF015200D317DE /* Preview Assets.xcassets */; };
+		CB2AA2C025BF015300D317DE /* OTPHub (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB2AA2E125BF02C200D317DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
+		CB2AA2F425BF04C400D317DE /* OTPHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* OTPHubApp.swift */; };
+		CB2AA30125BF04DE00D317DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
+		CB2AA30625BF04E100D317DE /* OTPHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */; };
+		CB2AA30B25BF04E400D317DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
+		CB2AA31025BF04E900D317DE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694925B53CEB00663B2E /* Persistence.swift */; };
+		CB2AA31525BF04ED00D317DE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
+		CB2AA31A25BF04F100D317DE /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
+		CB2AA31F25BF04FB00D317DE /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddPasswordView.swift */; };
+		CB2AA32E25BF050900D317DE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
+		CB2AA33325BF050E00D317DE /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A445025B5974C003CED6D /* ViewModifier.swift */; };
+		CB2AA33925BF052300D317DE /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB2AA33825BF052300D317DE /* SwiftOTP */; };
+		CB2AA36225BF139C00D317DE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2AA36125BF139C00D317DE /* CloudKit.framework */; };
 		CB351D8625B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
 		CB351D8725B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
 		CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */; };
@@ -42,7 +60,58 @@
 		CBD7FF8F25BADEDD008A2A10 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC1E4125B83BC500A87187 /* ToastView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CB2AA2AF25BF015200D317DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB35694025B53CEB00663B2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB2AA2AC25BF015200D317DE;
+			remoteInfo = "OTPHub watch Extension";
+		};
+		CB2AA2BE25BF015300D317DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB35694025B53CEB00663B2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB2AA2A325BF015100D317DE;
+			remoteInfo = "OTPHub watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB2AA2C125BF015300D317DE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CB2AA2C025BF015300D317DE /* OTPHub (watchOS).app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB2AA2C425BF015300D317DE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB2AA2AE25BF015200D317DE /* OTPHub (watchOS Extension).appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTPHub (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2AA2A825BF015100D317DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OTPHub (watchOS Extension).appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2AA2B625BF015200D317DE /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		CB2AA2B825BF015200D317DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB2AA2BB25BF015200D317DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB2AA2BD25BF015200D317DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2AA36025BF139500D317DE /* OTPHub (watchOS Extension).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OTPHub (watchOS Extension).entitlements"; sourceTree = "<group>"; };
+		CB2AA36125BF139C00D317DE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB351D8525B95DEE006F6A8D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CB35694625B53CEB00663B2E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		CB35694725B53CEB00663B2E /* OTPHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPHubApp.swift; sourceTree = "<group>"; };
@@ -70,6 +139,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB2AA2AA25BF015200D317DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2AA33925BF052300D317DE /* SwiftOTP in Frameworks */,
+				CB2AA36225BF139C00D317DE /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB35694C25B53CEC00663B2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,19 +173,50 @@
 		CB168FDD25B5DE24000DC544 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB2AA36125BF139C00D317DE /* CloudKit.framework */,
 				CB63970025B7007800B7AAA0 /* CloudKit.framework */,
 				CB6396FE25B7000700B7AAA0 /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB2AA2A525BF015100D317DE /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB2AA2A825BF015100D317DE /* Info.plist */,
+			);
+			path = watchOS;
+			sourceTree = "<group>";
+		};
+		CB2AA2B125BF015200D317DE /* watchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB2AA2B625BF015200D317DE /* ComplicationController.swift */,
+				CB2AA2B825BF015200D317DE /* Assets.xcassets */,
+				CB2AA2BD25BF015200D317DE /* Info.plist */,
+				CB2AA2BA25BF015200D317DE /* Preview Content */,
+			);
+			path = "watchOS Extension";
+			sourceTree = "<group>";
+		};
+		CB2AA2BA25BF015200D317DE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB2AA2BB25BF015200D317DE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		CB35693F25B53CEB00663B2E = {
 			isa = PBXGroup;
 			children = (
+				CB2AA36025BF139500D317DE /* OTPHub (watchOS Extension).entitlements */,
 				CBBD42F025BC18170091028D /* SwiftOTP */,
 				CB35694425B53CEB00663B2E /* Shared */,
 				CB35695125B53CEC00663B2E /* iOS */,
 				CB35695825B53CEC00663B2E /* macOS */,
+				CB2AA2A525BF015100D317DE /* watchOS */,
+				CB2AA2B125BF015200D317DE /* watchOS Extension */,
 				CB35695025B53CEC00663B2E /* Products */,
 				CB168FDD25B5DE24000DC544 /* Frameworks */,
 			);
@@ -139,6 +248,8 @@
 			children = (
 				CB35694F25B53CEC00663B2E /* OTPHub.app */,
 				CB35695725B53CEC00663B2E /* OTPHub.app */,
+				CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */,
+				CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +275,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB2AA2A325BF015100D317DE /* OTPHub (watchOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB2AA2C825BF015300D317DE /* Build configuration list for PBXNativeTarget "OTPHub (watchOS)" */;
+			buildPhases = (
+				CB2AA2A225BF015100D317DE /* Resources */,
+				CB2AA2C425BF015300D317DE /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB2AA2B025BF015200D317DE /* PBXTargetDependency */,
+			);
+			name = "OTPHub (watchOS)";
+			productName = "OTPHub watch";
+			productReference = CB2AA2A425BF015100D317DE /* OTPHub (watchOS).app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CB2AA2AC25BF015200D317DE /* OTPHub (watchOS Extension) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB2AA2C725BF015300D317DE /* Build configuration list for PBXNativeTarget "OTPHub (watchOS Extension)" */;
+			buildPhases = (
+				CB2AA2A925BF015200D317DE /* Sources */,
+				CB2AA2AA25BF015200D317DE /* Frameworks */,
+				CB2AA2AB25BF015200D317DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OTPHub (watchOS Extension)";
+			packageProductDependencies = (
+				CB2AA33825BF052300D317DE /* SwiftOTP */,
+			);
+			productName = "OTPHub watch Extension";
+			productReference = CB2AA2AD25BF015200D317DE /* OTPHub (watchOS Extension).appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		CB35694E25B53CEC00663B2E /* OTPHub (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB35696725B53CEC00663B2E /* Build configuration list for PBXNativeTarget "OTPHub (iOS)" */;
@@ -171,10 +319,12 @@
 				CB35694B25B53CEC00663B2E /* Sources */,
 				CB35694C25B53CEC00663B2E /* Frameworks */,
 				CB35694D25B53CEC00663B2E /* Resources */,
+				CB2AA2C125BF015300D317DE /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB2AA2BF25BF015300D317DE /* PBXTargetDependency */,
 			);
 			name = "OTPHub (iOS)";
 			packageProductDependencies = (
@@ -211,9 +361,15 @@
 		CB35694025B53CEB00663B2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					CB2AA2A325BF015100D317DE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CB2AA2AC25BF015200D317DE = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					CB35694E25B53CEC00663B2E = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -241,11 +397,31 @@
 			targets = (
 				CB35694E25B53CEC00663B2E /* OTPHub (iOS) */,
 				CB35695625B53CEC00663B2E /* OTPHub (macOS) */,
+				CB2AA2A325BF015100D317DE /* OTPHub (watchOS) */,
+				CB2AA2AC25BF015200D317DE /* OTPHub (watchOS Extension) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CB2AA2A225BF015100D317DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2AA2E125BF02C200D317DE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB2AA2AB25BF015200D317DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2AA2BC25BF015200D317DE /* Preview Assets.xcassets in Resources */,
+				CB2AA30B25BF04E400D317DE /* Localizable.strings in Resources */,
+				CB2AA2B925BF015200D317DE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB35694D25B53CEC00663B2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +443,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB2AA2A925BF015200D317DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2AA31525BF04ED00D317DE /* String.swift in Sources */,
+				CB2AA2F425BF04C400D317DE /* OTPHubApp.swift in Sources */,
+				CB2AA30625BF04E100D317DE /* OTPHub.xcdatamodeld in Sources */,
+				CB2AA2B725BF015200D317DE /* ComplicationController.swift in Sources */,
+				CB2AA32E25BF050900D317DE /* ListItem.swift in Sources */,
+				CB2AA31A25BF04F100D317DE /* Enum.swift in Sources */,
+				CB2AA30125BF04DE00D317DE /* ContentView.swift in Sources */,
+				CB2AA33325BF050E00D317DE /* ViewModifier.swift in Sources */,
+				CB2AA31025BF04E900D317DE /* Persistence.swift in Sources */,
+				CB2AA31F25BF04FB00D317DE /* AddPasswordView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB35694B25B53CEC00663B2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +500,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CB2AA2B025BF015200D317DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB2AA2AC25BF015200D317DE /* OTPHub (watchOS Extension) */;
+			targetProxy = CB2AA2AF25BF015200D317DE /* PBXContainerItemProxy */;
+		};
+		CB2AA2BF25BF015300D317DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB2AA2A325BF015100D317DE /* OTPHub (watchOS) */;
+			targetProxy = CB2AA2BE25BF015300D317DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		CB89B18E25B6C6B100B61B68 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -320,6 +526,106 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CB2AA2C225BF015300D317DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				IBSC_MODULE = OTPHub_watch_Extension;
+				INFOPLIST_FILE = watchOS/Info.plist;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		CB2AA2C325BF015300D317DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				IBSC_MODULE = OTPHub_watch_Extension;
+				INFOPLIST_FILE = watchOS/Info.plist;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		CB2AA2C525BF015300D317DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "OTPHub (watchOS Extension).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		CB2AA2C625BF015300D317DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "OTPHub (watchOS Extension).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
 		CB35696525B53CEC00663B2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -442,7 +748,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -451,7 +757,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
 				SDKROOT = iphoneos;
@@ -467,7 +773,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -476,7 +782,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
 				SDKROOT = iphoneos;
@@ -494,7 +800,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -504,7 +810,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
 				SDKROOT = macosx;
@@ -520,7 +826,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -530,7 +836,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
 				SDKROOT = macosx;
@@ -541,6 +847,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB2AA2C725BF015300D317DE /* Build configuration list for PBXNativeTarget "OTPHub (watchOS Extension)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB2AA2C525BF015300D317DE /* Debug */,
+				CB2AA2C625BF015300D317DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB2AA2C825BF015300D317DE /* Build configuration list for PBXNativeTarget "OTPHub (watchOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB2AA2C225BF015300D317DE /* Debug */,
+				CB2AA2C325BF015300D317DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CB35694325B53CEB00663B2E /* Build configuration list for PBXProject "OTPHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -582,6 +906,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CB2AA33825BF052300D317DE /* SwiftOTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftOTP;
+		};
 		CBBD42F525BC1AEC0091028D /* SwiftOTP */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftOTP;
