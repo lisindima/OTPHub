@@ -133,9 +133,11 @@ struct AddPasswordView: View {
                 #endif
             }
             #if os(iOS)
-            CustomButton("button_title_add_account", action: savePassword)
-                .shadow(radius: 6)
-                .padding()
+            Button(action: savePassword) {
+                Text("button_title_add_account")
+                    .fontWeight(.bold)
+            }
+            .buttonStyle(CustomButton())
             #endif
         }
         .navigationTitle("navigation_title_new_account")

@@ -7,28 +7,20 @@
 
 import SwiftUI
 
-struct CustomButton: View {
-    var title: LocalizedStringKey
-    var action: () -> Void
-    
-    init(_ title: LocalizedStringKey, action: @escaping () -> Void) {
-        self.title = title
-        self.action = action
-    }
-    
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                Spacer()
-                Text(title)
-                    .font(.system(.body, design: .rounded))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                Spacer()
-            }
-            .padding()
+struct CustomButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            Spacer()
+            configuration.label
+                .font(.system(.body, design: .rounded))
+                .foregroundColor(.white)
+            Spacer()
         }
+        .padding()
         .background(Color.accentColor)
         .cornerRadius(8)
+        .shadow(radius: 6)
+        .padding()
+        .scaleEffect(configuration.isPressed ? 0.95 : 1)
     }
 }
