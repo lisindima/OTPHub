@@ -18,7 +18,7 @@ struct ListItem: View {
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    var width: CGFloat {
+    private var width: CGFloat {
         #if os(watchOS)
         return CGFloat(40)
         #else
@@ -26,7 +26,7 @@ struct ListItem: View {
         #endif
     }
     
-    func copyPasteboard() {
+    private func copyPasteboard() {
         #if os(macOS)
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
