@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @State private var isPresented: Bool = false
+    @Binding var isPresented: Bool
     @State private var showIndicator: Bool = false
     
     @FetchRequest(
@@ -69,7 +69,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(isPresented: .constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -83,6 +83,7 @@ struct ListItem: View {
             }
             Spacer()
             ProgressView(value: progress, total: Float(Int(item.updateTime)))
+                .accentColor(Color(hex: item.passwordColor ?? "#000000"))
                 .frame(width: width)
         }
         .button(action: copyPasteboard)

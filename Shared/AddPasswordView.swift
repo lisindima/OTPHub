@@ -19,7 +19,7 @@ struct AddPasswordView: View {
     @State private var updateTime: UpdateTime = .thirtySeconds
     @State private var sizePassword: SizePassword = .sixDigit
     @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
-    @State private var passwordColor: Color = .black
+    @State private var passwordColor: Color = .purple
     @State private var isPresented: Bool = false
     @State private var showQRView: Bool = false
     
@@ -27,13 +27,15 @@ struct AddPasswordView: View {
         if passwordName.isEmpty || passwordSecret.isEmpty {
             isPresented = true
         } else {
+            let hexString = passwordColor.hexStringFromColor()
+            
             let item = Item(context: moc)
             item.passwordName = passwordName
             item.passwordSecret = passwordSecret
             item.passwordAlgorithm = passwordAlgorithm.rawValue
             item.updateTime = Int32(updateTime.rawValue)
             item.sizePassword = Int32(sizePassword.rawValue)
-            item.passwordColor = "#000000"
+            item.passwordColor = hexString
             do {
                 try moc.save()
                 presentationMode.wrappedValue.dismiss()
@@ -169,12 +171,5 @@ struct AddPasswordView: View {
             }
             #endif
         }
-    }
-}
-
-extension URL {
-    subscript(queryParam: String) -> String {
-        guard let url = URLComponents(string: absoluteString) else { return "" }
-        return url.queryItems?.first(where: { $0.name == queryParam })?.value ?? ""
     }
 }

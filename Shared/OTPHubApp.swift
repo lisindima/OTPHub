@@ -9,12 +9,18 @@ import SwiftUI
 
 @main
 struct OTPHubApp: App {
+    @State private var openAddPasswordView: Bool = false
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(isPresented: $openAddPasswordView)
                 .accentColor(.purple)
+                .onOpenURL { url in
+                    print(url)
+                    openAddPasswordView = true
+                }
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

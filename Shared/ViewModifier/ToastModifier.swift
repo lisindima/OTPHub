@@ -1,8 +1,8 @@
 //
 //  ToastModifier.swift
-//  OTPHub (iOS)
+//  OTPHub
 //
-//  Created by Дмитрий Лисин on 20.01.2021.
+//  Created by Дмитрий Лисин on 18.01.2021.
 //
 
 import SwiftUI
@@ -25,11 +25,5 @@ struct ToastModifier: ViewModifier {
                 }
             content
         }
-    }
-}
-
-extension View {
-    func toast(isPresented: Binding<Bool>) -> some View {
-        modifier(ToastModifier(isPresented: isPresented))
     }
 }
