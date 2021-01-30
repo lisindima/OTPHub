@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EmbedInNavigation: ViewModifier {
     var title: LocalizedStringKey
-    var displayMode: NavigationBarItem.TitleDisplayMode
     
     @ViewBuilder
     func body(content: Content) -> some View {
@@ -20,7 +19,6 @@ struct EmbedInNavigation: ViewModifier {
         NavigationView {
             content
                 .navigationTitle(title)
-                .navigationBarTitleDisplayMode(displayMode)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         #else

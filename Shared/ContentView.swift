@@ -61,7 +61,7 @@ struct ContentView: View {
             AddPasswordView()
                 .accentColor(.purple)
         }
-        .empedInNavigation(title: "OTPHub", displayMode: .automatic)
+        .empedInNavigation(title: "OTPHub")
     }
 }
 
