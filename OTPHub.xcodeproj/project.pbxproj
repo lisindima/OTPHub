@@ -19,15 +19,12 @@
 		CB158E6225C2B04F001627E4 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E6125C2B04F001627E4 /* ListStyle.swift */; };
 		CB158E6325C2B04F001627E4 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E6125C2B04F001627E4 /* ListStyle.swift */; };
 		CB158E6425C2B04F001627E4 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E6125C2B04F001627E4 /* ListStyle.swift */; };
-		CB158E6A25C2B06D001627E4 /* NavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E6925C2B06D001627E4 /* NavigationStyle.swift */; };
-		CB158E6B25C2B06D001627E4 /* NavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E6925C2B06D001627E4 /* NavigationStyle.swift */; };
-		CB158E6C25C2B06D001627E4 /* NavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E6925C2B06D001627E4 /* NavigationStyle.swift */; };
 		CB158E7225C2B092001627E4 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7125C2B092001627E4 /* ButtonModifier.swift */; };
 		CB158E7325C2B092001627E4 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7125C2B092001627E4 /* ButtonModifier.swift */; };
 		CB158E7425C2B092001627E4 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7125C2B092001627E4 /* ButtonModifier.swift */; };
-		CB158E7A25C2B0C9001627E4 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* NavigationModifier.swift */; };
-		CB158E7B25C2B0C9001627E4 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* NavigationModifier.swift */; };
-		CB158E7C25C2B0C9001627E4 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* NavigationModifier.swift */; };
+		CB158E7A25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */; };
+		CB158E7B25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */; };
+		CB158E7C25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */; };
 		CB158E8225C2B0E1001627E4 /* ColorPickerMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E8125C2B0E1001627E4 /* ColorPickerMac.swift */; };
 		CB158E8325C2B0E1001627E4 /* ColorPickerMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E8125C2B0E1001627E4 /* ColorPickerMac.swift */; };
 		CB158E8425C2B0E1001627E4 /* ColorPickerMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E8125C2B0E1001627E4 /* ColorPickerMac.swift */; };
@@ -130,9 +127,8 @@
 		CB158E4C25C2AEA1001627E4 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CB158E5425C2AEEA001627E4 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		CB158E6125C2B04F001627E4 /* ListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyle.swift; sourceTree = "<group>"; };
-		CB158E6925C2B06D001627E4 /* NavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStyle.swift; sourceTree = "<group>"; };
 		CB158E7125C2B092001627E4 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
-		CB158E7925C2B0C9001627E4 /* NavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModifier.swift; sourceTree = "<group>"; };
+		CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedInNavigation.swift; sourceTree = "<group>"; };
 		CB158E8125C2B0E1001627E4 /* ColorPickerMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerMac.swift; sourceTree = "<group>"; };
 		CB158E8925C2B10E001627E4 /* CustomPickerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerStyle.swift; sourceTree = "<group>"; };
 		CB2AA2A425BF015100D317DE /* OTPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,9 +212,8 @@
 				CB7A445025B5974C003CED6D /* ToastModifier.swift */,
 				CB158E8925C2B10E001627E4 /* CustomPickerStyle.swift */,
 				CB158E8125C2B0E1001627E4 /* ColorPickerMac.swift */,
-				CB158E7925C2B0C9001627E4 /* NavigationModifier.swift */,
+				CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */,
 				CB158E6125C2B04F001627E4 /* ListStyle.swift */,
-				CB158E6925C2B06D001627E4 /* NavigationStyle.swift */,
 				CB158E7125C2B092001627E4 /* ButtonModifier.swift */,
 			);
 			path = ViewModifier;
@@ -502,7 +497,7 @@
 			files = (
 				CB2AA31525BF04ED00D317DE /* String.swift in Sources */,
 				CB2AA2F425BF04C400D317DE /* OTPHubApp.swift in Sources */,
-				CB158E7C25C2B0C9001627E4 /* NavigationModifier.swift in Sources */,
+				CB158E7C25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */,
 				CB2AA30625BF04E100D317DE /* OTPHub.xcdatamodeld in Sources */,
 				CB158E8425C2B0E1001627E4 /* ColorPickerMac.swift in Sources */,
 				CB158E4F25C2AEA1001627E4 /* URL.swift in Sources */,
@@ -512,7 +507,6 @@
 				CB2AA31A25BF04F100D317DE /* Enum.swift in Sources */,
 				CB2AA30125BF04DE00D317DE /* ContentView.swift in Sources */,
 				CB158E7425C2B092001627E4 /* ButtonModifier.swift in Sources */,
-				CB158E6C25C2B06D001627E4 /* NavigationStyle.swift in Sources */,
 				CB158E5725C2AEEA001627E4 /* View.swift in Sources */,
 				CB2AA31025BF04E900D317DE /* Persistence.swift in Sources */,
 				CB158E8C25C2B10E001627E4 /* CustomPickerStyle.swift in Sources */,
@@ -525,7 +519,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
-				CB158E6A25C2B06D001627E4 /* NavigationStyle.swift in Sources */,
 				CB158E5525C2AEEA001627E4 /* View.swift in Sources */,
 				CB7A445125B5974C003CED6D /* ToastModifier.swift in Sources */,
 				CB158E6225C2B04F001627E4 /* ListStyle.swift in Sources */,
@@ -542,7 +535,7 @@
 				CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB158E7225C2B092001627E4 /* ButtonModifier.swift in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
-				CB158E7A25C2B0C9001627E4 /* NavigationModifier.swift in Sources */,
+				CB158E7A25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */,
 				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,7 +545,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB35695E25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
-				CB158E6B25C2B06D001627E4 /* NavigationStyle.swift in Sources */,
 				CB7A445225B5974C003CED6D /* ToastModifier.swift in Sources */,
 				CB158E5625C2AEEA001627E4 /* View.swift in Sources */,
 				CB158E6325C2B04F001627E4 /* ListStyle.swift in Sources */,
@@ -569,7 +561,7 @@
 				CB35695C25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB158E7325C2B092001627E4 /* ButtonModifier.swift in Sources */,
 				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
-				CB158E7B25C2B0C9001627E4 /* NavigationModifier.swift in Sources */,
+				CB158E7B25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */,
 				CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -54,8 +54,10 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/OTPHub">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB2AA2A325BF015100D317DE"
@@ -63,7 +65,7 @@
             BlueprintName = "OTPHub (watchOS)"
             ReferencedContainer = "container:OTPHub.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -71,8 +73,10 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/OTPHub">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB2AA2A325BF015100D317DE"
@@ -80,7 +84,16 @@
             BlueprintName = "OTPHub (watchOS)"
             ReferencedContainer = "container:OTPHub.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CB2AA2A325BF015100D317DE"
+            BuildableName = "OTPHub.app"
+            BlueprintName = "OTPHub (watchOS)"
+            ReferencedContainer = "container:OTPHub.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

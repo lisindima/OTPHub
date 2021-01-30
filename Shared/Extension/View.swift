@@ -14,8 +14,8 @@ extension View {
 }
 
 extension View {
-    func navigationView() -> some View {
-        modifier(NavigationModifier())
+    func empedInNavigation(title: LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View {
+        modifier(EmbedInNavigation(title: title, displayMode: displayMode))
     }
 }
 
