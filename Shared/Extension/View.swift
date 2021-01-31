@@ -11,27 +11,19 @@ extension View {
     func button(action: @escaping () -> Void) -> some View {
         modifier(ButtonModifier(action: action))
     }
-}
-
-extension View {
+    
     func empedInNavigation(title: LocalizedStringKey) -> some View {
         modifier(EmbedInNavigation(title: title))
     }
-}
-
-extension View {
+    
     func colorPickerMac() -> some View {
         modifier(ColorPickerMac())
     }
-}
-
-extension View {
+    
     func customPickerStyle() -> some View {
         modifier(CustomPickerStyle())
     }
-}
-
-extension View {
+    
     @ViewBuilder
     func toast(isPresented: Binding<Bool>) -> some View {
         #if !os(watchOS)
@@ -39,4 +31,3 @@ extension View {
         #endif
     }
 }
-

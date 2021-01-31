@@ -28,7 +28,6 @@ struct AddPasswordView: View {
             isPresented = true
         } else {
             let hexString = passwordColor.hexStringFromColor()
-            
             let item = Item(context: moc)
             item.passwordName = passwordName
             item.passwordSecret = passwordSecret
@@ -155,6 +154,7 @@ struct AddPasswordView: View {
                     Text("close_toolbar")
                     #endif
                 }
+                .keyboardShortcut(.cancelAction)
             }
             #if os(iOS)
             ToolbarItem(placement: .primaryAction) {
@@ -168,6 +168,7 @@ struct AddPasswordView: View {
                 Button(action: savePassword) {
                     Text("button_title_add_account")
                 }
+                .keyboardShortcut(.defaultAction)
             }
             #endif
         }

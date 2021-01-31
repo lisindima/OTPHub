@@ -42,6 +42,7 @@ struct ContentView: View {
                     Image(systemName: "plus.circle.fill")
                         .imageScale(.large)
                 }
+                .keyboardShortcut("a", modifiers: .command)
                 .help("help_title_add_button")
             }
         }
