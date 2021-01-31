@@ -16,17 +16,12 @@ struct EmbedInNavigation: ViewModifier {
         content
             .navigationTitle(title)
             .frame(minWidth: 300, idealWidth: 400, maxWidth: nil, minHeight: 340, idealHeight: 440, maxHeight: nil)
-        #elseif os(iOS)
-        NavigationView {
-            content
-                .navigationTitle(title)
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
         #else
         NavigationView {
             content
                 .navigationTitle(title)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         #endif
     }
 }

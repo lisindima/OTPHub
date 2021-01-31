@@ -20,14 +20,7 @@ extension View {
         modifier(ColorPickerMac())
     }
     
-    func customPickerStyle() -> some View {
-        modifier(CustomPickerStyle())
-    }
-    
-    @ViewBuilder
     func toast(isPresented: Binding<Bool>) -> some View {
-        #if !os(watchOS)
         modifier(ToastModifier(isPresented: isPresented))
-        #endif
     }
 }

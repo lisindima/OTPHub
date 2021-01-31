@@ -85,11 +85,9 @@ struct AddPasswordView: View {
                     .ignoresSafeArea(edges: .bottom)
                 }
         }
-        #elseif os(macOS)
-        form
-            .padding()
         #else
         form
+            .padding()
         #endif
     }
     
@@ -108,7 +106,7 @@ struct AddPasswordView: View {
                     }
                     .labelsHidden()
                 }
-                .customPickerStyle()
+                .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_update_time")) {
                     Picker("section_header_update_time", selection: $updateTime) {
                         Text("30_seconds").tag(UpdateTime.thirtySeconds)
@@ -116,7 +114,7 @@ struct AddPasswordView: View {
                     }
                     .labelsHidden()
                 }
-                .customPickerStyle()
+                .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_encryption_type")) {
                     Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
                         Text("SHA1").tag(PasswordAlgorithm.sha1)
@@ -125,13 +123,11 @@ struct AddPasswordView: View {
                     }
                     .labelsHidden()
                 }
-                .customPickerStyle()
-                #if !os(watchOS)
+                .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_customization"), footer: Text("section_footer_customization")) {
                     ColorPicker("colorpicker_title", selection: $passwordColor)
                         .colorPickerMac()
                 }
-                #endif
             }
             #if os(iOS)
             Button(action: savePassword) {

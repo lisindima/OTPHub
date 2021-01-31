@@ -18,20 +18,12 @@ struct ListItem: View {
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    private var width: CGFloat {
-        #if os(watchOS)
-        return CGFloat(40)
-        #else
-        return CGFloat(60)
-        #endif
-    }
-    
     private func copyPasteboard() {
         #if os(macOS)
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
         pasteBoard.setString(otpString, forType: .string)
-        #elseif os(iOS)
+        #else
         UIPasteboard.general.string = otpString
         #endif
         showIndicator = true
@@ -69,22 +61,16 @@ struct ListItem: View {
                 Text(item.passwordName ?? "")
                     .font(.system(.footnote, design: .rounded))
                     .foregroundColor(.secondary)
-                #if os(watchOS)
-                Text(otpString.separated())
-                    .font(.system(.title3, design: .rounded))
-                    .fontWeight(.bold)
-                #else
                 Text(otpString.separated())
                     .font(.system(.title, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                     .animation(.interactiveSpring())
-                #endif
             }
             Spacer()
             ProgressView(value: progress, total: Float(Int(item.updateTime)))
                 .accentColor(Color(hex: item.passwordColor ?? "#000000"))
-                .frame(width: width)
+                .frame(width: 60)
         }
         .button(action: copyPasteboard)
         .onAppear(perform: generatePassword)

@@ -12,13 +12,11 @@ struct ButtonModifier: ViewModifier {
     
     @ViewBuilder
     func body(content: Content) -> some View {
-        #if os(watchOS)
-        content
-        #elseif os(iOS)
+        #if os(iOS)
         Button(action: action) {
             content
         }
-        #elseif os(macOS)
+        #else
         content
             .onTapGesture(perform: action)
         #endif
