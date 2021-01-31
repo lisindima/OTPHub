@@ -31,11 +31,12 @@ extension View {
     }
 }
 
-#if !os(watchOS)
 extension View {
+    @ViewBuilder
     func toast(isPresented: Binding<Bool>) -> some View {
+        #if !os(watchOS)
         modifier(ToastModifier(isPresented: isPresented))
+        #endif
     }
 }
-#endif
 

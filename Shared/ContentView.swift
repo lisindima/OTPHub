@@ -28,19 +28,6 @@ struct ContentView: View {
     }
     
     var body: some View {
-        #if os(watchOS)
-        list
-        #elseif os(macOS)
-        list
-            .toast(isPresented: $showIndicator)
-            .frame(minWidth: 300, idealWidth: 400, maxWidth: nil, minHeight: 340, idealHeight: 440, maxHeight: nil)
-        #else
-        list
-            .toast(isPresented: $showIndicator)
-        #endif
-    }
-    
-    var list: some View {
         List {
             ForEach(items) { item in
                 ListItem(item: item, showIndicator: $showIndicator)
@@ -55,6 +42,7 @@ struct ContentView: View {
                     Image(systemName: "plus.circle.fill")
                         .imageScale(.large)
                 }
+                .help("help_title_add_button")
             }
         }
         .sheet(isPresented: $isPresented) {
@@ -62,6 +50,7 @@ struct ContentView: View {
                 .accentColor(.purple)
         }
         .empedInNavigation(title: "OTPHub")
+        .toast(isPresented: $showIndicator)
     }
 }
 

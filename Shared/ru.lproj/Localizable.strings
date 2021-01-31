@@ -18,3 +18,4 @@
 "alert_error_message" = "Заполните все поля";
 "toast_title_copy" = "Код скопирован";
 "close_toolbar" = "Закрыть";
+"help_title_add_button" = "Добавить новый аккаунт";
