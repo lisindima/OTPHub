@@ -96,30 +96,36 @@ struct AddPasswordView: View {
             Form {
                 Section(header: Text("section_header_basic_information")) {
                     TextField("textfield_name", text: $passwordName)
+                        .customTextField()
                     TextField("textfield_secret", text: $passwordSecret)
+                        .customTextField()
                 }
                 Section(header: Text("section_header_password_length")) {
                     Picker("section_header_password_length", selection: $sizePassword) {
-                        Text("6_digits").tag(SizePassword.sixDigit)
-                        Text("7_digits").tag(SizePassword.sevenDigit)
-                        Text("8_digits").tag(SizePassword.eightDigit)
+                        ForEach(SizePassword.allCases) { size in
+                            Text(size.localized)
+                                .tag(size)
+                        }
                     }
                     .labelsHidden()
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_update_time")) {
                     Picker("section_header_update_time", selection: $updateTime) {
-                        Text("30_seconds").tag(UpdateTime.thirtySeconds)
-                        Text("60_seconds").tag(UpdateTime.sixtySeconds)
+                        ForEach(UpdateTime.allCases) { time in
+                            Text(time.localized)
+                                .tag(time)
+                        }
                     }
                     .labelsHidden()
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_encryption_type")) {
                     Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
-                        Text("SHA1").tag(PasswordAlgorithm.sha1)
-                        Text("SHA256").tag(PasswordAlgorithm.sha256)
-                        Text("SHA512").tag(PasswordAlgorithm.sha512)
+                        ForEach(PasswordAlgorithm.allCases) { algorithm in
+                            Text(algorithm.rawValue)
+                                .tag(algorithm)
+                        }
                     }
                     .labelsHidden()
                 }

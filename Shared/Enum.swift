@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import Foundation
+import SwiftUI
 
 enum SizePassword: Int, CaseIterable, Identifiable {
     case sixDigit = 6
@@ -15,11 +15,30 @@ enum SizePassword: Int, CaseIterable, Identifiable {
     var id: Int { rawValue }
 }
 
+extension SizePassword {
+    var localized: LocalizedStringKey {
+        switch self {
+        case .sixDigit: return "6_digits"
+        case .sevenDigit: return "7_digits"
+        case .eightDigit: return "8_digits"
+        }
+    }
+}
+
 enum UpdateTime: Int, CaseIterable, Identifiable {
     case thirtySeconds = 30
     case sixtySeconds = 60
 
     var id: Int { rawValue }
+}
+
+extension UpdateTime {
+    var localized: LocalizedStringKey {
+        switch self {
+        case .thirtySeconds: return "30_seconds"
+        case .sixtySeconds: return "60_seconds"
+        }
+    }
 }
 
 enum PasswordAlgorithm: String, CaseIterable, Identifiable {

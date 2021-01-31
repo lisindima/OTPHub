@@ -20,6 +20,10 @@ extension View {
         modifier(ColorPickerMac())
     }
     
+    func customTextField() -> some View {
+        modifier(CustomTextField())
+    }
+    
     func toast(isPresented: Binding<Bool>) -> some View {
         modifier(ToastModifier(isPresented: isPresented))
     }
