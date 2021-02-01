@@ -19,6 +19,7 @@ struct AddPasswordView: View {
     @State private var updateTime: UpdateTime = .thirtySeconds
     @State private var sizePassword: SizePassword = .sixDigit
     @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
+    @State private var typeAlgorithm: TypeAlgorithm = .totp
     @State private var passwordColor: Color = .purple
     @State private var isPresented: Bool = false
     @State private var showQRView: Bool = false
@@ -32,6 +33,7 @@ struct AddPasswordView: View {
             item.passwordName = passwordName
             item.passwordSecret = passwordSecret
             item.passwordAlgorithm = passwordAlgorithm.rawValue
+            item.typeAlgorithm = typeAlgorithm.rawValue
             item.updateTime = Int32(updateTime.rawValue)
             item.sizePassword = Int32(sizePassword.rawValue)
             item.passwordColor = hexString
@@ -70,25 +72,65 @@ struct AddPasswordView: View {
         NavigationView {
             form
                 .sheet(isPresented: $showQRView) {
-                    CodeScannerView(
-                        codeTypes: [.qr],
-                        simulatedData: "otpauth://totp/foo?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA====&algorithm=SHA256&digits=8"
-                    ) { result in
-                        switch result {
-                        case let .success(code):
-                            getURLComponents(URL(string: code)!)
-                            showQRView = false
-                        case let .failure(error):
-                            print(error.localizedDescription)
+                    NavigationView {
+                        ZStack {
+                            CodeScannerView(
+                                codeTypes: [.qr],
+                                simulatedData: "otpauth://totp/foo?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA====&algorithm=SHA256&digits=8"
+                            ) { result in
+                                switch result {
+                                case let .success(code):
+                                    getURLComponents(URL(string: code)!)
+                                    showQRView = false
+                                case let .failure(error):
+                                    print(error.localizedDescription)
+                                }
+                            }
+                            .ignoresSafeArea(edges: .bottom)
+                            VStack {
+                                Spacer()
+                                Image(systemName: "viewfinder")
+                                    .resizable()
+                                    .foregroundColor(.white)
+                                    .opacity(0.5)
+                                    .padding(.top)
+                                    .frame(width: 300, height: 300)
+                                Spacer()
+                                Text("bottom_title_scan_qr")
+                                    .fontWeight(.bold)
+                                    .font(.system(.title3, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .padding(.bottom, 30)
+                            }
+                        }
+                        .navigationTitle("navigation_title_scan_qr")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                                    Image(systemName: "xmark")
+                                }
+                                .keyboardShortcut(.cancelAction)
+                            }
                         }
                     }
-                    .ignoresSafeArea(edges: .bottom)
+                    .accentColor(.purple)
                 }
         }
         #else
         form
             .padding()
         #endif
+    }
+    
+    var picker: some View {
+        Picker("", selection: $typeAlgorithm) {
+            ForEach(TypeAlgorithm.allCases) { type in
+                Text(type.rawValue)
+                    .tag(type)
+            }
+        }
+        .labelsHidden()
     }
     
     var form: some View {
@@ -107,9 +149,9 @@ struct AddPasswordView: View {
                                 .tag(size)
                         }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_update_time")) {
                     Picker("section_header_update_time", selection: $updateTime) {
                         ForEach(UpdateTime.allCases) { time in
@@ -117,9 +159,9 @@ struct AddPasswordView: View {
                                 .tag(time)
                         }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_encryption_type")) {
                     Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
                         ForEach(PasswordAlgorithm.allCases) { algorithm in
@@ -127,9 +169,9 @@ struct AddPasswordView: View {
                                 .tag(algorithm)
                         }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                .pickerStyle(SegmentedPickerStyle())
                 Section(header: Text("section_header_customization"), footer: Text("section_footer_customization")) {
                     ColorPicker("colorpicker_title", selection: $passwordColor)
                         .colorPickerMac()
@@ -148,6 +190,15 @@ struct AddPasswordView: View {
             Alert(title: Text("alert_error_title"), message: Text("alert_error_message"), dismissButton: .cancel())
         }
         .toolbar {
+            #if os(iOS)
+            ToolbarItem(placement: .principal) {
+                picker
+            }
+            #else
+            ToolbarItem(placement: .automatic) {
+                picker
+            }
+            #endif
             ToolbarItem(placement: .cancellationAction) {
                 Button(action: { presentationMode.wrappedValue.dismiss() }) {
                     #if os(iOS)

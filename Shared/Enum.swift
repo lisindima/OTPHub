@@ -48,3 +48,10 @@ enum PasswordAlgorithm: String, CaseIterable, Identifiable {
     
     var id: String { rawValue }
 }
+
+enum TypeAlgorithm: String, CaseIterable, Identifiable {
+    case totp = "TOTP"
+    case hotp = "HOTP"
+    
+    var id: String { rawValue }
+}

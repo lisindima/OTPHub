@@ -6,9 +6,10 @@
         <attribute name="passwordName" optional="YES" attributeType="String"/>
         <attribute name="passwordSecret" optional="YES" attributeType="String"/>
         <attribute name="sizePassword" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" customClassName="Int"/>
+        <attribute name="typeAlgorithm" optional="YES" attributeType="String"/>
         <attribute name="updateTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" customClassName="Int"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="134"/>
     </elements>
 </model>

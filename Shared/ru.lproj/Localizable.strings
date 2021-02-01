@@ -19,3 +19,5 @@
 "toast_title_copy" = "Код скопирован";
 "close_toolbar" = "Закрыть";
 "help_title_add_button" = "Добавить новый аккаунт";
+"navigation_title_scan_qr" = "Сканирование QR-кода";
+"bottom_title_scan_qr" = "Наведите камеру на QR-код";
