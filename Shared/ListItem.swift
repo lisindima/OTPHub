@@ -11,11 +11,11 @@ import SwiftUI
 struct ListItem: View {
     var item: Item
     
-    @Binding var showIndicator: Bool
-    
+    @State private var showIndicator: Bool = false
     @State private var otpString: String?
-    @State private var counter: UInt64 = 0
     @State private var progress: Float = 0.0
+    
+    @AppStorage("counter") private var counter: Int = 0
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -28,7 +28,12 @@ struct ListItem: View {
             #else
             UIPasteboard.general.string = otpString
             #endif
-            showIndicator = true
+            withAnimation(.spring()) {
+                showIndicator = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    showIndicator = false
+                }
+            }
         }
     }
     
@@ -55,7 +60,7 @@ struct ListItem: View {
                 digits: digits,
                 algorithm: algorithm
             ) {
-                otpString = hotp.generate(counter: counter)
+                otpString = hotp.generate(counter: UInt64(counter))
             }
         } else {
             if let totp = TOTP(
@@ -72,9 +77,11 @@ struct ListItem: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(item.passwordName ?? "")
-                    .font(.system(.footnote, design: .rounded))
-                    .foregroundColor(.secondary)
+                if let passwordName = item.passwordName {
+                    Text(passwordName)
+                        .font(.system(.footnote, design: .rounded))
+                        .foregroundColor(.secondary)
+                }
                 if let otpString = otpString {
                     Text(otpString.separated())
                         .font(.system(.title, design: .rounded))
@@ -84,9 +91,18 @@ struct ListItem: View {
                 }
             }
             Spacer()
-            ProgressView(value: progress, total: Float(Int(item.updateTime)))
-                .accentColor(Color(hex: item.passwordColor ?? "#000000"))
-                .frame(width: 60)
+            if let passwordColor = item.passwordColor {
+                if showIndicator {
+                    Image(systemName: "checkmark.circle.fill")
+                        .imageScale(.large)
+                        .foregroundColor(Color(hex: passwordColor))
+                        .frame(width: 60)
+                } else {
+                    ProgressView(value: progress, total: Float(Int(item.updateTime)))
+                        .accentColor(Color(hex: passwordColor))
+                        .frame(width: 60)
+                }
+            }
         }
         .button(action: copyPasteboard)
         .onAppear(perform: generatePassword)

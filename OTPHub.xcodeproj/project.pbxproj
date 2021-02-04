@@ -43,8 +43,6 @@
 		CB35699725B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
 		CB6396FF25B7000700B7AAA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6396FE25B7000700B7AAA0 /* CloudKit.framework */; };
 		CB63970125B7007800B7AAA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63970025B7007800B7AAA0 /* CloudKit.framework */; };
-		CB7A445125B5974C003CED6D /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A445025B5974C003CED6D /* ToastModifier.swift */; };
-		CB7A445225B5974C003CED6D /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A445025B5974C003CED6D /* ToastModifier.swift */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB89B18C25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CBBD42F625BC1AEC0091028D /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CBBD42F525BC1AEC0091028D /* SwiftOTP */; };
@@ -96,7 +94,6 @@
 		CB6396FB25B7000100B7AAA0 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CB6396FE25B7000700B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB63970025B7007800B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		CB7A445025B5974C003CED6D /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		CB89B18D25B6C6B100B61B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB89B18F25B6C6B400B61B68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBBD42F025BC18170091028D /* SwiftOTP */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftOTP; path = ../SwiftOTP; sourceTree = "<group>"; };
@@ -141,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				CB35697B25B55F1D00663B2E /* CustomButton.swift */,
-				CB7A445025B5974C003CED6D /* ToastModifier.swift */,
 				CB158E8125C2B0E1001627E4 /* ColorPickerMac.swift */,
 				CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */,
 				CB158E6125C2B04F001627E4 /* ListStyle.swift */,
@@ -333,7 +329,6 @@
 			files = (
 				CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
 				CB158E5525C2AEEA001627E4 /* View.swift in Sources */,
-				CB7A445125B5974C003CED6D /* ToastModifier.swift in Sources */,
 				CB158E6225C2B04F001627E4 /* ListStyle.swift in Sources */,
 				CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */,
 				CBFEC13025C6E9FC0092BD1A /* CustomTextField.swift in Sources */,
@@ -358,7 +353,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB35695E25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
-				CB7A445225B5974C003CED6D /* ToastModifier.swift in Sources */,
 				CB158E5625C2AEEA001627E4 /* View.swift in Sources */,
 				CB158E6325C2B04F001627E4 /* ListStyle.swift in Sources */,
 				CB351D8725B95DEE006F6A8D /* String.swift in Sources */,

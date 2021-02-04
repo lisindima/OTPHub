@@ -23,8 +23,4 @@ extension View {
     func customTextField() -> some View {
         modifier(CustomTextField())
     }
-    
-    func toast(isPresented: Binding<Bool>) -> some View {
-        modifier(ToastModifier(isPresented: isPresented))
-    }
 }

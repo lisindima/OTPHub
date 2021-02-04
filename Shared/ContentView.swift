@@ -12,7 +12,6 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @Binding var isPresented: Bool
-    @State private var showIndicator: Bool = false
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.passwordName, ascending: true)],
@@ -30,7 +29,7 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(items) { item in
-                ListItem(item: item, showIndicator: $showIndicator)
+                ListItem(item: item)
             }
             .onDelete(perform: deleteItems)
         }
@@ -51,7 +50,6 @@ struct ContentView: View {
                 .accentColor(.purple)
         }
         .empedInNavigation(title: "OTPHub")
-        .toast(isPresented: $showIndicator)
     }
 }
 
