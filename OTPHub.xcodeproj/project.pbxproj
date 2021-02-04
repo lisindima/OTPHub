@@ -48,8 +48,6 @@
 		CBBD42F625BC1AEC0091028D /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CBBD42F525BC1AEC0091028D /* SwiftOTP */; };
 		CBBD42F825BC1AF40091028D /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CBBD42F725BC1AF40091028D /* SwiftOTP */; };
 		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
-		CBCC1E4225B83BC500A87187 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC1E4125B83BC500A87187 /* ToastView.swift */; };
-		CBD7FF8F25BADEDD008A2A10 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC1E4125B83BC500A87187 /* ToastView.swift */; };
 		CBFEC13025C6E9FC0092BD1A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEC12F25C6E9FC0092BD1A /* CustomTextField.swift */; };
 		CBFEC13125C6E9FC0092BD1A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEC12F25C6E9FC0092BD1A /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
@@ -97,7 +95,6 @@
 		CB89B18D25B6C6B100B61B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB89B18F25B6C6B400B61B68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBBD42F025BC18170091028D /* SwiftOTP */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftOTP; path = ../SwiftOTP; sourceTree = "<group>"; };
-		CBCC1E4125B83BC500A87187 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		CBFEC12F25C6E9FC0092BD1A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,7 +174,6 @@
 				CB35694725B53CEB00663B2E /* OTPHubApp.swift */,
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
 				CB35699025B566B900663B2E /* ListItem.swift */,
-				CBCC1E4125B83BC500A87187 /* ToastView.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
 				CB35699525B568A700663B2E /* Enum.swift */,
 				CB351D8525B95DEE006F6A8D /* String.swift */,
@@ -268,7 +264,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					CB35694E25B53CEC00663B2E = {
 						CreatedOnToolsVersion = 12.3;
@@ -338,7 +334,6 @@
 				CB35696125B53CEC00663B2E /* Persistence.swift in Sources */,
 				CB351D8625B95DEE006F6A8D /* String.swift in Sources */,
 				CB158E8225C2B0E1001627E4 /* ColorPickerMac.swift in Sources */,
-				CBCC1E4225B83BC500A87187 /* ToastView.swift in Sources */,
 				CB35697C25B55F1D00663B2E /* CustomButton.swift in Sources */,
 				CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB158E7225C2B092001627E4 /* ButtonModifier.swift in Sources */,
@@ -360,7 +355,6 @@
 				CB158E4E25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
 				CB158E3925C2AE0C001627E4 /* Color.swift in Sources */,
-				CBD7FF8F25BADEDD008A2A10 /* ToastView.swift in Sources */,
 				CB35699725B568A700663B2E /* Enum.swift in Sources */,
 				CB158E8325C2B0E1001627E4 /* ColorPickerMac.swift in Sources */,
 				CB35696225B53CEC00663B2E /* Persistence.swift in Sources */,
@@ -392,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -453,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
