@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct CustomButton: ButtonStyle {
+    var backgroundColor: Color = .accentColor
+    var labelColor: Color = .white
+    
     func makeBody(configuration: Configuration) -> some View {
         HStack {
             Spacer()
             configuration.label
                 .font(.system(.body, design: .rounded))
-                .foregroundColor(.white)
+                .foregroundColor(labelColor)
             Spacer()
         }
         .padding()
-        .background(Color.accentColor)
+        .background(backgroundColor)
         .cornerRadius(8)
         .shadow(radius: 6)
-        .padding()
         .scaleEffect(configuration.isPressed ? 0.95 : 1)
     }
 }

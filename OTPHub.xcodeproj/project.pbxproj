@@ -41,6 +41,8 @@
 		CB35699225B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
 		CB35699625B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
 		CB35699725B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
+		CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
+		CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
 		CB6396FF25B7000700B7AAA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6396FE25B7000700B7AAA0 /* CloudKit.framework */; };
 		CB63970125B7007800B7AAA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63970025B7007800B7AAA0 /* CloudKit.framework */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
@@ -89,6 +91,7 @@
 		CB35697B25B55F1D00663B2E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CB35699025B566B900663B2E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		CB35699525B568A700663B2E /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		CB49478625CC314C0062FBBE /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		CB6396FB25B7000100B7AAA0 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CB6396FE25B7000700B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB63970025B7007800B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -140,6 +143,7 @@
 				CB158E6125C2B04F001627E4 /* ListStyle.swift */,
 				CBFEC12F25C6E9FC0092BD1A /* CustomTextField.swift */,
 				CB158E7125C2B092001627E4 /* ButtonModifier.swift */,
+				CB49478625CC314C0062FBBE /* CustomLabel.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -324,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
+				CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */,
 				CB158E5525C2AEEA001627E4 /* View.swift in Sources */,
 				CB158E6225C2B04F001627E4 /* ListStyle.swift in Sources */,
 				CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */,
@@ -348,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB35695E25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
+				CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */,
 				CB158E5625C2AEEA001627E4 /* View.swift in Sources */,
 				CB158E6325C2B04F001627E4 /* ListStyle.swift in Sources */,
 				CB351D8725B95DEE006F6A8D /* String.swift in Sources */,

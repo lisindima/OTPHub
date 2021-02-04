@@ -123,16 +123,6 @@ struct AddPasswordView: View {
         #endif
     }
     
-    var picker: some View {
-        Picker("", selection: $typeAlgorithm) {
-            ForEach(TypeAlgorithm.allCases) { type in
-                Text(type.rawValue)
-                    .tag(type)
-            }
-        }
-        .labelsHidden()
-    }
-    
     var form: some View {
         VStack {
             Form {
@@ -178,11 +168,24 @@ struct AddPasswordView: View {
                 }
             }
             #if os(iOS)
-            Button(action: savePassword) {
-                Text("button_title_add_account")
-                    .fontWeight(.bold)
+            HStack {
+                Button(action: { showQRView = true }) {
+                    Image(systemName: "qrcode")
+                        .imageScale(.large)
+                }
+                .buttonStyle(
+                    CustomButton(
+                        backgroundColor: .accentColor.opacity(0.2),
+                        labelColor: .accentColor)
+                )
+                .frame(width: 80)
+                Button(action: savePassword) {
+                    Text("button_title_add_account")
+                        .fontWeight(.bold)
+                }
+                .buttonStyle(CustomButton())
             }
-            .buttonStyle(CustomButton())
+            .padding()
             #endif
         }
         .navigationTitle("navigation_title_new_account")
@@ -190,33 +193,23 @@ struct AddPasswordView: View {
             Alert(title: Text("alert_error_title"), message: Text("alert_error_message"), dismissButton: .cancel())
         }
         .toolbar {
-            #if os(iOS)
-            ToolbarItem(placement: .principal) {
-                picker
-            }
-            #else
             ToolbarItem(placement: .automatic) {
-                picker
+                Picker("", selection: $typeAlgorithm) {
+                    ForEach(TypeAlgorithm.allCases) { type in
+                        Text(type.rawValue)
+                            .tag(type)
+                    }
+                }
+                .labelsHidden()
             }
-            #endif
             ToolbarItem(placement: .cancellationAction) {
                 Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                    #if os(iOS)
-                    Image(systemName: "xmark")
-                    #else
-                    Text("close_toolbar")
-                    #endif
+                    Label("close_toolbar", systemImage: "xmark")
+                        .labelStyle(CustomLabelStyle())
                 }
                 .keyboardShortcut(.cancelAction)
             }
-            #if os(iOS)
-            ToolbarItem(placement: .primaryAction) {
-                Button(action: { showQRView = true }) {
-                    Image(systemName: "qrcode")
-                        .imageScale(.large)
-                }
-            }
-            #else
+            #if os(macOS)
             ToolbarItem(placement: .confirmationAction) {
                 Button(action: savePassword) {
                     Text("button_title_add_account")
