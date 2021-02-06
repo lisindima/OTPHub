@@ -31,8 +31,8 @@ struct AddPasswordView: View {
             item.passwordSecret = passwordSecret
             item.passwordAlgorithm = passwordAlgorithm.rawValue
             item.typeAlgorithm = typeAlgorithm.rawValue
-            item.updateTime = Int32(updateTime.rawValue)
-            item.sizePassword = Int32(sizePassword.rawValue)
+            item.updateTime = updateTime.rawValue
+            item.sizePassword = sizePassword.rawValue
             item.passwordColor = hexString
             do {
                 try moc.save()
@@ -75,7 +75,10 @@ struct AddPasswordView: View {
                     TextField("textfield_secret", text: $passwordSecret)
                         .customTextField()
                 }
-                Section(header: Text("section_header_password_length")) {
+                Section(
+                    header: Text("section_header_password_length"),
+                    footer: Text("section_footer_password_length")
+                ) {
                     Picker("section_header_password_length", selection: $sizePassword) {
                         ForEach(SizePassword.allCases) { size in
                             Text(size.localized)
@@ -85,7 +88,10 @@ struct AddPasswordView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                Section(header: Text("section_header_update_time")) {
+                Section(
+                    header: Text("section_header_update_time"),
+                    footer: Text("section_footer_update_time")
+                ) {
                     Picker("section_header_update_time", selection: $updateTime) {
                         ForEach(UpdateTime.allCases) { time in
                             Text(time.localized)
@@ -95,7 +101,10 @@ struct AddPasswordView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                Section(header: Text("section_header_encryption_type")) {
+                Section(
+                    header: Text("section_header_encryption_type"),
+                    footer: Text("section_footer_encryption_type")
+                ) {
                     Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
                         ForEach(PasswordAlgorithm.allCases) { algorithm in
                             Text(algorithm.rawValue)
@@ -105,7 +114,10 @@ struct AddPasswordView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                Section(header: Text("section_header_customization"), footer: Text("section_footer_customization")) {
+                Section(
+                    header: Text("section_header_customization"),
+                    footer: Text("section_footer_customization")
+                ) {
                     ColorPicker("colorpicker_title", selection: $passwordColor)
                         .colorPickerMac()
                 }
@@ -134,7 +146,11 @@ struct AddPasswordView: View {
         }
         .navigationTitle("navigation_title_new_account")
         .alert(isPresented: $isPresented) {
-            Alert(title: Text("alert_error_title"), message: Text("alert_error_message"), dismissButton: .cancel())
+            Alert(
+                title: Text("alert_error_title"),
+                message: Text("alert_error_message"),
+                dismissButton: .cancel()
+            )
         }
         .toolbar {
             ToolbarItem(placement: .automatic) {

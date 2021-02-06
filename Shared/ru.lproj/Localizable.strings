@@ -2,13 +2,16 @@
 "textfield_name" = "Название";
 "textfield_secret" = "Секрет";
 "section_header_password_length" = "Длина пароля";
+"section_footer_password_length" = "Выберите длину генерируемого пароля, чем пароль длиннее - тем он надежнее.";
 "6_digits" = "6 цифр";
 "7_digits" = "7 цифр";
 "8_digits" = "8 цифр";
 "section_header_update_time" = "Время обновления";
+"section_footer_update_time" = "Выберите время обновление пароля.";
 "30_seconds" = "30 секунд";
 "60_seconds" = "60 секунд";
 "section_header_encryption_type" = "Тип шифрования";
+"section_footer_encryption_type" = "Выберите тип шифрования, если вы не уверены с выбором оставьте его по умолчанию.";
 "section_header_customization" = "Кастомизация";
 "section_footer_customization" = "Выберите цвет для своего пароля, чтобы его было легче найти.";
 "colorpicker_title" = "Цвет пароля";
