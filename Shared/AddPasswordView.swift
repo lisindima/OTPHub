@@ -5,9 +5,6 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-#if os(iOS)
-import CodeScanner
-#endif
 import SwiftUI
 
 struct AddPasswordView: View {
@@ -47,73 +44,19 @@ struct AddPasswordView: View {
         }
     }
     
-    private func getURLComponents(_ url: URL) {
-        passwordSecret = url["secret"]
-        let algorithm = url["algorithm"]
-        if algorithm == "SHA1" {
-            passwordAlgorithm = .sha1
-        } else if algorithm == "SHA256" {
-            passwordAlgorithm = .sha256
-        } else if algorithm == "SHA512" {
-            passwordAlgorithm = .sha512
-        }
-        let digit = url["digits"]
-        if digit == "6" {
-            sizePassword = .sixDigit
-        } else if digit == "7" {
-            sizePassword = .sevenDigit
-        } else if digit == "8" {
-            sizePassword = .eightDigit
-        }
-    }
-    
     var body: some View {
         #if os(iOS)
         NavigationView {
             form
                 .sheet(isPresented: $showQRView) {
-                    NavigationView {
-                        ZStack {
-                            CodeScannerView(
-                                codeTypes: [.qr],
-                                simulatedData: "otpauth://totp/foo?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA====&algorithm=SHA256&digits=8"
-                            ) { result in
-                                switch result {
-                                case let .success(code):
-                                    getURLComponents(URL(string: code)!)
-                                    showQRView = false
-                                case let .failure(error):
-                                    print(error.localizedDescription)
-                                }
-                            }
-                            .ignoresSafeArea(edges: .bottom)
-                            VStack {
-                                Spacer()
-                                Image(systemName: "viewfinder")
-                                    .resizable()
-                                    .foregroundColor(.white)
-                                    .opacity(0.5)
-                                    .padding(.top)
-                                    .frame(width: 300, height: 300)
-                                Spacer()
-                                Text("bottom_title_scan_qr")
-                                    .fontWeight(.bold)
-                                    .font(.system(.title3, design: .rounded))
-                                    .foregroundColor(.white)
-                                    .padding(.bottom, 30)
-                            }
-                        }
-                        .navigationTitle("navigation_title_scan_qr")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                Button(action: { showQRView = false }) {
-                                    Image(systemName: "xmark")
-                                }
-                                .keyboardShortcut(.cancelAction)
-                            }
-                        }
-                    }
+                    QRView(
+                        passwordName: $passwordName,
+                        passwordSecret: $passwordSecret,
+                        updateTime: $updateTime,
+                        sizePassword: $sizePassword,
+                        passwordAlgorithm: $passwordAlgorithm,
+                        typeAlgorithm: $typeAlgorithm
+                    )
                     .accentColor(.purple)
                 }
         }
@@ -176,7 +119,8 @@ struct AddPasswordView: View {
                 .buttonStyle(
                     CustomButton(
                         backgroundColor: .accentColor.opacity(0.2),
-                        labelColor: .accentColor)
+                        labelColor: .accentColor
+                    )
                 )
                 .frame(width: 80)
                 Button(action: savePassword) {
