@@ -107,7 +107,7 @@ struct AddPasswordView: View {
                         .navigationBarTitleDisplayMode(.inline)
                         .toolbar {
                             ToolbarItem(placement: .cancellationAction) {
-                                Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                                Button(action: { showQRView = false }) {
                                     Image(systemName: "xmark")
                                 }
                                 .keyboardShortcut(.cancelAction)
