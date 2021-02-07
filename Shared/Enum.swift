@@ -55,3 +55,15 @@ enum TypeAlgorithm: String, CaseIterable, Identifiable {
     
     var id: String { rawValue }
 }
+
+enum PasswordIcons: String, CaseIterable, Identifiable {
+    case applelogo
+    case pills
+    case swift
+    case sum
+    case percent
+    case function
+    case plus
+        
+    var id: String { rawValue }
+}

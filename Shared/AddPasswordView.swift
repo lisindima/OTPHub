@@ -17,6 +17,7 @@ struct AddPasswordView: View {
     @State private var sizePassword: SizePassword = .sixDigit
     @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
+    @State private var passwordIcons: PasswordIcons = .applelogo
     @State private var passwordColor: Color = .purple
     @State private var isPresented: Bool = false
     @State private var showQRView: Bool = false
@@ -114,12 +115,17 @@ struct AddPasswordView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                Section(
-                    header: Text("section_header_customization"),
-                    footer: Text("section_footer_customization")
-                ) {
+                Section(footer: Text("section_footer_customization")) {
                     ColorPicker("colorpicker_title", selection: $passwordColor)
                         .colorPickerMac()
+                }
+                Section(footer: Text("section_footer_customization")) {
+                    Picker("Иконка", selection: $passwordIcons) {
+                        ForEach(PasswordIcons.allCases) { icon in
+                            Image(systemName: icon.rawValue)
+                                .tag(icon)
+                        }
+                    }
                 }
             }
             #if os(iOS)
