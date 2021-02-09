@@ -74,6 +74,20 @@ struct ListItem: View {
         }
     }
     
+    @ViewBuilder
+    private func progressView(_ passwordColor: String) -> some View {
+        if showIndicator {
+            Image(systemName: "checkmark.circle.fill")
+                .imageScale(.large)
+                .foregroundColor(Color(hex: passwordColor))
+                .frame(width: 60)
+        } else {
+            ProgressView(value: progress, total: Float(Int(item.updateTime)))
+                .accentColor(Color(hex: passwordColor))
+                .frame(width: 60)
+        }
+    }
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -92,16 +106,7 @@ struct ListItem: View {
             }
             Spacer()
             if let passwordColor = item.passwordColor {
-                if showIndicator {
-                    Image(systemName: "checkmark.circle.fill")
-                        .imageScale(.large)
-                        .foregroundColor(Color(hex: passwordColor))
-                        .frame(width: 60)
-                } else {
-                    ProgressView(value: progress, total: Float(Int(item.updateTime)))
-                        .accentColor(Color(hex: passwordColor))
-                        .frame(width: 60)
-                }
+                progressView(passwordColor)
             }
         }
         .button(action: copyPasteboard)

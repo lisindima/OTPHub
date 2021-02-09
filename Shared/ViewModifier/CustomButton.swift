@@ -15,7 +15,7 @@ struct CustomButton: ButtonStyle {
         HStack {
             Spacer()
             configuration.label
-                .font(.system(.body, design: .rounded))
+                .font(.system(size: 17, weight: .bold, design: .rounded))
                 .foregroundColor(labelColor)
             Spacer()
         }

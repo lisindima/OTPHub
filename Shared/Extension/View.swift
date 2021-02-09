@@ -23,4 +23,8 @@ extension View {
     func customTextField() -> some View {
         modifier(CustomTextField())
     }
+    
+    func customListStyle() -> some View {
+        modifier(ListStyle())
+    }
 }

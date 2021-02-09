@@ -40,6 +40,10 @@ struct QRView: View {
         }
     }
     
+    private func dismissView() {
+        presentationMode.wrappedValue.dismiss()
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -76,7 +80,7 @@ struct QRView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                    Button(action: dismissView) {
                         Image(systemName: "xmark")
                     }
                     .keyboardShortcut(.cancelAction)

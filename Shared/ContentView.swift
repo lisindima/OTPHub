@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @Binding var isPresented: Bool
+    @State private var isShowSettings: Bool = false
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.passwordName, ascending: true)],
@@ -26,26 +26,32 @@ struct ContentView: View {
         }
     }
     
+    private func showSettings() {
+        isShowSettings = true
+    }
+    
+    var settingsButton: some View {
+        Button(action: showSettings) {
+            Image(systemName: "plus.circle.fill")
+                .imageScale(.large)
+        }
+        .keyboardShortcut("a", modifiers: .command)
+        .help("help_title_add_button")
+    }
+    
     var body: some View {
         List {
-            ForEach(items) { item in
-                ListItem(item: item)
-            }
-            .onDelete(perform: deleteItems)
+            ForEach(items, content: ListItem.init)
+                .onDelete(perform: deleteItems)
         }
-        .modifier(ListStyle())
+        .customListStyle()
         .environment(\.defaultMinListRowHeight, 70)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button(action: { isPresented = true }) {
-                    Image(systemName: "plus.circle.fill")
-                        .imageScale(.large)
-                }
-                .keyboardShortcut("a", modifiers: .command)
-                .help("help_title_add_button")
+                settingsButton
             }
         }
-        .sheet(isPresented: $isPresented) {
+        .sheet(isPresented: $isShowSettings) {
             AddPasswordView()
                 .accentColor(.purple)
         }
@@ -55,7 +61,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(isPresented: .constant(false))
+        ContentView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

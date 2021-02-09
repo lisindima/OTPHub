@@ -18,12 +18,12 @@ struct AddPasswordView: View {
     @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
     @State private var passwordColor: Color = .purple
-    @State private var isPresented: Bool = false
-    @State private var showQRView: Bool = false
+    @State private var isShowAlert: Bool = false
+    @State private var isShowQRView: Bool = false
     
     private func savePassword() {
         if passwordName.isEmpty || passwordSecret.isEmpty {
-            isPresented = true
+            isShowAlert = true
         } else {
             let hexString = passwordColor.hexStringFromColor()
             let item = Item(context: moc)
@@ -44,11 +44,19 @@ struct AddPasswordView: View {
         }
     }
     
+    private func showQRView() {
+        isShowQRView = true
+    }
+    
+    private func dismissView() {
+        presentationMode.wrappedValue.dismiss()
+    }
+    
     var body: some View {
         #if os(iOS)
         NavigationView {
             form
-                .sheet(isPresented: $showQRView) {
+                .sheet(isPresented: $isShowQRView) {
                     QRView(
                         passwordName: $passwordName,
                         passwordSecret: $passwordSecret,
@@ -71,10 +79,9 @@ struct AddPasswordView: View {
             Form {
                 Section(header: Text("section_header_basic_information")) {
                     TextField("textfield_name", text: $passwordName)
-                        .customTextField()
                     TextField("textfield_secret", text: $passwordSecret)
-                        .customTextField()
                 }
+                .customTextField()
                 Section(
                     header: Text("section_header_password_length"),
                     footer: Text("section_footer_password_length")
@@ -124,7 +131,7 @@ struct AddPasswordView: View {
             }
             #if os(iOS)
             HStack {
-                Button(action: { showQRView = true }) {
+                Button(action: showQRView) {
                     Image(systemName: "qrcode")
                         .imageScale(.large)
                 }
@@ -135,17 +142,14 @@ struct AddPasswordView: View {
                     )
                 )
                 .frame(width: 80)
-                Button(action: savePassword) {
-                    Text("button_title_add_account")
-                        .fontWeight(.bold)
-                }
-                .buttonStyle(CustomButton())
+                Button("button_title_add_account", action: savePassword)
+                    .buttonStyle(CustomButton())
             }
             .padding()
             #endif
         }
         .navigationTitle("navigation_title_new_account")
-        .alert(isPresented: $isPresented) {
+        .alert(isPresented: $isShowAlert) {
             Alert(
                 title: Text("alert_error_title"),
                 message: Text("alert_error_message"),
@@ -163,7 +167,7 @@ struct AddPasswordView: View {
                 .labelsHidden()
             }
             ToolbarItem(placement: .cancellationAction) {
-                Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                Button(action: dismissView) {
                     Label("close_toolbar", systemImage: "xmark")
                         .labelStyle(CustomLabelStyle())
                 }
@@ -171,10 +175,8 @@ struct AddPasswordView: View {
             }
             #if os(macOS)
             ToolbarItem(placement: .confirmationAction) {
-                Button(action: savePassword) {
-                    Text("button_title_add_account")
-                }
-                .keyboardShortcut(.defaultAction)
+                Button("button_title_add_account", action: savePassword)
+                    .keyboardShortcut(.defaultAction)
             }
             #endif
         }
