@@ -12,19 +12,19 @@ extension View {
         modifier(ButtonModifier(action: action))
     }
     
-    func empedInNavigation(title: LocalizedStringKey) -> some View {
-        modifier(EmbedInNavigation(title: title))
-    }
-    
-    func colorPickerMac() -> some View {
-        modifier(ColorPickerMac())
-    }
-    
-    func customTextField() -> some View {
-        modifier(CustomTextField())
+    func empedInNavigation(_ navigationTitle: LocalizedStringKey) -> some View {
+        modifier(EmbedInNavigation(navigationTitle: navigationTitle))
     }
     
     func customListStyle() -> some View {
         modifier(ListStyle())
+    }
+    
+    func macOS<Content: View>(_ modifier: (Self) -> Content) -> some View {
+        #if os(macOS)
+        modifier(self)
+        #else
+        self
+        #endif
     }
 }

@@ -51,11 +51,11 @@ struct ContentView: View {
                 settingsButton
             }
         }
+        .empedInNavigation("OTPHub")
         .sheet(isPresented: $isShowSettings) {
             AddPasswordView()
                 .accentColor(.purple)
         }
-        .empedInNavigation(title: "OTPHub")
     }
 }
 

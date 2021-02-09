@@ -53,35 +53,13 @@ struct AddPasswordView: View {
     }
     
     var body: some View {
-        #if os(iOS)
-        NavigationView {
-            form
-                .sheet(isPresented: $isShowQRView) {
-                    QRView(
-                        passwordName: $passwordName,
-                        passwordSecret: $passwordSecret,
-                        updateTime: $updateTime,
-                        sizePassword: $sizePassword,
-                        passwordAlgorithm: $passwordAlgorithm,
-                        typeAlgorithm: $typeAlgorithm
-                    )
-                    .accentColor(.purple)
-                }
-        }
-        #else
-        form
-            .padding()
-        #endif
-    }
-    
-    var form: some View {
         VStack {
             Form {
                 Section(header: Text("section_header_basic_information")) {
                     TextField("textfield_name", text: $passwordName)
                     TextField("textfield_secret", text: $passwordSecret)
                 }
-                .customTextField()
+                .macOS { $0.textFieldStyle(RoundedBorderTextFieldStyle()) }
                 Section(
                     header: Text("section_header_password_length"),
                     footer: Text("section_footer_password_length")
@@ -126,7 +104,8 @@ struct AddPasswordView: View {
                     footer: Text("section_footer_customization")
                 ) {
                     ColorPicker("colorpicker_title", selection: $passwordColor)
-                        .colorPickerMac()
+                        .macOS { $0.labelsHidden() }
+                        .macOS { $0.frame(height: 50) }
                 }
             }
             #if os(iOS)
@@ -136,19 +115,18 @@ struct AddPasswordView: View {
                         .imageScale(.large)
                 }
                 .buttonStyle(
-                    CustomButton(
+                    CustomButtonStyle(
                         backgroundColor: .accentColor.opacity(0.2),
                         labelColor: .accentColor
                     )
                 )
                 .frame(width: 80)
                 Button("button_title_add_account", action: savePassword)
-                    .buttonStyle(CustomButton())
+                    .buttonStyle(CustomButtonStyle())
             }
             .padding()
             #endif
         }
-        .navigationTitle("navigation_title_new_account")
         .alert(isPresented: $isShowAlert) {
             Alert(
                 title: Text("alert_error_title"),
@@ -178,6 +156,21 @@ struct AddPasswordView: View {
                 Button("button_title_add_account", action: savePassword)
                     .keyboardShortcut(.defaultAction)
             }
+            #endif
+        }
+        .empedInNavigation("navigation_title_new_account")
+        .macOS { $0.padding() }
+        .sheet(isPresented: $isShowQRView) {
+            #if os(iOS)
+            QRView(
+                passwordName: $passwordName,
+                passwordSecret: $passwordSecret,
+                updateTime: $updateTime,
+                sizePassword: $sizePassword,
+                passwordAlgorithm: $passwordAlgorithm,
+                typeAlgorithm: $typeAlgorithm
+            )
+            .accentColor(.purple)
             #endif
         }
     }

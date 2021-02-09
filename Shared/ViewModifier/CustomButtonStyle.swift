@@ -1,5 +1,5 @@
 //
-//  CustomButton.swift
+//  CustomButtonStyle.swift
 //  OTPHub
 //
 //  Created by Дмитрий Лисин on 18.01.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomButton: ButtonStyle {
+struct CustomButtonStyle: ButtonStyle {
     var backgroundColor: Color = .accentColor
     var labelColor: Color = .white
     

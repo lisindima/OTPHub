@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct EmbedInNavigation: ViewModifier {
-    var title: LocalizedStringKey
+    var navigationTitle: LocalizedStringKey
     
     @ViewBuilder
     func body(content: Content) -> some View {
         #if os(macOS)
         content
-            .navigationTitle(title)
-            .frame(minWidth: 300, idealWidth: 400, maxWidth: nil, minHeight: 340, idealHeight: 440, maxHeight: nil)
+            .navigationTitle(navigationTitle)
+            .frame(minWidth: 300, idealWidth: 500, maxWidth: nil, minHeight: 340, idealHeight: 540, maxHeight: nil)
         #else
         NavigationView {
             content
-                .navigationTitle(title)
+                .navigationTitle(navigationTitle)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         #endif
