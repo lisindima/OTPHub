@@ -12,6 +12,7 @@
 "60_seconds" = "60 seconds";
 "section_header_encryption_type" = "Encryption type";
 "section_footer_encryption_type" = "Select the type of encryption, if you are not sure with the choice, leave it as default.";
+"section_header_customization" = "Customization";
 "section_footer_customization" = "Choose a color for your password to make it easier to find.";
 "colorpicker_title" = "Password color";
 "button_title_add_account" = "Add account";

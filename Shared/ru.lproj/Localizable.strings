@@ -12,6 +12,7 @@
 "60_seconds" = "60 секунд";
 "section_header_encryption_type" = "Тип шифрования";
 "section_footer_encryption_type" = "Выберите тип шифрования, если вы не уверены с выбором оставьте его по умолчанию.";
+"section_header_customization" = "Кастомизация";
 "section_footer_customization" = "Выберите цвет для своего пароля, чтобы его было легче найти.";
 "colorpicker_title" = "Цвет пароля";
 "button_title_add_account" = "Добавить аккаунт";
