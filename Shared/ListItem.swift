@@ -11,7 +11,6 @@ import SwiftUI
 struct ListItem: View {
     var item: Item
     
-    @State private var showIndicator: Bool = false
     @State private var otpString: String?
     @State private var progress: Float = 0.0
     
@@ -30,12 +29,6 @@ struct ListItem: View {
             generator.notificationOccurred(.success)
             UIPasteboard.general.string = otpString
             #endif
-            withAnimation(.spring()) {
-                showIndicator = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    showIndicator = false
-                }
-            }
         }
     }
     
@@ -75,48 +68,61 @@ struct ListItem: View {
             }
         }
     }
-    
-    @ViewBuilder
-    private func progressView(_ passwordColor: String) -> some View {
-        if showIndicator {
-            Image(systemName: "checkmark.circle.fill")
-                .imageScale(.large)
-                .foregroundColor(Color(hex: passwordColor))
-                .frame(width: 60)
+    var body: some View {
+        if item.typeAlgorithm == "HOTP" {
+            hotp
         } else {
-            ProgressView(value: progress, total: Float(Int(item.updateTime)))
-                .accentColor(Color(hex: passwordColor))
-                .frame(width: 60)
+            totp
         }
     }
     
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                if let passwordName = item.passwordName {
-                    Text(passwordName)
-                        .font(.system(.footnote, design: .rounded))
-                        .foregroundColor(.secondary)
-                }
-                if let otpString = otpString {
-                    Text(otpString.separated())
-                        .font(.system(.title, design: .rounded))
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                        .animation(.interactiveSpring())
-                }
+    var password: some View {
+        VStack(alignment: .leading) {
+            if let passwordName = item.passwordName {
+                Text(passwordName)
+                    .font(.system(.footnote, design: .rounded))
+                    .foregroundColor(.secondary)
             }
+            if let otpString = otpString {
+                Text(otpString.separated())
+                    .font(.system(.title, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+            }
+        }
+    }
+    
+    var hotp: some View {
+        HStack {
+            password
+            Spacer()
+            Button(action: generatePassword) {
+                Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                    .imageScale(.large)
+            }
+            .buttonStyle(PlainButtonStyle())
+            .frame(width: 60)
+        }
+        .button(action: copyPasteboard)
+        .onAppear(perform: generatePassword)
+    }
+    
+    var totp: some View {
+        HStack {
+            password
             Spacer()
             if let passwordColor = item.passwordColor {
-                progressView(passwordColor)
+                ProgressView(value: progress, total: item.updateTime.toFloat())
+                    .accentColor(Color(hex: passwordColor))
+                    .frame(width: 60)
             }
         }
         .button(action: copyPasteboard)
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in
-            if progress < Float(Int(item.updateTime)) {
+            if progress < item.updateTime.toFloat() {
                 progress += 1
-            } else if progress == Float(Int(item.updateTime)) {
+            } else if progress == item.updateTime.toFloat() {
                 progress = 0.0
                 generatePassword()
             }

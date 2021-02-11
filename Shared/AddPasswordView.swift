@@ -138,7 +138,7 @@ struct AddPasswordView: View {
         }
         .toolbar {
             ToolbarItem(placement: .automatic) {
-                Picker("", selection: $typeAlgorithm) {
+                Picker("", selection: $typeAlgorithm.animation()) {
                     ForEach(TypeAlgorithm.allCases) { type in
                         Text(type.rawValue)
                             .tag(type)
