@@ -73,18 +73,20 @@ struct AddPasswordView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                Section(
-                    header: Text("section_header_update_time"),
-                    footer: Text("section_footer_update_time")
-                ) {
-                    Picker("section_header_update_time", selection: $updateTime) {
-                        ForEach(UpdateTime.allCases) { time in
-                            Text(time.localized)
-                                .tag(time)
+                if typeAlgorithm == .totp {
+                    Section(
+                        header: Text("section_header_update_time"),
+                        footer: Text("section_footer_update_time")
+                    ) {
+                        Picker("section_header_update_time", selection: $updateTime) {
+                            ForEach(UpdateTime.allCases) { time in
+                                Text(time.localized)
+                                    .tag(time)
+                            }
                         }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .labelsHidden()
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .labelsHidden()
                 }
                 Section(
                     header: Text("section_header_encryption_type"),

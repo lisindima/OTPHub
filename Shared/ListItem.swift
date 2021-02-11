@@ -15,7 +15,7 @@ struct ListItem: View {
     @State private var otpString: String?
     @State private var progress: Float = 0.0
     
-    @AppStorage("counter") private var counter: Int = 0
+    @SceneStorage("counter") private var counter: Int = 0
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -26,6 +26,8 @@ struct ListItem: View {
             pasteBoard.clearContents()
             pasteBoard.setString(otpString, forType: .string)
             #else
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
             UIPasteboard.general.string = otpString
             #endif
             withAnimation(.spring()) {
