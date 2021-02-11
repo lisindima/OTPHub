@@ -23,3 +23,4 @@
 "help_title_add_button" = "Add new account";
 "navigation_title_scan_qr" = "Scan QR code";
 "bottom_title_scan_qr" = "Point the camera at the QR code";
+"picker_title_type_algorithm" = "Algorithm type";

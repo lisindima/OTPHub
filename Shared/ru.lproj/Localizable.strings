@@ -23,3 +23,4 @@
 "help_title_add_button" = "Добавить новый аккаунт";
 "navigation_title_scan_qr" = "Сканирование QR-кода";
 "bottom_title_scan_qr" = "Наведите камеру на QR-код";
+"picker_title_type_algorithm" = "Тип алгоритма";

@@ -126,7 +126,8 @@ struct AddPasswordView: View {
                 Button("button_title_add_account", action: savePassword)
                     .buttonStyle(CustomButtonStyle())
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.vertical, 6)
             #endif
         }
         .alert(isPresented: $isShowAlert) {
@@ -138,7 +139,7 @@ struct AddPasswordView: View {
         }
         .toolbar {
             ToolbarItem(placement: .automatic) {
-                Picker("", selection: $typeAlgorithm.animation()) {
+                Picker("picker_title_type_algorithm", selection: $typeAlgorithm.animation()) {
                     ForEach(TypeAlgorithm.allCases) { type in
                         Text(type.rawValue)
                             .tag(type)
