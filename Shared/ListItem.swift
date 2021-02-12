@@ -113,6 +113,7 @@ struct ListItem: View {
             Spacer()
             if let passwordColor = item.passwordColor {
                 ProgressView(value: progress, total: item.updateTime.toFloat())
+                    .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
                     .accentColor(Color(hex: passwordColor))
                     .frame(width: 60)
             }
