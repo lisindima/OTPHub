@@ -8,10 +8,6 @@
 import SwiftUI
 
 extension View {
-    func button(action: @escaping () -> Void) -> some View {
-        self.modifier(ButtonModifier(action: action))
-    }
-    
     func empedInNavigation(_ navigationTitle: LocalizedStringKey) -> some View {
         self.modifier(EmbedInNavigation(navigationTitle: navigationTitle))
     }

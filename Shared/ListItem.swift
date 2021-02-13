@@ -87,32 +87,36 @@ struct ListItem: View {
     }
     
     var hotp: some View {
-        HStack {
-            password
-            Spacer()
-            Button(action: generatePassword) {
-                Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
-                    .imageScale(.large)
+        Button(action: copyPasteboard) {
+            HStack {
+                password
+                Spacer()
+                Button(action: generatePassword) {
+                    Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                        .imageScale(.large)
+                }
+                .macOS { $0.buttonStyle(PlainButtonStyle()) }
+                .frame(width: 60)
             }
-            .buttonStyle(PlainButtonStyle())
-            .frame(width: 60)
         }
-        .button(action: copyPasteboard)
+        .macOS { $0.buttonStyle(PlainButtonStyle()) }
         .onAppear(perform: generatePassword)
     }
     
     var totp: some View {
-        HStack {
-            password
-            Spacer()
-            if let passwordColor = item.passwordColor {
-                ProgressView(value: progress, total: item.updateTime.toFloat())
-                    .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
-                    .accentColor(Color(hex: passwordColor))
-                    .frame(width: 60)
+        Button(action: copyPasteboard) {
+            HStack {
+                password
+                Spacer()
+                if let passwordColor = item.passwordColor {
+                    ProgressView(value: progress, total: item.updateTime.toFloat())
+                        .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
+                        .accentColor(Color(hex: passwordColor))
+                        .frame(width: 60)
+                }
             }
         }
-        .button(action: copyPasteboard)
+        .macOS { $0.buttonStyle(PlainButtonStyle()) }
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in
             if progress < item.updateTime.toFloat() {

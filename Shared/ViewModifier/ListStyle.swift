@@ -13,8 +13,10 @@ struct ListStyle: ViewModifier {
         #if os(iOS)
         content
             .listStyle(InsetGroupedListStyle())
+            .environment(\.defaultMinListRowHeight, 70)
         #else
         content
+            .environment(\.defaultMinListRowHeight, 70)
         #endif
     }
 }

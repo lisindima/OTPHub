@@ -17,7 +17,7 @@ struct AddPasswordView: View {
     @State private var sizePassword: SizePassword = .sixDigit
     @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
-    @State private var passwordColor: Color = .purple
+    @State private var passwordColor: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
     
