@@ -129,6 +129,7 @@
 				CB158E4C25C2AEA1001627E4 /* URL.swift */,
 				CB158E5425C2AEEA001627E4 /* View.swift */,
 				CBC5909B25D55F1C006090D5 /* Int32.swift */,
+				CB351D8525B95DEE006F6A8D /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -176,7 +177,6 @@
 				CB35699025B566B900663B2E /* ListItem.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
 				CB35699525B568A700663B2E /* Enum.swift */,
-				CB351D8525B95DEE006F6A8D /* String.swift */,
 				CB35694925B53CEB00663B2E /* Persistence.swift */,
 				CB35694A25B53CEC00663B2E /* Assets.xcassets */,
 				CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */,

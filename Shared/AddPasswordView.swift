@@ -58,6 +58,7 @@ struct AddPasswordView: View {
                 Section(header: Text("section_header_basic_information")) {
                     TextField("textfield_name", text: $passwordName)
                     TextField("textfield_secret", text: $passwordSecret)
+                        .disableAutocorrection(true)
                 }
                 .macOS { $0.textFieldStyle(RoundedBorderTextFieldStyle()) }
                 Section(

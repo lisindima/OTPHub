@@ -34,13 +34,7 @@ struct ListItem: View {
     
     private func generatePassword() {
         var algorithm: OTPAlgorithm = .sha1
-        if item.passwordAlgorithm == "SHA1" {
-            algorithm = .sha1
-        } else if item.passwordAlgorithm == "SHA256" {
-            algorithm = .sha256
-        } else if item.passwordAlgorithm == "SHA512" {
-            algorithm = .sha512
-        }
+        algorithm = item.passwordAlgorithm!.algorithmFromString()
         
         guard let data = item.passwordSecret else { return }
         guard let secret = base32DecodeToData(data) else { return }
