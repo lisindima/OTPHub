@@ -17,6 +17,7 @@ struct AddPasswordView: View {
     @State private var sizePassword: SizePassword = .sixDigit
     @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
+    @State private var passwordCounter: Int = 1
     @State private var passwordColor: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
@@ -87,6 +88,13 @@ struct AddPasswordView: View {
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         .labelsHidden()
+                    }
+                } else {
+                    Section(
+                        header: Text("section_header_password_counter"),
+                        footer: Text("section_footer_password_counter")
+                    ) {
+                        Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 1...1000)
                     }
                 }
                 Section(
