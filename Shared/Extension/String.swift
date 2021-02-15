@@ -39,7 +39,7 @@ extension String {
         }
     }
     
-    func digitFromString() ->  SizePassword {
+    func digitFromString() -> SizePassword {
         switch self {
         case "6":
             return .sixDigit

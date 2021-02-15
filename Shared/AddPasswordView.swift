@@ -94,7 +94,7 @@ struct AddPasswordView: View {
                         header: Text("section_header_password_counter"),
                         footer: Text("section_footer_password_counter")
                     ) {
-                        Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 1...1000)
+                        Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 1 ... 1000)
                     }
                 }
                 Section(

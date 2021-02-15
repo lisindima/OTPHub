@@ -72,6 +72,7 @@ struct ListItem: View {
             }
         }
     }
+
     var body: some View {
         if item.typeAlgorithm == "HOTP" {
             hotp
