@@ -23,3 +23,7 @@
 "help_title_add_button" = "Добавить новый аккаунт";
 "navigation_title_scan_qr" = "Сканирование QR-кода";
 "bottom_title_scan_qr" = "Наведите камеру на QR-код";
+"picker_title_type_algorithm" = "Тип алгоритма";
+"stepper_title_password_counter %lld" = "Текущее значение: %lld";
+"section_header_password_counter" = "Начальное значение счетчика";
+"section_footer_password_counter" = "Установите начальное значение для счетчика, если вы не уверены с выбором оставьте его по умолчанию.";

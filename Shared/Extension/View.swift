@@ -8,16 +8,12 @@
 import SwiftUI
 
 extension View {
-    func button(action: @escaping () -> Void) -> some View {
-        modifier(ButtonModifier(action: action))
-    }
-    
     func empedInNavigation(_ navigationTitle: LocalizedStringKey) -> some View {
-        modifier(EmbedInNavigation(navigationTitle: navigationTitle))
+        self.modifier(EmbedInNavigation(navigationTitle: navigationTitle))
     }
     
     func customListStyle() -> some View {
-        modifier(ListStyle())
+        self.modifier(ListStyle())
     }
     
     func macOS<Content: View>(_ modifier: (Self) -> Content) -> some View {

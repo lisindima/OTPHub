@@ -32,8 +32,7 @@ struct ContentView: View {
     
     var settingsButton: some View {
         Button(action: showSettings) {
-            Image(systemName: "plus.circle.fill")
-                .imageScale(.large)
+            Label("button_title_add_account", systemImage: "plus.circle.fill")
         }
         .keyboardShortcut("a", modifiers: .command)
         .help("help_title_add_button")
@@ -45,7 +44,6 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
         }
         .customListStyle()
-        .environment(\.defaultMinListRowHeight, 70)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 settingsButton

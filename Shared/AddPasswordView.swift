@@ -17,7 +17,8 @@ struct AddPasswordView: View {
     @State private var sizePassword: SizePassword = .sixDigit
     @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
-    @State private var passwordColor: Color = .purple
+    @State private var passwordCounter: Int = 1
+    @State private var passwordColor: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
     
@@ -25,7 +26,6 @@ struct AddPasswordView: View {
         if passwordName.isEmpty || passwordSecret.isEmpty {
             isShowAlert = true
         } else {
-            let hexString = passwordColor.hexStringFromColor()
             let item = Item(context: moc)
             item.passwordName = passwordName
             item.passwordSecret = passwordSecret
@@ -33,7 +33,8 @@ struct AddPasswordView: View {
             item.typeAlgorithm = typeAlgorithm.rawValue
             item.updateTime = updateTime.rawValue
             item.sizePassword = sizePassword.rawValue
-            item.passwordColor = hexString
+            item.passwordCounter = passwordCounter.toInt32()
+            item.passwordColor = passwordColor.hexStringFromColor()
             do {
                 try moc.save()
                 presentationMode.wrappedValue.dismiss()
@@ -58,6 +59,7 @@ struct AddPasswordView: View {
                 Section(header: Text("section_header_basic_information")) {
                     TextField("textfield_name", text: $passwordName)
                     TextField("textfield_secret", text: $passwordSecret)
+                        .disableAutocorrection(true)
                 }
                 .macOS { $0.textFieldStyle(RoundedBorderTextFieldStyle()) }
                 Section(
@@ -73,18 +75,27 @@ struct AddPasswordView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                Section(
-                    header: Text("section_header_update_time"),
-                    footer: Text("section_footer_update_time")
-                ) {
-                    Picker("section_header_update_time", selection: $updateTime) {
-                        ForEach(UpdateTime.allCases) { time in
-                            Text(time.localized)
-                                .tag(time)
+                if typeAlgorithm == .totp {
+                    Section(
+                        header: Text("section_header_update_time"),
+                        footer: Text("section_footer_update_time")
+                    ) {
+                        Picker("section_header_update_time", selection: $updateTime) {
+                            ForEach(UpdateTime.allCases) { time in
+                                Text(time.localized)
+                                    .tag(time)
+                            }
                         }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .labelsHidden()
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .labelsHidden()
+                } else {
+                    Section(
+                        header: Text("section_header_password_counter"),
+                        footer: Text("section_footer_password_counter")
+                    ) {
+                        Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 1 ... 1000)
+                    }
                 }
                 Section(
                     header: Text("section_header_encryption_type"),
@@ -124,7 +135,8 @@ struct AddPasswordView: View {
                 Button("button_title_add_account", action: savePassword)
                     .buttonStyle(CustomButtonStyle())
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.vertical, 6)
             #endif
         }
         .alert(isPresented: $isShowAlert) {
@@ -136,7 +148,7 @@ struct AddPasswordView: View {
         }
         .toolbar {
             ToolbarItem(placement: .automatic) {
-                Picker("", selection: $typeAlgorithm) {
+                Picker("picker_title_type_algorithm", selection: $typeAlgorithm.animation()) {
                     ForEach(TypeAlgorithm.allCases) { type in
                         Text(type.rawValue)
                             .tag(type)

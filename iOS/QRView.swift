@@ -18,30 +18,20 @@ struct QRView: View {
     @Binding var passwordAlgorithm: PasswordAlgorithm
     @Binding var typeAlgorithm: TypeAlgorithm
     
-    private let simulatedData: String = "otpauth://totp/foo?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQGEZA====&algorithm=SHA256&digits=8"
-    
-    private func getURLComponents(_ url: URL) {
-        passwordSecret = url["secret"]
-        let algorithm = url["algorithm"]
-        if algorithm == "SHA1" {
-            passwordAlgorithm = .sha1
-        } else if algorithm == "SHA256" {
-            passwordAlgorithm = .sha256
-        } else if algorithm == "SHA512" {
-            passwordAlgorithm = .sha512
-        }
-        let digit = url["digits"]
-        if digit == "6" {
-            sizePassword = .sixDigit
-        } else if digit == "7" {
-            sizePassword = .sevenDigit
-        } else if digit == "8" {
-            sizePassword = .eightDigit
-        }
-    }
+    private let simulatedData: String = "otpauth://totp/ACME%20Co:john@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA256&digits=7&period=60"
     
     private func dismissView() {
         presentationMode.wrappedValue.dismiss()
+    }
+    
+    private func getURLComponents(_ string: String) {
+        guard let url = URL(string: string) else { return }
+        passwordName = String(url.path.dropFirst())
+        typeAlgorithm = url.host!.typeAlgorithmFromString()
+        passwordSecret = url["secret"]
+        passwordAlgorithm = url["algorithm"].algorithmFromString()
+        sizePassword = url["digits"].digitFromString()
+        updateTime = url["period"].updateTimeFromString()
     }
     
     var body: some View {
@@ -53,8 +43,8 @@ struct QRView: View {
                 ) { result in
                     switch result {
                     case let .success(code):
-                        getURLComponents(URL(string: code)!)
-                        presentationMode.wrappedValue.dismiss()
+                        getURLComponents(code)
+                        dismissView()
                     case let .failure(error):
                         print(error.localizedDescription)
                     }

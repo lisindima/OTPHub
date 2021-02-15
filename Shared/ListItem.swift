@@ -9,13 +9,12 @@ import SwiftOTP
 import SwiftUI
 
 struct ListItem: View {
-    var item: Item
+    @Environment(\.managedObjectContext) private var moc
     
-    @State private var showIndicator: Bool = false
     @State private var otpString: String?
     @State private var progress: Float = 0.0
     
-    @AppStorage("counter") private var counter: Int = 0
+    var item: Item
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -26,42 +25,42 @@ struct ListItem: View {
             pasteBoard.clearContents()
             pasteBoard.setString(otpString, forType: .string)
             #else
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
             UIPasteboard.general.string = otpString
             #endif
-            withAnimation(.spring()) {
-                showIndicator = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    showIndicator = false
-                }
-            }
+        }
+    }
+    
+    private func saveCounter() {
+        do {
+            try moc.save()
+        } catch {
+            let nsError = error as NSError
+            print("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
     
     private func generatePassword() {
         var algorithm: OTPAlgorithm = .sha1
-        if item.passwordAlgorithm == "SHA1" {
-            algorithm = .sha1
-        } else if item.passwordAlgorithm == "SHA256" {
-            algorithm = .sha256
-        } else if item.passwordAlgorithm == "SHA512" {
-            algorithm = .sha512
-        }
+        algorithm = item.passwordAlgorithm!.algorithmFromString()
         
         guard let data = item.passwordSecret else { return }
         guard let secret = base32DecodeToData(data) else { return }
         
-        let digits = Int(item.sizePassword)
-        let timeInterval = Int(item.updateTime)
+        let digits = item.sizePassword.toInt()
+        let timeInterval = item.updateTime.toInt()
         
         if item.typeAlgorithm == "HOTP" {
-            counter += 1
+            item.passwordCounter += 1
             if let hotp = HOTP(
                 secret: secret,
                 digits: digits,
                 algorithm: algorithm
             ) {
-                otpString = hotp.generate(counter: UInt64(counter))
+                otpString = hotp.generate(counter: UInt64(item.passwordCounter))
             }
+            saveCounter()
         } else {
             if let totp = TOTP(
                 secret: secret,
@@ -73,48 +72,67 @@ struct ListItem: View {
             }
         }
     }
-    
-    @ViewBuilder
-    private func progressView(_ passwordColor: String) -> some View {
-        if showIndicator {
-            Image(systemName: "checkmark.circle.fill")
-                .imageScale(.large)
-                .foregroundColor(Color(hex: passwordColor))
-                .frame(width: 60)
+
+    var body: some View {
+        if item.typeAlgorithm == "HOTP" {
+            hotp
         } else {
-            ProgressView(value: progress, total: Float(Int(item.updateTime)))
-                .accentColor(Color(hex: passwordColor))
-                .frame(width: 60)
+            totp
         }
     }
     
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                if let passwordName = item.passwordName {
-                    Text(passwordName)
-                        .font(.system(.footnote, design: .rounded))
-                        .foregroundColor(.secondary)
-                }
-                if let otpString = otpString {
-                    Text(otpString.separated())
-                        .font(.system(.title, design: .rounded))
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                        .animation(.interactiveSpring())
-                }
+    var password: some View {
+        VStack(alignment: .leading) {
+            if let passwordName = item.passwordName {
+                Text(passwordName)
+                    .font(.system(.footnote, design: .rounded))
+                    .foregroundColor(.secondary)
             }
-            Spacer()
-            if let passwordColor = item.passwordColor {
-                progressView(passwordColor)
+            if let otpString = otpString {
+                Text(otpString.separated())
+                    .font(.system(.title, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
             }
         }
-        .button(action: copyPasteboard)
+    }
+    
+    var hotp: some View {
+        Button(action: copyPasteboard) {
+            HStack {
+                password
+                Spacer()
+                Button(action: generatePassword) {
+                    Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                        .imageScale(.large)
+                }
+                .macOS { $0.buttonStyle(PlainButtonStyle()) }
+                .frame(width: 60)
+            }
+        }
+        .macOS { $0.buttonStyle(PlainButtonStyle()) }
+        .onAppear(perform: generatePassword)
+    }
+    
+    var totp: some View {
+        Button(action: copyPasteboard) {
+            HStack {
+                password
+                Spacer()
+                if let passwordColor = item.passwordColor {
+                    ProgressView(value: progress, total: item.updateTime.toFloat())
+                        .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
+                        .accentColor(Color(hex: passwordColor))
+                        .frame(width: 60)
+                }
+            }
+        }
+        .macOS { $0.buttonStyle(PlainButtonStyle()) }
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in
-            if progress < Float(Int(item.updateTime)) {
+            if progress < item.updateTime.toFloat() {
                 progress += 1
-            } else if progress == Float(Int(item.updateTime)) {
+            } else if progress == item.updateTime.toFloat() {
                 progress = 0.0
                 generatePassword()
             }

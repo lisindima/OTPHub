@@ -23,3 +23,7 @@
 "help_title_add_button" = "Add new account";
 "navigation_title_scan_qr" = "Scan QR code";
 "bottom_title_scan_qr" = "Point the camera at the QR code";
+"picker_title_type_algorithm" = "Algorithm type";
+"stepper_title_password_counter %lld" = "Present value: %lld";
+"section_header_password_counter" = "Counter initial value";
+"section_footer_password_counter" = "Set the initial value for the counter, if you are not sure with the choice, leave it at the default.";
