@@ -11,4 +11,8 @@ extension Int32 {
     func toFloat() -> Float {
         Float(Int(self))
     }
+    
+    func toInt() -> Int {
+        Int(self)
+    }
 }

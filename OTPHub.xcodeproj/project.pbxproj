@@ -46,6 +46,8 @@
 		CB63970125B7007800B7AAA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63970025B7007800B7AAA0 /* CloudKit.framework */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB89B18C25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
+		CB9BCB0725D9032400A42B33 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BCB0625D9032400A42B33 /* Int.swift */; };
+		CB9BCB0825D9032400A42B33 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BCB0625D9032400A42B33 /* Int.swift */; };
 		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
 		CBC5909C25D55F1C006090D5 /* Int32.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5909B25D55F1C006090D5 /* Int32.swift */; };
 		CBC5909D25D55F1C006090D5 /* Int32.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5909B25D55F1C006090D5 /* Int32.swift */; };
@@ -93,6 +95,7 @@
 		CB63970025B7007800B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CB89B18D25B6C6B100B61B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB89B18F25B6C6B400B61B68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB9BCB0625D9032400A42B33 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		CBC5909B25D55F1C006090D5 /* Int32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int32.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +129,7 @@
 				CB158E4C25C2AEA1001627E4 /* URL.swift */,
 				CB158E5425C2AEEA001627E4 /* View.swift */,
 				CBC5909B25D55F1C006090D5 /* Int32.swift */,
+				CB9BCB0625D9032400A42B33 /* Int.swift */,
 				CB351D8525B95DEE006F6A8D /* String.swift */,
 			);
 			path = Extension;
@@ -336,6 +340,7 @@
 				CBC5909C25D55F1C006090D5 /* Int32.swift in Sources */,
 				CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
+				CB9BCB0725D9032400A42B33 /* Int.swift in Sources */,
 				CB158E7A25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */,
 				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
@@ -351,6 +356,7 @@
 				CB351D8725B95DEE006F6A8D /* String.swift in Sources */,
 				CB158E4E25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
+				CB9BCB0825D9032400A42B33 /* Int.swift in Sources */,
 				CB158E3925C2AE0C001627E4 /* Color.swift in Sources */,
 				CB35699725B568A700663B2E /* Enum.swift in Sources */,
 				CB35696225B53CEC00663B2E /* Persistence.swift in Sources */,

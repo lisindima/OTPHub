@@ -9,12 +9,12 @@ import SwiftOTP
 import SwiftUI
 
 struct ListItem: View {
-    var item: Item
+    @Environment(\.managedObjectContext) private var moc
     
     @State private var otpString: String?
     @State private var progress: Float = 0.0
     
-    @SceneStorage("counter") private var counter: Int = 0
+    var item: Item
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -32,6 +32,15 @@ struct ListItem: View {
         }
     }
     
+    private func saveCounter() {
+        do {
+            try moc.save()
+        } catch {
+            let nsError = error as NSError
+            print("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     private func generatePassword() {
         var algorithm: OTPAlgorithm = .sha1
         algorithm = item.passwordAlgorithm!.algorithmFromString()
@@ -39,18 +48,19 @@ struct ListItem: View {
         guard let data = item.passwordSecret else { return }
         guard let secret = base32DecodeToData(data) else { return }
         
-        let digits = Int(item.sizePassword)
-        let timeInterval = Int(item.updateTime)
+        let digits = item.sizePassword.toInt()
+        let timeInterval = item.updateTime.toInt()
         
         if item.typeAlgorithm == "HOTP" {
-            counter += 1
+            item.passwordCounter += 1
             if let hotp = HOTP(
                 secret: secret,
                 digits: digits,
                 algorithm: algorithm
             ) {
-                otpString = hotp.generate(counter: UInt64(counter))
+                otpString = hotp.generate(counter: UInt64(item.passwordCounter))
             }
+            saveCounter()
         } else {
             if let totp = TOTP(
                 secret: secret,

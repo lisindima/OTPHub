@@ -26,7 +26,6 @@ struct AddPasswordView: View {
         if passwordName.isEmpty || passwordSecret.isEmpty {
             isShowAlert = true
         } else {
-            let hexString = passwordColor.hexStringFromColor()
             let item = Item(context: moc)
             item.passwordName = passwordName
             item.passwordSecret = passwordSecret
@@ -34,7 +33,8 @@ struct AddPasswordView: View {
             item.typeAlgorithm = typeAlgorithm.rawValue
             item.updateTime = updateTime.rawValue
             item.sizePassword = sizePassword.rawValue
-            item.passwordColor = hexString
+            item.passwordCounter = passwordCounter.toInt32()
+            item.passwordColor = passwordColor.hexStringFromColor()
             do {
                 try moc.save()
                 presentationMode.wrappedValue.dismiss()
