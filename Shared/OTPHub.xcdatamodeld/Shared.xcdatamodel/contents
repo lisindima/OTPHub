@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18147.2" systemVersion="20B28" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="passwordAlgorithm" optional="YES" attributeType="String"/>
-        <attribute name="passwordColor" optional="YES" attributeType="String"/>
+        <attribute name="passwordColor" optional="YES" attributeType="String" defaultValueString="#000000"/>
         <attribute name="passwordCounter" optional="YES" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES"/>
         <attribute name="passwordName" optional="YES" attributeType="String"/>
         <attribute name="passwordSecret" optional="YES" attributeType="String"/>

@@ -17,6 +17,7 @@ struct QRView: View {
     @Binding var sizePassword: SizePassword
     @Binding var passwordAlgorithm: PasswordAlgorithm
     @Binding var typeAlgorithm: TypeAlgorithm
+    @Binding var passwordCounter: Int
     
     private let simulatedData: String = "otpauth://totp/ACME%20Co:john@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA256&digits=7&period=60"
     
@@ -29,9 +30,10 @@ struct QRView: View {
         passwordName = String(url.path.dropFirst())
         typeAlgorithm = url.host!.typeAlgorithmFromString()
         passwordSecret = url["secret"]
-        passwordAlgorithm = url["algorithm"].algorithmFromString()
+        passwordAlgorithm = url["algorithm"].passwordAlgorithmFromString()
         sizePassword = url["digits"].digitFromString()
         updateTime = url["period"].updateTimeFromString()
+        passwordCounter = url["counter"].counterFromString()
     }
     
     var body: some View {

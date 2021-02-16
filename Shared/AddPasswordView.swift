@@ -180,7 +180,8 @@ struct AddPasswordView: View {
                 updateTime: $updateTime,
                 sizePassword: $sizePassword,
                 passwordAlgorithm: $passwordAlgorithm,
-                typeAlgorithm: $typeAlgorithm
+                typeAlgorithm: $typeAlgorithm,
+                passwordCounter: $passwordCounter
             )
             .accentColor(.purple)
             #endif

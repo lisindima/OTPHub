@@ -42,14 +42,12 @@ struct ListItem: View {
     }
     
     private func generatePassword() {
-        var algorithm: OTPAlgorithm = .sha1
-        algorithm = item.passwordAlgorithm!.algorithmFromString()
-        
         guard let data = item.passwordSecret else { return }
         guard let secret = base32DecodeToData(data) else { return }
         
         let digits = item.sizePassword.toInt()
         let timeInterval = item.updateTime.toInt()
+        let algorithm = item.passwordAlgorithm!.algorithmFromString()
         
         if item.typeAlgorithm == "HOTP" {
             item.passwordCounter += 1

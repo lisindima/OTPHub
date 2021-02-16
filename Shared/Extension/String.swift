@@ -26,7 +26,7 @@ extension String {
         }
     }
     
-    func algorithmFromString() -> PasswordAlgorithm {
+    func passwordAlgorithmFromString() -> PasswordAlgorithm {
         switch self {
         case "SHA1":
             return .sha1
@@ -72,5 +72,9 @@ extension String {
         default:
             return .thirtySeconds
         }
+    }
+    
+    func counterFromString() -> Int {
+        Int(self) ?? 1
     }
 }
