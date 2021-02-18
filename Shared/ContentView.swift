@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @State private var isShowSettings: Bool = false
+    @State private var isPresented: SheetState?
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.passwordName, ascending: true)],
@@ -26,10 +26,6 @@ struct ContentView: View {
         }
     }
     
-    private func showSettings() {
-        isShowSettings = true
-    }
-    
     var body: some View {
         NavigationViewWrapper {
             List {
@@ -39,18 +35,32 @@ struct ContentView: View {
             .customListStyle()
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button(action: showSettings) {
+                    Button(action: { isPresented = .addpassword }) {
                         Label("button_title_add_account", systemImage: "plus.circle.fill")
                     }
                     .keyboardShortcut("a", modifiers: .command)
                     .help("help_title_add_button")
                 }
+                #if os(iOS)
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(action: { isPresented = .settings }) {
+                        Label("button_title_settings", systemImage: "ellipsis")
+                    }
+                    .keyboardShortcut("s", modifiers: .command)
+                }
+                #endif
             }
             .navigationTitle("OTPHub")
         }
-        .sheet(isPresented: $isShowSettings) {
-            AddPasswordView()
-                .accentColor(.purple)
+        .sheet(item: $isPresented) { view in
+            switch view {
+            case .settings:
+                SettingsView()
+                    .accentColor(.purple)
+            case .addpassword:
+                AddPasswordView()
+                    .accentColor(.purple)
+            }
         }
     }
 }

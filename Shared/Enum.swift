@@ -55,3 +55,10 @@ enum TypeAlgorithm: String, CaseIterable, Identifiable {
     
     var id: String { rawValue }
 }
+
+enum SheetState: String, Identifiable {
+    case settings
+    case addpassword
+    
+    var id: String { rawValue }
+}

@@ -27,3 +27,5 @@
 "stepper_title_password_counter %lld" = "Текущее значение: %lld";
 "section_header_password_counter" = "Начальное значение счетчика";
 "section_footer_password_counter" = "Установите начальное значение для счетчика, если вы не уверены с выбором оставьте его по умолчанию.";
+"button_title_settings" = "Настройки";
+"navigation_title_settings" = "Настройки";

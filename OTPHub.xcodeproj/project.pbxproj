@@ -40,6 +40,7 @@
 		CB37064F25D5378B006A4172 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB37064E25D5378B006A4172 /* SwiftOTP */; };
 		CB37065125D5379E006A4172 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB37065025D5379E006A4172 /* SwiftOTP */; };
 		CB39D0AC25CE648A0091F161 /* QRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39D0AB25CE648A0091F161 /* QRView.swift */; };
+		CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C69F225DE7F4B001E9369 /* SettingsView.swift */; };
 		CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
 		CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
 		CB6396FF25B7000700B7AAA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6396FE25B7000700B7AAA0 /* CloudKit.framework */; };
@@ -89,6 +90,7 @@
 		CB35699025B566B900663B2E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		CB35699525B568A700663B2E /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CB39D0AB25CE648A0091F161 /* QRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRView.swift; sourceTree = "<group>"; };
+		CB3C69F225DE7F4B001E9369 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CB49478625CC314C0062FBBE /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		CB6396FB25B7000100B7AAA0 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CB6396FE25B7000700B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -139,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */,
-				CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */,
 				CB49478625CC314C0062FBBE /* CustomLabel.swift */,
 				CB1B863125D2C04600EE2557 /* ListStyle.swift */,
 			);
@@ -178,6 +179,7 @@
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
 				CB35699525B568A700663B2E /* Enum.swift */,
 				CB35694925B53CEB00663B2E /* Persistence.swift */,
+				CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */,
 				CB35694A25B53CEC00663B2E /* Assets.xcassets */,
 				CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */,
 				CB89B18E25B6C6B100B61B68 /* Localizable.strings */,
@@ -197,6 +199,7 @@
 		CB35695125B53CEC00663B2E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CB3C69F225DE7F4B001E9369 /* SettingsView.swift */,
 				CB39D0AB25CE648A0091F161 /* QRView.swift */,
 				CB35695225B53CEC00663B2E /* Info.plist */,
 				CB6396FB25B7000100B7AAA0 /* iOS.entitlements */,
@@ -343,6 +346,7 @@
 				CB9BCB0725D9032400A42B33 /* Int.swift in Sources */,
 				CB158E7A25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
+				CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
