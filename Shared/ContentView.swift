@@ -30,36 +30,27 @@ struct ContentView: View {
         isShowSettings = true
     }
     
-    var settingsButton: some View {
-        Button(action: showSettings) {
-            Label("button_title_add_account", systemImage: "plus.circle.fill")
-        }
-        .keyboardShortcut("a", modifiers: .command)
-        .help("help_title_add_button")
-    }
-    
     var body: some View {
-        List {
-            ForEach(items, content: ListItem.init)
-                .onDelete(perform: deleteItems)
-        }
-        .customListStyle()
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                settingsButton
+        NavigationViewWrapper {
+            List {
+                ForEach(items, content: ListItem.init)
+                    .onDelete(perform: deleteItems)
             }
+            .customListStyle()
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: showSettings) {
+                        Label("button_title_add_account", systemImage: "plus.circle.fill")
+                    }
+                    .keyboardShortcut("a", modifiers: .command)
+                    .help("help_title_add_button")
+                }
+            }
+            .navigationTitle("OTPHub")
         }
-        .empedInNavigation("OTPHub")
         .sheet(isPresented: $isShowSettings) {
             AddPasswordView()
                 .accentColor(.purple)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

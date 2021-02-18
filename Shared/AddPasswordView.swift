@@ -54,133 +54,138 @@ struct AddPasswordView: View {
     }
     
     var body: some View {
-        VStack {
-            Form {
-                Section(header: Text("section_header_basic_information")) {
-                    TextField("textfield_name", text: $passwordName)
-                    TextField("textfield_secret", text: $passwordSecret)
-                        .disableAutocorrection(true)
-                }
-                .macOS { $0.textFieldStyle(RoundedBorderTextFieldStyle()) }
-                Section(
-                    header: Text("section_header_password_length"),
-                    footer: Text("section_footer_password_length")
-                ) {
-                    Picker("section_header_password_length", selection: $sizePassword) {
-                        ForEach(SizePassword.allCases) { size in
-                            Text(size.localized)
-                                .tag(size)
-                        }
+        NavigationViewWrapper {
+            VStack {
+                Form {
+                    Section(header: Text("section_header_basic_information")) {
+                        TextField("textfield_name", text: $passwordName)
+                        TextField("textfield_secret", text: $passwordSecret)
+                            .disableAutocorrection(true)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .labelsHidden()
-                }
-                if typeAlgorithm == .totp {
+                    .macOS { $0.textFieldStyle(RoundedBorderTextFieldStyle()) }
                     Section(
-                        header: Text("section_header_update_time"),
-                        footer: Text("section_footer_update_time")
+                        header: Text("section_header_password_length"),
+                        footer: Text("section_footer_password_length")
                     ) {
-                        Picker("section_header_update_time", selection: $updateTime) {
-                            ForEach(UpdateTime.allCases) { time in
-                                Text(time.localized)
-                                    .tag(time)
+                        Picker("section_header_password_length", selection: $sizePassword) {
+                            ForEach(SizePassword.allCases) { size in
+                                Text(size.localized)
+                                    .tag(size)
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         .labelsHidden()
                     }
-                } else {
-                    Section(
-                        header: Text("section_header_password_counter"),
-                        footer: Text("section_footer_password_counter")
-                    ) {
-                        #if os(iOS)
-                        Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 1 ... 1000)
-                        #else
-                        HStack {
-                            Text("stepper_title_password_counter \(passwordCounter)")
-                            Spacer()
-                            Stepper("", value: $passwordCounter, in: 1 ... 1000)
-                                .labelsHidden()
+                    if typeAlgorithm == .totp {
+                        Section(
+                            header: Text("section_header_update_time"),
+                            footer: Text("section_footer_update_time")
+                        ) {
+                            Picker("section_header_update_time", selection: $updateTime) {
+                                ForEach(UpdateTime.allCases) { time in
+                                    Text(time.localized)
+                                        .tag(time)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .labelsHidden()
                         }
-                        #endif
+                    } else {
+                        Section(
+                            header: Text("section_header_password_counter"),
+                            footer: Text("section_footer_password_counter")
+                        ) {
+                            #if os(iOS)
+                            Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 1 ... 1000)
+                            #else
+                            HStack {
+                                Text("stepper_title_password_counter \(passwordCounter)")
+                                Spacer()
+                                Stepper("", value: $passwordCounter, in: 1 ... 1000)
+                                    .labelsHidden()
+                            }
+                            #endif
+                        }
+                    }
+                    Section(
+                        header: Text("section_header_encryption_type"),
+                        footer: Text("section_footer_encryption_type")
+                    ) {
+                        Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
+                            ForEach(PasswordAlgorithm.allCases) { algorithm in
+                                Text(algorithm.rawValue)
+                                    .tag(algorithm)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .labelsHidden()
+                    }
+                    Section(
+                        header: Text("section_header_customization"),
+                        footer: Text("section_footer_customization")
+                    ) {
+                        ColorPicker("colorpicker_title", selection: $passwordColor)
+                            .macOS { $0.labelsHidden() }
+                            .macOS { $0.frame(height: 50) }
                     }
                 }
-                Section(
-                    header: Text("section_header_encryption_type"),
-                    footer: Text("section_footer_encryption_type")
-                ) {
-                    Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
-                        ForEach(PasswordAlgorithm.allCases) { algorithm in
-                            Text(algorithm.rawValue)
-                                .tag(algorithm)
+                #if os(iOS)
+                HStack {
+                    Button(action: showQRView) {
+                        Image(systemName: "qrcode")
+                            .imageScale(.large)
+                    }
+                    .buttonStyle(
+                        CustomButtonStyle(
+                            backgroundColor: .accentColor.opacity(0.2),
+                            labelColor: .accentColor
+                        )
+                    )
+                    .frame(width: 80)
+                    Button("button_title_add_account", action: savePassword)
+                        .buttonStyle(CustomButtonStyle())
+                }
+                .padding(.horizontal)
+                .padding(.vertical, 6)
+                #endif
+            }
+            .alert(isPresented: $isShowAlert) {
+                Alert(
+                    title: Text("alert_error_title"),
+                    message: Text("alert_error_message"),
+                    dismissButton: .cancel()
+                )
+            }
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Picker("picker_title_type_algorithm", selection: $typeAlgorithm.animation()) {
+                        ForEach(TypeAlgorithm.allCases) { type in
+                            Text(type.rawValue)
+                                .tag(type)
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
                 }
-                Section(
-                    header: Text("section_header_customization"),
-                    footer: Text("section_footer_customization")
-                ) {
-                    ColorPicker("colorpicker_title", selection: $passwordColor)
-                        .macOS { $0.labelsHidden() }
-                        .macOS { $0.frame(height: 50) }
-                }
-            }
-            #if os(iOS)
-            HStack {
-                Button(action: showQRView) {
-                    Image(systemName: "qrcode")
-                        .imageScale(.large)
-                }
-                .buttonStyle(
-                    CustomButtonStyle(
-                        backgroundColor: .accentColor.opacity(0.2),
-                        labelColor: .accentColor
-                    )
-                )
-                .frame(width: 80)
-                Button("button_title_add_account", action: savePassword)
-                    .buttonStyle(CustomButtonStyle())
-            }
-            .padding(.horizontal)
-            .padding(.vertical, 6)
-            #endif
-        }
-        .alert(isPresented: $isShowAlert) {
-            Alert(
-                title: Text("alert_error_title"),
-                message: Text("alert_error_message"),
-                dismissButton: .cancel()
-            )
-        }
-        .toolbar {
-            ToolbarItem(placement: .automatic) {
-                Picker("picker_title_type_algorithm", selection: $typeAlgorithm.animation()) {
-                    ForEach(TypeAlgorithm.allCases) { type in
-                        Text(type.rawValue)
-                            .tag(type)
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(action: dismissView) {
+                        Label("close_toolbar", systemImage: "xmark")
+                            .labelStyle(CustomLabelStyle())
                     }
+                    .keyboardShortcut(.cancelAction)
                 }
-                .labelsHidden()
-            }
-            ToolbarItem(placement: .cancellationAction) {
-                Button(action: dismissView) {
-                    Label("close_toolbar", systemImage: "xmark")
-                        .labelStyle(CustomLabelStyle())
+                #if os(macOS)
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("button_title_add_account", action: savePassword)
+                        .keyboardShortcut(.defaultAction)
                 }
-                .keyboardShortcut(.cancelAction)
+                #endif
             }
-            #if os(macOS)
-            ToolbarItem(placement: .confirmationAction) {
-                Button("button_title_add_account", action: savePassword)
-                    .keyboardShortcut(.defaultAction)
-            }
-            #endif
+            .navigationTitle("navigation_title_new_account")
         }
-        .empedInNavigation("navigation_title_new_account")
         .macOS { $0.padding() }
+        .onOpenURL { url in
+            print(url)
+        }
         .sheet(isPresented: $isShowQRView) {
             #if os(iOS)
             QRView(

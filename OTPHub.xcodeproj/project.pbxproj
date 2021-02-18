@@ -13,8 +13,8 @@
 		CB158E4E25C2AEA1001627E4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E4C25C2AEA1001627E4 /* URL.swift */; };
 		CB158E5525C2AEEA001627E4 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E5425C2AEEA001627E4 /* View.swift */; };
 		CB158E5625C2AEEA001627E4 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E5425C2AEEA001627E4 /* View.swift */; };
-		CB158E7A25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */; };
-		CB158E7B25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */; };
+		CB158E7A25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */; };
+		CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */; };
 		CB1B863225D2C04600EE2557 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B863125D2C04600EE2557 /* ListStyle.swift */; };
 		CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B863125D2C04600EE2557 /* ListStyle.swift */; };
 		CB351D8625B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
@@ -70,7 +70,7 @@
 		CB158E3725C2AE0C001627E4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CB158E4C25C2AEA1001627E4 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CB158E5425C2AEEA001627E4 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedInNavigation.swift; sourceTree = "<group>"; };
+		CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewWrapper.swift; sourceTree = "<group>"; };
 		CB1B863125D2C04600EE2557 /* ListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyle.swift; sourceTree = "<group>"; };
 		CB2AA36125BF139C00D317DE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB351D8525B95DEE006F6A8D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */,
-				CB158E7925C2B0C9001627E4 /* EmbedInNavigation.swift */,
+				CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */,
 				CB49478625CC314C0062FBBE /* CustomLabel.swift */,
 				CB1B863125D2C04600EE2557 /* ListStyle.swift */,
 			);
@@ -170,9 +170,9 @@
 		CB35694425B53CEB00663B2E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CB35694725B53CEB00663B2E /* OTPHubApp.swift */,
 				CB158E6025C2B02E001627E4 /* ViewModifier */,
 				CB158E3F25C2AE15001627E4 /* Extension */,
-				CB35694725B53CEB00663B2E /* OTPHubApp.swift */,
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
 				CB35699025B566B900663B2E /* ListItem.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
@@ -341,7 +341,7 @@
 				CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB9BCB0725D9032400A42B33 /* Int.swift in Sources */,
-				CB158E7A25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */,
+				CB158E7A25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,7 +365,7 @@
 				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */,
 				CBC5909D25D55F1C006090D5 /* Int32.swift in Sources */,
-				CB158E7B25C2B0C9001627E4 /* EmbedInNavigation.swift in Sources */,
+				CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,10 +8,6 @@
 import SwiftUI
 
 extension View {
-    func empedInNavigation(_ navigationTitle: LocalizedStringKey) -> some View {
-        self.modifier(EmbedInNavigation(navigationTitle: navigationTitle))
-    }
-    
     func customListStyle() -> some View {
         self.modifier(ListStyle())
     }
