@@ -10,10 +10,10 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.presentationMode) private var presentationMode
     
-    var appVersion: some View {
+    var appVersion: Text {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-        return Text("\(version) (\(build))")
+        return Text("section_footer_app_version \(version) (\(build))")
     }
     
     private func dismissView() {

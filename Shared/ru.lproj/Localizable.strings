@@ -29,3 +29,4 @@
 "section_footer_password_counter" = "Установите начальное значение для счетчика, если вы не уверены с выбором оставьте его по умолчанию.";
 "button_title_settings" = "Настройки";
 "navigation_title_settings" = "Настройки";
+"section_footer_app_version %@ (%@)" = "Версия: %@ (%@)";

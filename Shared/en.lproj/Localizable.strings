@@ -29,3 +29,4 @@
 "section_footer_password_counter" = "Set the initial value for the counter, if you are not sure with the choice, leave it at the default.";
 "button_title_settings" = "Settings";
 "navigation_title_settings" = "Settings";
+"section_footer_app_version %@ (%@)" = "Version: %@ (%@)";
