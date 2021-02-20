@@ -17,7 +17,7 @@ struct AddPasswordView: View {
     @State private var sizePassword: SizePassword = .sixDigit
     @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
-    @State private var passwordCounter: Int = 1
+    @State private var passwordCounter: Int = 0
     @State private var passwordColor: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
@@ -96,12 +96,12 @@ struct AddPasswordView: View {
                             footer: Text("section_footer_password_counter")
                         ) {
                             #if os(iOS)
-                            Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 1 ... 1000)
+                            Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 0 ... 1000)
                             #else
                             HStack {
                                 Text("stepper_title_password_counter \(passwordCounter)")
                                 Spacer()
-                                Stepper("", value: $passwordCounter, in: 1 ... 1000)
+                                Stepper("", value: $passwordCounter, in: 0 ... 1000)
                                     .labelsHidden()
                             }
                             #endif

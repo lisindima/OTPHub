@@ -24,8 +24,8 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Section(footer: appVersion) {
-                    NavigationLink(destination: Text("Лицензии")) {
-                        Label("Лицензии", systemImage: "doc.plaintext")
+                    NavigationLink(destination: License()) {
+                        Label("navigation_link_license", systemImage: "doc.plaintext")
                     }
                 }
             }

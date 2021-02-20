@@ -30,3 +30,7 @@
 "button_title_settings" = "Настройки";
 "navigation_title_settings" = "Настройки";
 "section_footer_app_version %@ (%@)" = "Версия: %@ (%@)";
+"navigation_link_license" = "Лицензии";
+"navigation_title_license" = "Лицензии";
+"section_footer_license" = "Здесь перечислены библиотеки и фреймворки с открытым исходным кодом, которые используются в этом приложении.";
+"toolbar_link_license" = "Открыть ссылку";

@@ -88,7 +88,7 @@ struct ListItem: View {
             }
             if let otpString = otpString {
                 Text(otpString.separated())
-                    .font(.system(.title, design: .rounded))
+                    .font(.system(.largeTitle, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
             }
@@ -101,7 +101,7 @@ struct ListItem: View {
                 password
                 Spacer()
                 Button(action: generatePassword) {
-                    Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                    Image(systemName: "arrow.clockwise.circle.fill")
                         .imageScale(.large)
                 }
                 .macOS { $0.buttonStyle(PlainButtonStyle()) }

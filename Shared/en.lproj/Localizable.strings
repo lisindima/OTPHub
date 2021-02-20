@@ -30,3 +30,7 @@
 "button_title_settings" = "Settings";
 "navigation_title_settings" = "Settings";
 "section_footer_app_version %@ (%@)" = "Version: %@ (%@)";
+"navigation_link_license" = "License";
+"navigation_title_license" = "License";
+"section_footer_license" = "Listed here are the open source libraries and frameworks that are used in this application.";
+"toolbar_link_license" = "Open link";
