@@ -23,6 +23,16 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
+                Section {
+                    Button(action: {}) {
+                        Label("Резервное копирование", systemImage: "externaldrive.badge.timemachine")
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    Button(action: {}) {
+                        Label("Восстановление", systemImage: "internaldrive")
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
                 Section(footer: appVersion) {
                     NavigationLink(destination: License()) {
                         Label("navigation_link_license", systemImage: "doc.plaintext")

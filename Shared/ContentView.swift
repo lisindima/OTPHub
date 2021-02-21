@@ -55,8 +55,10 @@ struct ContentView: View {
         .sheet(item: $isPresented) { view in
             switch view {
             case .settings:
+                #if os(iOS)
                 SettingsView()
                     .accentColor(.purple)
+                #endif
             case .addpassword:
                 AddPasswordView()
                     .accentColor(.purple)

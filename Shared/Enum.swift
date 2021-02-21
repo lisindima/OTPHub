@@ -41,7 +41,7 @@ extension UpdateTime {
     }
 }
 
-enum PasswordAlgorithm: String, CaseIterable, Identifiable {
+enum PasswordAlgorithm: String, CaseIterable, Identifiable, Codable {
     case sha1 = "SHA1"
     case sha256 = "SHA256"
     case sha512 = "SHA512"

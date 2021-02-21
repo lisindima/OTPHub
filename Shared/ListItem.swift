@@ -41,7 +41,20 @@ struct ListItem: View {
         }
     }
     
-    private func generatePassword() {
+    func generatePassword() {
+        guard let data = item.passwordSecret else { return }
+        guard let secret = base32DecodeToData(data) else { return }
+        
+        let digits = item.sizePassword.toInt()
+        let timeInterval = item.updateTime.toInt()
+        let algorithm = item.passwordAlgorithm!.passwordAlgorithmFromString()
+        
+        let generator = Generator(algorithm: algorithm, secret: secret, factor: .timer(period: TimeInterval(timeInterval)), digits: digits)
+        let account = Account(label: item.passwordName!, issuer: nil, color: "", imageURL: nil, generator: generator)
+        otpString = account.generate(time: Date())
+    }
+    
+    private func d() {
         guard let data = item.passwordSecret else { return }
         guard let secret = base32DecodeToData(data) else { return }
         
