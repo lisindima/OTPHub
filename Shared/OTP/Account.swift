@@ -79,7 +79,6 @@ struct Account: Identifiable, Codable {
                 .set(encoded, key: id.uuidString)
         }
     }
-    
 }
 
 struct Generator: Codable {

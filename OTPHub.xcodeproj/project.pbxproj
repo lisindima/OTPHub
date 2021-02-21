@@ -65,6 +65,8 @@
 		CBD69C5625E2586F0030CB1E /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = CBD69C5525E2586F0030CB1E /* KeychainAccess */; };
 		CBDFB05125E21D210048DD7C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDFB05025E21D210048DD7C /* Account.swift */; };
 		CBDFB05225E21D210048DD7C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDFB05025E21D210048DD7C /* Account.swift */; };
+		CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
+		CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,6 +120,7 @@
 		CB9BCB0625D9032400A42B33 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		CBC5909B25D55F1C006090D5 /* Int32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int32.swift; sourceTree = "<group>"; };
 		CBDFB05025E21D210048DD7C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CBF0652525E2A2350068DC44 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +213,7 @@
 				CB35699025B566B900663B2E /* ListItem.swift */,
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
+				CBF0652525E2A2350068DC44 /* AppStore.swift */,
 				CB35699525B568A700663B2E /* Enum.swift */,
 				CB35694925B53CEB00663B2E /* Persistence.swift */,
 				CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */,
@@ -380,6 +384,7 @@
 				CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
 				CBDFB05125E21D210048DD7C /* Account.swift in Sources */,
+				CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */,
 				CB178CEC25E13165000C845C /* LicenseModel.swift in Sources */,
 				CB158E3825C2AE0C001627E4 /* Color.swift in Sources */,
 				CB35699625B568A700663B2E /* Enum.swift in Sources */,
@@ -424,6 +429,7 @@
 				CB35695C25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */,
+				CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */,
 				CBC5909D25D55F1C006090D5 /* Int32.swift in Sources */,
 				CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */,

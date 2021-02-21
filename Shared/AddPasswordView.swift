@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import SwiftOTP
 
 struct AddPasswordView: View {
     @Environment(\.managedObjectContext) private var moc
     @Environment(\.presentationMode) private var presentationMode
+    
+    @EnvironmentObject private var appStore: AppStore
     
     @State private var passwordName: String = ""
     @State private var passwordSecret: String = ""
@@ -22,28 +25,50 @@ struct AddPasswordView: View {
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
     
-    private func savePassword() {
-        if passwordName.isEmpty || passwordSecret.isEmpty {
-            isShowAlert = true
-        } else {
-            let item = Item(context: moc)
-            item.passwordName = passwordName
-            item.passwordSecret = passwordSecret
-            item.passwordAlgorithm = passwordAlgorithm.rawValue
-            item.typeAlgorithm = typeAlgorithm.rawValue
-            item.updateTime = updateTime.rawValue
-            item.sizePassword = sizePassword.rawValue
-            item.passwordCounter = passwordCounter.toInt32()
-            item.passwordColor = passwordColor.hexStringFromColor()
-            do {
-                try moc.save()
-                presentationMode.wrappedValue.dismiss()
-            } catch {
-                let nsError = error as NSError
-                print("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+    func savePassword() {
+        guard let secret = base32DecodeToData(passwordSecret) else { return }
+        
+        let generator = Generator(
+            algorithm: passwordAlgorithm,
+            secret: secret,
+            factor: typeAlgorithm == .totp
+                ? .timer(period: TimeInterval(updateTime.rawValue))
+                : .counter(UInt64(passwordCounter)),
+            digits: sizePassword.rawValue.toInt()
+        )
+        
+        let account = Account(
+            label: passwordName,
+            issuer: nil,
+            color: passwordColor.hexStringFromColor(),
+            imageURL: nil, generator: generator
+        )
+        
+        appStore.addAccount(account)
     }
+    
+//    private func savePassword() {
+//        if passwordName.isEmpty || passwordSecret.isEmpty {
+//            isShowAlert = true
+//        } else {
+//            let item = Item(context: moc)
+//            item.passwordName = passwordName
+//            item.passwordSecret = passwordSecret
+//            item.passwordAlgorithm = passwordAlgorithm.rawValue
+//            item.typeAlgorithm = typeAlgorithm.rawValue
+//            item.updateTime = updateTime.rawValue
+//            item.sizePassword = sizePassword.rawValue
+//            item.passwordCounter = passwordCounter.toInt32()
+//            item.passwordColor = passwordColor.hexStringFromColor()
+//            do {
+//                try moc.save()
+//                presentationMode.wrappedValue.dismiss()
+//            } catch {
+//                let nsError = error as NSError
+//                print("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
     
     private func showQRView() {
         isShowQRView = true
