@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum SizePassword: Int32, CaseIterable, Identifiable {
+enum SizePassword: Int, CaseIterable, Identifiable {
     case six = 6
     case seven = 7
     case eight = 8
 
-    var id: Int32 { rawValue }
+    var id: Int { rawValue }
 }
 
 extension SizePassword {
@@ -25,11 +25,11 @@ extension SizePassword {
     }
 }
 
-enum Period: Int32, CaseIterable, Identifiable {
+enum Period: TimeInterval, CaseIterable, Identifiable {
     case thirty = 30
     case sixty = 60
 
-    var id: Int32 { rawValue }
+    var id: TimeInterval { rawValue }
 }
 
 extension Period {

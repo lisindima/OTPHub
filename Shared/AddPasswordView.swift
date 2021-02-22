@@ -19,7 +19,7 @@ struct AddPasswordView: View {
     @State private var sizePassword: SizePassword = .six
     @State private var passwordAlgorithm: OTPAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
-    @State private var passwordCounter: Int = 0
+    @State private var passwordCounter: UInt64 = 0
     @State private var passwordColor: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
@@ -37,9 +37,9 @@ struct AddPasswordView: View {
                 algorithm: passwordAlgorithm,
                 secret: secret,
                 factor: typeAlgorithm == .totp
-                    ? .timer(period: TimeInterval(period.rawValue))
-                    : .counter(UInt64(passwordCounter)),
-                digits: sizePassword.rawValue.toInt()
+                    ? .timer(period: period.rawValue)
+                    : .counter(passwordCounter),
+                digits: sizePassword.rawValue
             )
             
             let account = Account(

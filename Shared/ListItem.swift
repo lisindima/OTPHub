@@ -109,21 +109,21 @@ struct ListItem: View {
             HStack {
                 password
                 Spacer()
-//                ProgressView(value: progress, total: item.updateTime.toFloat())
-//                    .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
-//                    .accentColor(Color(hex: account.color))
-//                    .frame(width: 60)
+                ProgressView(value: progress, total: Float(account.generator.factor.getValuePeriod))
+                    .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
+                    .accentColor(Color(hex: account.color))
+                    .frame(width: 60)
             }
         }
         .macOS { $0.buttonStyle(PlainButtonStyle()) }
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in
-//            if progress < item.updateTime.toFloat() {
-//                progress += 1
-//            } else if progress == item.updateTime.toFloat() {
-//                progress = 0.0
-//                generatePassword()
-//            }
+            if progress < Float(account.generator.factor.getValuePeriod) {
+                progress += 1
+            } else if progress == Float(account.generator.factor.getValuePeriod) {
+                progress = 0.0
+                generatePassword()
+            }
         }
     }
 }

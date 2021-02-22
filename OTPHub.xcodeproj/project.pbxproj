@@ -53,11 +53,7 @@
 		CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB89B18C25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
-		CB9BCB0725D9032400A42B33 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BCB0625D9032400A42B33 /* Int.swift */; };
-		CB9BCB0825D9032400A42B33 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BCB0625D9032400A42B33 /* Int.swift */; };
 		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
-		CBC5909C25D55F1C006090D5 /* Int32.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5909B25D55F1C006090D5 /* Int32.swift */; };
-		CBC5909D25D55F1C006090D5 /* Int32.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5909B25D55F1C006090D5 /* Int32.swift */; };
 		CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
 		CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
 /* End PBXBuildFile section */
@@ -109,8 +105,6 @@
 		CB63970025B7007800B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CB89B18D25B6C6B100B61B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB89B18F25B6C6B400B61B68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CB9BCB0625D9032400A42B33 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		CBC5909B25D55F1C006090D5 /* Int32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int32.swift; sourceTree = "<group>"; };
 		CBF0652525E2A2350068DC44 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,8 +137,6 @@
 				CB158E3725C2AE0C001627E4 /* Color.swift */,
 				CB158E4C25C2AEA1001627E4 /* URL.swift */,
 				CB158E5425C2AEEA001627E4 /* View.swift */,
-				CBC5909B25D55F1C006090D5 /* Int32.swift */,
-				CB9BCB0625D9032400A42B33 /* Int.swift */,
 				CB351D8525B95DEE006F6A8D /* String.swift */,
 				CB178CE725E13129000C845C /* Bundle.swift */,
 			);
@@ -373,10 +365,8 @@
 				CB351D8625B95DEE006F6A8D /* String.swift in Sources */,
 				CB35697C25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */,
 				CB1B863225D2C04600EE2557 /* ListStyle.swift in Sources */,
-				CBC5909C25D55F1C006090D5 /* Int32.swift in Sources */,
 				CB178CE825E13129000C845C /* Bundle.swift in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
-				CB9BCB0725D9032400A42B33 /* Int.swift in Sources */,
 				CB158E7A25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
 				CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */,
@@ -397,14 +387,12 @@
 				CB158E4E25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB178CF025E131A1000C845C /* License.swift in Sources */,
 				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
-				CB9BCB0825D9032400A42B33 /* Int.swift in Sources */,
 				CB158E3925C2AE0C001627E4 /* Color.swift in Sources */,
 				CB35699725B568A700663B2E /* Enum.swift in Sources */,
 				CB35697D25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */,
 				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */,
 				CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */,
-				CBC5909D25D55F1C006090D5 /* Int32.swift in Sources */,
 				CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
