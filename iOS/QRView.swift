@@ -17,7 +17,7 @@ struct QRView: View {
     @Binding var sizePassword: SizePassword
     @Binding var passwordAlgorithm: PasswordAlgorithm
     @Binding var typeAlgorithm: TypeAlgorithm
-    @Binding var passwordCounter: Int
+    @Binding var passwordCounter: UInt64
     
     private let simulatedData: String = "otpauth://totp/ACME%20Co:john@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA256&digits=7&period=60"
     

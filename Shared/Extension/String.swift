@@ -74,7 +74,7 @@ extension String {
         }
     }
     
-    func counterFromString() -> Int {
-        Int(self) ?? 1
+    func counterFromString() -> UInt64 {
+        UInt64(self) ?? 1
     }
 }
