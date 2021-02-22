@@ -50,7 +50,7 @@ struct ListItem: View {
         let algorithm = item.passwordAlgorithm!.passwordAlgorithmFromString()
         
         let generator = Generator(algorithm: algorithm, secret: secret, factor: .timer(period: TimeInterval(timeInterval)), digits: digits)
-        let account = Account(label: item.passwordName!, issuer: "", imageURL: nil, color: "", generator: generator)
+        let account = Account(label: item.passwordName!, issuer: nil, color: "", imageURL: nil, generator: generator)
         otpString = account.generate(time: Date())
     }
     
