@@ -22,16 +22,11 @@ struct SettingsView: View {
         presentationMode.wrappedValue.dismiss()
     }
     
-    private func test() {
-        let account = try? appStore.loadAccountsFromKeychain()
-        print(account!)
-    }
-    
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Button(action: test) {
+                    Button(action: {}) {
                         Label("Резервное копирование", systemImage: "externaldrive.badge.timemachine")
                     }
                     .buttonStyle(PlainButtonStyle())

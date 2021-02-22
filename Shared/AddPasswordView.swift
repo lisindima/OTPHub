@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import SwiftOTP
+import OTP
 import SwiftUI
 
 struct AddPasswordView: View {
@@ -15,9 +15,9 @@ struct AddPasswordView: View {
     
     @State private var passwordName: String = ""
     @State private var passwordSecret: String = ""
-    @State private var updateTime: UpdateTime = .thirtySeconds
-    @State private var sizePassword: SizePassword = .sixDigit
-    @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
+    @State private var period: Period = .thirty
+    @State private var sizePassword: SizePassword = .six
+    @State private var passwordAlgorithm: OTPAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
     @State private var passwordCounter: Int = 0
     @State private var passwordColor: Color = .black
@@ -37,7 +37,7 @@ struct AddPasswordView: View {
                 algorithm: passwordAlgorithm,
                 secret: secret,
                 factor: typeAlgorithm == .totp
-                    ? .timer(period: TimeInterval(updateTime.rawValue))
+                    ? .timer(period: TimeInterval(period.rawValue))
                     : .counter(UInt64(passwordCounter)),
                 digits: sizePassword.rawValue.toInt()
             )
@@ -91,8 +91,8 @@ struct AddPasswordView: View {
                             header: Text("section_header_update_time"),
                             footer: Text("section_footer_update_time")
                         ) {
-                            Picker("section_header_update_time", selection: $updateTime) {
-                                ForEach(UpdateTime.allCases) { time in
+                            Picker("section_header_update_time", selection: $period) {
+                                ForEach(Period.allCases) { time in
                                     Text(time.localized)
                                         .tag(time)
                                 }
@@ -122,7 +122,7 @@ struct AddPasswordView: View {
                         footer: Text("section_footer_encryption_type")
                     ) {
                         Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
-                            ForEach(PasswordAlgorithm.allCases) { algorithm in
+                            ForEach(OTPAlgorithm.allCases) { algorithm in
                                 Text(algorithm.rawValue)
                                     .tag(algorithm)
                             }
@@ -201,7 +201,7 @@ struct AddPasswordView: View {
             QRView(
                 passwordName: $passwordName,
                 passwordSecret: $passwordSecret,
-                updateTime: $updateTime,
+                period: $period,
                 sizePassword: $sizePassword,
                 passwordAlgorithm: $passwordAlgorithm,
                 typeAlgorithm: $typeAlgorithm,

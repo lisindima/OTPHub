@@ -6,6 +6,7 @@
 //
 
 import KeychainAccess
+import OTP
 import SwiftUI
 
 class AppStore: ObservableObject {

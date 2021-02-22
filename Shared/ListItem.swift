@@ -5,14 +5,14 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import SwiftOTP
+import OTP
 import SwiftUI
 
 struct ListItem: View {
+    var account: Account
+    
     @State private var otpString: String?
     @State private var progress: Float = 0.0
-    
-    var account: Account
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -65,7 +65,7 @@ struct ListItem: View {
 //    }
 
     var body: some View {
-        if account.generator.factor.getTypeAlgorithm() == .hotp {
+        if account.generator.factor.getTypeAlgorithm == .hotp {
             hotp
         } else {
             totp
@@ -93,7 +93,8 @@ struct ListItem: View {
                 Spacer()
                 Button(action: generatePassword) {
                     Image(systemName: "arrow.clockwise.circle.fill")
-                        .imageScale(.large)
+                        .font(.largeTitle)
+                        .foregroundColor(Color(hex: account.color))
                 }
                 .macOS { $0.buttonStyle(PlainButtonStyle()) }
                 .frame(width: 60)

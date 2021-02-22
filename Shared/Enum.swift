@@ -8,9 +8,9 @@
 import SwiftUI
 
 enum SizePassword: Int32, CaseIterable, Identifiable {
-    case sixDigit = 6
-    case sevenDigit = 7
-    case eightDigit = 8
+    case six = 6
+    case seven = 7
+    case eight = 8
 
     var id: Int32 { rawValue }
 }
@@ -18,42 +18,27 @@ enum SizePassword: Int32, CaseIterable, Identifiable {
 extension SizePassword {
     var localized: LocalizedStringKey {
         switch self {
-        case .sixDigit: return "6_digits"
-        case .sevenDigit: return "7_digits"
-        case .eightDigit: return "8_digits"
+        case .six: return "6_digits"
+        case .seven: return "7_digits"
+        case .eight: return "8_digits"
         }
     }
 }
 
-enum UpdateTime: Int32, CaseIterable, Identifiable {
-    case thirtySeconds = 30
-    case sixtySeconds = 60
+enum Period: Int32, CaseIterable, Identifiable {
+    case thirty = 30
+    case sixty = 60
 
     var id: Int32 { rawValue }
 }
 
-extension UpdateTime {
+extension Period {
     var localized: LocalizedStringKey {
         switch self {
-        case .thirtySeconds: return "30_seconds"
-        case .sixtySeconds: return "60_seconds"
+        case .thirty: return "30_seconds"
+        case .sixty: return "60_seconds"
         }
     }
-}
-
-enum PasswordAlgorithm: String, CaseIterable, Identifiable, Codable {
-    case sha1 = "SHA1"
-    case sha256 = "SHA256"
-    case sha512 = "SHA512"
-    
-    var id: String { rawValue }
-}
-
-enum TypeAlgorithm: String, CaseIterable, Identifiable {
-    case totp = "TOTP"
-    case hotp = "HOTP"
-    
-    var id: String { rawValue }
 }
 
 enum SheetState: String, Identifiable {

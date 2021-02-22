@@ -6,6 +6,7 @@
 //
 
 import CodeScanner
+import OTP
 import SwiftUI
 
 struct QRView: View {
@@ -13,9 +14,9 @@ struct QRView: View {
     
     @Binding var passwordName: String
     @Binding var passwordSecret: String
-    @Binding var updateTime: UpdateTime
+    @Binding var period: Period
     @Binding var sizePassword: SizePassword
-    @Binding var passwordAlgorithm: PasswordAlgorithm
+    @Binding var passwordAlgorithm: OTPAlgorithm
     @Binding var typeAlgorithm: TypeAlgorithm
     @Binding var passwordCounter: Int
     
@@ -30,9 +31,9 @@ struct QRView: View {
         passwordName = String(url.path.dropFirst())
         typeAlgorithm = url.host!.typeAlgorithmFromString()
         passwordSecret = url["secret"]
-        passwordAlgorithm = url["algorithm"].passwordAlgorithmFromString()
+        passwordAlgorithm = url["algorithm"].algorithmFromString()
         sizePassword = url["digits"].digitFromString()
-        updateTime = url["period"].updateTimeFromString()
+        period = url["period"].periodFromString()
         passwordCounter = url["counter"].counterFromString()
     }
     
