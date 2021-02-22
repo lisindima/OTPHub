@@ -5,11 +5,11 @@
 //  Created by Дмитрий Лисин on 21.02.2021.
 //
 
-import Foundation
 import CryptoKit
+import Foundation
 import KeychainAccess
 
-struct Account: Identifiable, Codable {
+struct Account: Identifiable, Codable, Equatable {
     var id = UUID()
     let label: String
     let issuer: String?
@@ -31,28 +31,27 @@ struct Account: Identifiable, Codable {
 
         switch algorithm {
         case .sha1:
-            hmac = Data(HMAC<Insecure.SHA1>.authenticationCode(for: counterMessage, using: SymmetricKey.init(data: secret)))
+            hmac = Data(HMAC<Insecure.SHA1>.authenticationCode(for: counterMessage, using: SymmetricKey(data: secret)))
         case .sha256:
-            hmac = Data(HMAC<SHA256>.authenticationCode(for: counterMessage, using: SymmetricKey.init(data: secret)))
+            hmac = Data(HMAC<SHA256>.authenticationCode(for: counterMessage, using: SymmetricKey(data: secret)))
         case .sha512:
-            hmac = Data(HMAC<SHA512>.authenticationCode(for: counterMessage, using: SymmetricKey.init(data: secret)))
+            hmac = Data(HMAC<SHA512>.authenticationCode(for: counterMessage, using: SymmetricKey(data: secret)))
         }
 
-        
         // Get last 4 bits of hash as offset
-        let offset = Int((hmac.last ?? 0x00) & 0x0f)
+        let offset = Int((hmac.last ?? 0x00) & 0x0F)
         
         // Get 4 bytes from the hash from [offset] to [offset + 3]
-        let truncatedHMAC = Array(hmac[offset...offset + 3])
+        let truncatedHMAC = Array(hmac[offset ... offset + 3])
         
         // Convert byte array of the truncated hash to data
-        let data =  Data(truncatedHMAC)
+        let data = Data(truncatedHMAC)
         
         // Convert data to UInt32
         var number = UInt32(strtoul(data.bytes.toHexString(), nil, 16))
         
         // Mask most significant bit
-        number &= 0x7fffffff
+        number &= 0x7FFF_FFFF
         
         // Modulo number by 10^(digits)
         number = number % UInt32(pow(10, Float(digits)))
@@ -66,7 +65,7 @@ struct Account: Identifiable, Codable {
         }
         
         // Add zeros to start of string if not present and return
-        let prefixedZeros = String(repeatElement("0", count: (digits - strNum.count)))
+        let prefixedZeros = String(repeatElement("0", count: digits - strNum.count))
         return (prefixedZeros + strNum)
     }
     
@@ -79,9 +78,23 @@ struct Account: Identifiable, Codable {
                 .set(encoded, key: id.uuidString)
         }
     }
+    
+    func remove(from keychain: Keychain) throws {
+        try keychain.remove(id.uuidString)
+    }
+    
+    public static func loadAll(from keychain: Keychain) throws -> [Account] {
+        let decoder = JSONDecoder()
+        let items = keychain.allKeys()
+        let accounts = try items.compactMap { key throws -> Account? in
+            guard let data = try keychain.getData(key), let account = try? decoder.decode(Account.self, from: data) else { return nil }
+            return account
+        }
+        return accounts
+    }
 }
 
-struct Generator: Codable {
+struct Generator: Codable, Equatable {
     let algorithm: PasswordAlgorithm
     let secret: Data
     let factor: Factor
@@ -94,9 +107,9 @@ enum Factor {
     
     fileprivate func counterValue(at time: Date) throws -> UInt64 {
         switch self {
-        case .counter(let counter):
+        case let .counter(counter):
             return counter
-        case .timer(let period):
+        case let .timer(period):
             let timeSinceEpoch = time.timeIntervalSince1970
 //                try Generator.validateTime(timeSinceEpoch)
 //                try Generator.validatePeriod(period)
@@ -111,13 +124,13 @@ extension Factor {
     }
 }
 
-extension Factor: Codable {
+extension Factor: Codable, Equatable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         switch self {
-        case .counter(let counter):
+        case let .counter(counter):
             try container.encode(counter, forKey: .counter)
-        case .timer(let period):
+        case let .timer(period):
             try container.encode(period, forKey: .timer)
         }
     }

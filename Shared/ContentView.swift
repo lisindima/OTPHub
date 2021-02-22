@@ -5,31 +5,23 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import CoreData
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject private var appStore: AppStore
 
     @State private var isPresented: SheetState?
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.passwordName, ascending: true)],
-        animation: .default
-    )
-    private var items: FetchedResults<Item>
-    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-            try? viewContext.save()
+            offsets.map { appStore.accounts[$0] }.forEach(appStore.removeAccount)
         }
     }
     
     var body: some View {
         NavigationViewWrapper {
             List {
-                ForEach(items, content: ListItem.init)
+                ForEach(appStore.accounts, content: ListItem.init)
                     .onDelete(perform: deleteItems)
             }
             .customListStyle()

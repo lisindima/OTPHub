@@ -9,12 +9,10 @@ import SwiftOTP
 import SwiftUI
 
 struct ListItem: View {
-    @Environment(\.managedObjectContext) private var moc
-    
     @State private var otpString: String?
     @State private var progress: Float = 0.0
     
-    var item: Item
+    var account: Account
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -32,73 +30,54 @@ struct ListItem: View {
         }
     }
     
-    private func saveCounter() {
-        do {
-            try moc.save()
-        } catch {
-            let nsError = error as NSError
-            print("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-    }
-    
     func generatePassword() {
-        guard let data = item.passwordSecret else { return }
-        guard let secret = base32DecodeToData(data) else { return }
-        
-        let digits = item.sizePassword.toInt()
-        let timeInterval = item.updateTime.toInt()
-        let algorithm = item.passwordAlgorithm!.passwordAlgorithmFromString()
-        
-        let generator = Generator(algorithm: algorithm, secret: secret, factor: .timer(period: TimeInterval(timeInterval)), digits: digits)
-        let account = Account(label: item.passwordName!, issuer: nil, color: "", imageURL: nil, generator: generator)
         otpString = account.generate(time: Date())
     }
     
-    private func d() {
-        guard let data = item.passwordSecret else { return }
-        guard let secret = base32DecodeToData(data) else { return }
-        
-        let digits = item.sizePassword.toInt()
-        let timeInterval = item.updateTime.toInt()
-        let algorithm = item.passwordAlgorithm!.algorithmFromString()
-        
-        if item.typeAlgorithm == "HOTP" {
-            item.passwordCounter += 1
-            if let hotp = HOTP(
-                secret: secret,
-                digits: digits,
-                algorithm: algorithm
-            ) {
-                otpString = hotp.generate(counter: UInt64(item.passwordCounter))
-            }
-            saveCounter()
-        } else {
-            if let totp = TOTP(
-                secret: secret,
-                digits: digits,
-                timeInterval: timeInterval,
-                algorithm: algorithm
-            ) {
-                otpString = totp.generate(time: Date())
-            }
-        }
-    }
+//    private func d() {
+//        guard let data = item.passwordSecret else { return }
+//        guard let secret = base32DecodeToData(data) else { return }
+//
+//        let digits = item.sizePassword.toInt()
+//        let timeInterval = item.updateTime.toInt()
+//        let algorithm = item.passwordAlgorithm!.algorithmFromString()
+//
+//        if item.typeAlgorithm == "HOTP" {
+//            item.passwordCounter += 1
+//            if let hotp = HOTP(
+//                secret: secret,
+//                digits: digits,
+//                algorithm: algorithm
+//            ) {
+//                otpString = hotp.generate(counter: UInt64(item.passwordCounter))
+//            }
+//            saveCounter()
+//        } else {
+//            if let totp = TOTP(
+//                secret: secret,
+//                digits: digits,
+//                timeInterval: timeInterval,
+//                algorithm: algorithm
+//            ) {
+//                otpString = totp.generate(time: Date())
+//            }
+//        }
+//    }
 
     var body: some View {
-        if item.typeAlgorithm == "HOTP" {
-            hotp
-        } else {
-            totp
-        }
+//        if item.typeAlgorithm == "HOTP" {
+//            hotp
+//        } else {
+//            totp
+//        }
+        hotp
     }
     
     var password: some View {
         VStack(alignment: .leading) {
-            if let passwordName = item.passwordName {
-                Text(passwordName)
-                    .font(.system(.footnote, design: .rounded))
-                    .foregroundColor(.secondary)
-            }
+            Text(account.label)
+                .font(.system(.footnote, design: .rounded))
+                .foregroundColor(.secondary)
             if let otpString = otpString {
                 Text(otpString.separated())
                     .font(.system(.largeTitle, design: .rounded))
@@ -130,23 +109,21 @@ struct ListItem: View {
             HStack {
                 password
                 Spacer()
-                if let passwordColor = item.passwordColor {
-                    ProgressView(value: progress, total: item.updateTime.toFloat())
-                        .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
-                        .accentColor(Color(hex: passwordColor))
-                        .frame(width: 60)
-                }
+//                ProgressView(value: progress, total: item.updateTime.toFloat())
+//                    .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
+//                    .accentColor(Color(hex: account.color))
+//                    .frame(width: 60)
             }
         }
         .macOS { $0.buttonStyle(PlainButtonStyle()) }
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in
-            if progress < item.updateTime.toFloat() {
-                progress += 1
-            } else if progress == item.updateTime.toFloat() {
-                progress = 0.0
-                generatePassword()
-            }
+//            if progress < item.updateTime.toFloat() {
+//                progress += 1
+//            } else if progress == item.updateTime.toFloat() {
+//                progress = 0.0
+//                generatePassword()
+//            }
         }
     }
 }

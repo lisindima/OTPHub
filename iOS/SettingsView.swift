@@ -10,6 +10,8 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.presentationMode) private var presentationMode
     
+    @EnvironmentObject private var appStore: AppStore
+    
     var appVersion: Text {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
@@ -20,11 +22,16 @@ struct SettingsView: View {
         presentationMode.wrappedValue.dismiss()
     }
     
+    private func test() {
+        let account = try? appStore.loadAccountsFromKeychain()
+        print(account!)
+    }
+    
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Button(action: {}) {
+                    Button(action: test) {
                         Label("Резервное копирование", systemImage: "externaldrive.badge.timemachine")
                     }
                     .buttonStyle(PlainButtonStyle())
