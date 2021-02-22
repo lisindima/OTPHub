@@ -65,12 +65,11 @@ struct ListItem: View {
 //    }
 
     var body: some View {
-//        if item.typeAlgorithm == "HOTP" {
-//            hotp
-//        } else {
-//            totp
-//        }
-        hotp
+        if account.generator.factor.getTypeAlgorithm() == .hotp {
+            hotp
+        } else {
+            totp
+        }
     }
     
     var password: some View {

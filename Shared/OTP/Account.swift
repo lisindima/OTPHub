@@ -105,7 +105,7 @@ enum Factor {
     case counter(UInt64)
     case timer(period: TimeInterval)
     
-    fileprivate func counterValue(at time: Date) throws -> UInt64 {
+    func counterValue(at time: Date) throws -> UInt64 {
         switch self {
         case let .counter(counter):
             return counter
@@ -114,6 +114,15 @@ enum Factor {
 //                try Generator.validateTime(timeSinceEpoch)
 //                try Generator.validatePeriod(period)
             return UInt64(timeSinceEpoch / period)
+        }
+    }
+    
+    func getTypeAlgorithm() -> TypeAlgorithm {
+        switch self {
+        case .counter(_):
+            return .hotp
+        case .timer(_):
+            return .totp
         }
     }
 }

@@ -16,6 +16,10 @@ class AppStore: ObservableObject {
     let keychain = Keychain(service: "com.darkfox.otphub")
         .synchronizable(true)
     
+    init() {
+        accounts = try! loadAccountsFromKeychain()
+    }
+    
     func addAccount(_ account: Account) {
         do {
             try account.save(to: keychain)
