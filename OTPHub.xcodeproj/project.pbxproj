@@ -27,16 +27,14 @@
 		CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B863125D2C04600EE2557 /* ListStyle.swift */; };
 		CB2280BD25E136E500938B84 /* LicenseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2280BC25E136E500938B84 /* LicenseDetail.swift */; };
 		CB2280BE25E136E500938B84 /* LicenseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2280BC25E136E500938B84 /* LicenseDetail.swift */; };
+		CB25134325E40D1C001C2F0C /* OTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB25134225E40D1C001C2F0C /* OTP */; };
+		CB25134525E40D26001C2F0C /* OTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB25134425E40D26001C2F0C /* OTP */; };
 		CB351D8625B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
 		CB351D8725B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
-		CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */; };
-		CB35695C25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */; };
 		CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* OTPHubApp.swift */; };
 		CB35695E25B53CEC00663B2E /* OTPHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* OTPHubApp.swift */; };
 		CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
 		CB35696025B53CEC00663B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
-		CB35696125B53CEC00663B2E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694925B53CEB00663B2E /* Persistence.swift */; };
-		CB35696225B53CEC00663B2E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694925B53CEB00663B2E /* Persistence.swift */; };
 		CB35696325B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
 		CB35696425B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
 		CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddPasswordView.swift */; };
@@ -53,15 +51,11 @@
 		CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C69F225DE7F4B001E9369 /* SettingsView.swift */; };
 		CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
 		CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
-		CB6396FF25B7000700B7AAA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6396FE25B7000700B7AAA0 /* CloudKit.framework */; };
-		CB63970125B7007800B7AAA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63970025B7007800B7AAA0 /* CloudKit.framework */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB89B18C25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
-		CB9BCB0725D9032400A42B33 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BCB0625D9032400A42B33 /* Int.swift */; };
-		CB9BCB0825D9032400A42B33 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BCB0625D9032400A42B33 /* Int.swift */; };
 		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
-		CBC5909C25D55F1C006090D5 /* Int32.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5909B25D55F1C006090D5 /* Int32.swift */; };
-		CBC5909D25D55F1C006090D5 /* Int32.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5909B25D55F1C006090D5 /* Int32.swift */; };
+		CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
+		CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,12 +82,11 @@
 		CB178CEE25E131A1000C845C /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		CB1B863125D2C04600EE2557 /* ListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyle.swift; sourceTree = "<group>"; };
 		CB2280BC25E136E500938B84 /* LicenseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetail.swift; sourceTree = "<group>"; };
+		CB25134125E40C1F001C2F0C /* OTP */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OTP; path = ../../OTP; sourceTree = "<group>"; };
 		CB2AA36125BF139C00D317DE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB351D8525B95DEE006F6A8D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		CB35694625B53CEB00663B2E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		CB35694725B53CEB00663B2E /* OTPHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPHubApp.swift; sourceTree = "<group>"; };
 		CB35694825B53CEB00663B2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CB35694925B53CEB00663B2E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CB35694A25B53CEC00663B2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB35694F25B53CEC00663B2E /* OTPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB35695225B53CEC00663B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,8 +105,7 @@
 		CB63970025B7007800B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CB89B18D25B6C6B100B61B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB89B18F25B6C6B400B61B68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CB9BCB0625D9032400A42B33 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		CBC5909B25D55F1C006090D5 /* Int32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int32.swift; sourceTree = "<group>"; };
+		CBF0652525E2A2350068DC44 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6396FF25B7000700B7AAA0 /* CloudKit.framework in Frameworks */,
+				CB25134325E40D1C001C2F0C /* OTP in Frameworks */,
 				CB37064F25D5378B006A4172 /* SwiftOTP in Frameworks */,
 				CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */,
 			);
@@ -131,8 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB25134525E40D26001C2F0C /* OTP in Frameworks */,
 				CB37065125D5379E006A4172 /* SwiftOTP in Frameworks */,
-				CB63970125B7007800B7AAA0 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +137,6 @@
 				CB158E3725C2AE0C001627E4 /* Color.swift */,
 				CB158E4C25C2AEA1001627E4 /* URL.swift */,
 				CB158E5425C2AEEA001627E4 /* View.swift */,
-				CBC5909B25D55F1C006090D5 /* Int32.swift */,
-				CB9BCB0625D9032400A42B33 /* Int.swift */,
 				CB351D8525B95DEE006F6A8D /* String.swift */,
 				CB178CE725E13129000C845C /* Bundle.swift */,
 			);
@@ -197,6 +187,7 @@
 		CB35694425B53CEB00663B2E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CB25134125E40C1F001C2F0C /* OTP */,
 				CB35694725B53CEB00663B2E /* OTPHubApp.swift */,
 				CB158E6025C2B02E001627E4 /* ViewModifier */,
 				CB158E3F25C2AE15001627E4 /* Extension */,
@@ -204,12 +195,11 @@
 				CB35699025B566B900663B2E /* ListItem.swift */,
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
+				CBF0652525E2A2350068DC44 /* AppStore.swift */,
 				CB35699525B568A700663B2E /* Enum.swift */,
-				CB35694925B53CEB00663B2E /* Persistence.swift */,
 				CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */,
 				CB35694A25B53CEC00663B2E /* Assets.xcassets */,
 				CB178CE425E130DD000C845C /* license.json */,
-				CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */,
 				CB89B18E25B6C6B100B61B68 /* Localizable.strings */,
 			);
 			path = Shared;
@@ -264,6 +254,7 @@
 			packageProductDependencies = (
 				CBBE8A6C25B6969300CE1DE8 /* CodeScanner */,
 				CB37064E25D5378B006A4172 /* SwiftOTP */,
+				CB25134225E40D1C001C2F0C /* OTP */,
 			);
 			productName = "2FAapp (iOS)";
 			productReference = CB35694F25B53CEC00663B2E /* OTPHub.app */;
@@ -284,6 +275,7 @@
 			name = "OTPHub (macOS)";
 			packageProductDependencies = (
 				CB37065025D5379E006A4172 /* SwiftOTP */,
+				CB25134425E40D26001C2F0C /* OTP */,
 			);
 			productName = "2FAapp (macOS)";
 			productReference = CB35695725B53CEC00663B2E /* OTPHub.app */;
@@ -363,21 +355,18 @@
 				CB158E5525C2AEEA001627E4 /* View.swift in Sources */,
 				CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
+				CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */,
 				CB178CEC25E13165000C845C /* LicenseModel.swift in Sources */,
 				CB158E3825C2AE0C001627E4 /* Color.swift in Sources */,
 				CB35699625B568A700663B2E /* Enum.swift in Sources */,
 				CB39D0AC25CE648A0091F161 /* QRView.swift in Sources */,
 				CB2280BD25E136E500938B84 /* LicenseDetail.swift in Sources */,
 				CB178CEF25E131A1000C845C /* License.swift in Sources */,
-				CB35696125B53CEC00663B2E /* Persistence.swift in Sources */,
 				CB351D8625B95DEE006F6A8D /* String.swift in Sources */,
 				CB35697C25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */,
 				CB1B863225D2C04600EE2557 /* ListStyle.swift in Sources */,
-				CBC5909C25D55F1C006090D5 /* Int32.swift in Sources */,
 				CB178CE825E13129000C845C /* Bundle.swift in Sources */,
-				CB35695B25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
-				CB9BCB0725D9032400A42B33 /* Int.swift in Sources */,
 				CB158E7A25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
 				CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */,
@@ -398,15 +387,12 @@
 				CB158E4E25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB178CF025E131A1000C845C /* License.swift in Sources */,
 				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
-				CB9BCB0825D9032400A42B33 /* Int.swift in Sources */,
 				CB158E3925C2AE0C001627E4 /* Color.swift in Sources */,
 				CB35699725B568A700663B2E /* Enum.swift in Sources */,
-				CB35696225B53CEC00663B2E /* Persistence.swift in Sources */,
 				CB35697D25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */,
-				CB35695C25B53CEC00663B2E /* OTPHub.xcdatamodeld in Sources */,
 				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */,
-				CBC5909D25D55F1C006090D5 /* Int32.swift in Sources */,
+				CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */,
 				CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */,
 			);
@@ -699,6 +685,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CB25134225E40D1C001C2F0C /* OTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OTP;
+		};
+		CB25134425E40D26001C2F0C /* OTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OTP;
+		};
 		CB37064E25D5378B006A4172 /* SwiftOTP */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CB37064D25D5378B006A4172 /* XCRemoteSwiftPackageReference "SwiftOTP" */;
@@ -715,19 +709,6 @@
 			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		CB35694525B53CEB00663B2E /* OTPHub.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CB35694625B53CEB00663B2E /* Shared.xcdatamodel */,
-			);
-			currentVersion = CB35694625B53CEB00663B2E /* Shared.xcdatamodel */;
-			path = OTPHub.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CB35694025B53CEB00663B2E /* Project object */;
 }

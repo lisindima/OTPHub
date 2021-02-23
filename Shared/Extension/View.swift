@@ -11,7 +11,7 @@ extension View {
     func customListStyle() -> some View {
         self.modifier(ListStyle())
     }
-    
+
     func macOS<Content: View>(_ modifier: (Self) -> Content) -> some View {
         #if os(macOS)
         modifier(self)

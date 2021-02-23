@@ -6,75 +6,37 @@
 //
 
 import Foundation
-import SwiftOTP
 
 extension String {
     func separated(separator: String = " ", stride: Int = 2) -> String {
         enumerated().map { $0.isMultiple(of: stride) && ($0 != 0) ? "\(separator)\($1)" : String($1) }.joined()
     }
-    
-    func algorithmFromString() -> OTPAlgorithm {
-        switch self {
-        case "SHA1":
-            return .sha1
-        case "SHA256":
-            return .sha256
-        case "SHA512":
-            return .sha512
-        default:
-            return .sha1
-        }
-    }
-    
-    func passwordAlgorithmFromString() -> PasswordAlgorithm {
-        switch self {
-        case "SHA1":
-            return .sha1
-        case "SHA256":
-            return .sha256
-        case "SHA512":
-            return .sha512
-        default:
-            return .sha1
-        }
-    }
-    
-    func digitFromString() -> SizePassword {
+
+    func digitsFromString() -> Digits {
         switch self {
         case "6":
-            return .sixDigit
+            return .six
         case "7":
-            return .sevenDigit
+            return .seven
         case "8":
-            return .eightDigit
+            return .eight
         default:
-            return .sixDigit
+            return .six
         }
     }
-    
-    func typeAlgorithmFromString() -> TypeAlgorithm {
-        switch self {
-        case "totp":
-            return .totp
-        case "hotp":
-            return .hotp
-        default:
-            return .totp
-        }
-    }
-    
-    func updateTimeFromString() -> UpdateTime {
+
+    func periodFromString() -> Period {
         switch self {
         case "30":
-            return .thirtySeconds
+            return .thirty
         case "60":
-            return .sixtySeconds
+            return .sixty
         default:
-            return .thirtySeconds
+            return .thirty
         }
     }
-    
-    func counterFromString() -> Int {
-        Int(self) ?? 1
+
+    func counterFromString() -> UInt64 {
+        UInt64(self) ?? 0
     }
 }

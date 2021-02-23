@@ -9,16 +9,13 @@ import SwiftUI
 
 @main
 struct OTPHubApp: App {
-    let persistenceController = PersistenceController.shared
+    @StateObject private var appStore = AppStore.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appStore)
                 .accentColor(.purple)
-                .onOpenURL { url in
-                    print(url)
-                }
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

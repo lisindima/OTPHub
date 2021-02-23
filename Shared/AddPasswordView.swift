@@ -5,70 +5,81 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
+import OTP
 import SwiftUI
 
 struct AddPasswordView: View {
-    @Environment(\.managedObjectContext) private var moc
     @Environment(\.presentationMode) private var presentationMode
-    
-    @State private var passwordName: String = ""
-    @State private var passwordSecret: String = ""
-    @State private var updateTime: UpdateTime = .thirtySeconds
-    @State private var sizePassword: SizePassword = .sixDigit
-    @State private var passwordAlgorithm: PasswordAlgorithm = .sha1
+
+    @EnvironmentObject private var appStore: AppStore
+
+    @State private var label: String = ""
+    @State private var secret: String = ""
+    @State private var period: Period = .thirty
+    @State private var digits: Digits = .six
+    @State private var algorithm: OTPAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
-    @State private var passwordCounter: Int = 0
+    @State private var counter: UInt64 = 0
     @State private var passwordColor: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
-    
+
     private func savePassword() {
-        if passwordName.isEmpty || passwordSecret.isEmpty {
+        if label.isEmpty || secret.isEmpty {
             isShowAlert = true
         } else {
-            let item = Item(context: moc)
-            item.passwordName = passwordName
-            item.passwordSecret = passwordSecret
-            item.passwordAlgorithm = passwordAlgorithm.rawValue
-            item.typeAlgorithm = typeAlgorithm.rawValue
-            item.updateTime = updateTime.rawValue
-            item.sizePassword = sizePassword.rawValue
-            item.passwordCounter = passwordCounter.toInt32()
-            item.passwordColor = passwordColor.hexStringFromColor()
-            do {
-                try moc.save()
-                presentationMode.wrappedValue.dismiss()
-            } catch {
-                let nsError = error as NSError
-                print("Unresolved error \(nsError), \(nsError.userInfo)")
+            guard let secret = base32DecodeToData(secret) else {
+                isShowAlert = true
+                return
             }
+
+            let generator = Generator(
+                algorithm: algorithm,
+                secret: secret,
+                factor: typeAlgorithm == .totp
+                    ? .timer(period: period.rawValue)
+                    : .counter(counter),
+                digits: digits.rawValue
+            )
+
+            let account = Account(
+                label: label,
+                issuer: nil,
+                color: passwordColor.hexStringFromColor(),
+                imageURL: nil,
+                generator: generator
+            )
+
+            appStore.addAccount(account)
+
+            presentationMode.wrappedValue.dismiss()
         }
     }
-    
+
     private func showQRView() {
         isShowQRView = true
     }
-    
+
     private func dismissView() {
         presentationMode.wrappedValue.dismiss()
     }
-    
+
     var body: some View {
         NavigationViewWrapper {
             VStack {
                 Form {
                     Section(header: Text("section_header_basic_information")) {
-                        TextField("textfield_name", text: $passwordName)
-                        TextField("textfield_secret", text: $passwordSecret)
+                        TextField("textfield_label", text: $label)
+                        TextField("textfield_secret", text: $secret)
                             .disableAutocorrection(true)
                     }
                     .macOS { $0.textFieldStyle(RoundedBorderTextFieldStyle()) }
                     Section(
-                        header: Text("section_header_password_length"),
-                        footer: Text("section_footer_password_length")
+                        header: Text("section_header_digits"),
+                        footer: Text("section_footer_digits")
                     ) {
-                        Picker("section_header_password_length", selection: $sizePassword) {
-                            ForEach(SizePassword.allCases) { size in
+                        Picker("section_header_digits", selection: $digits) {
+                            ForEach(Digits.allCases) { size in
                                 Text(size.localized)
                                     .tag(size)
                             }
@@ -78,11 +89,11 @@ struct AddPasswordView: View {
                     }
                     if typeAlgorithm == .totp {
                         Section(
-                            header: Text("section_header_update_time"),
-                            footer: Text("section_footer_update_time")
+                            header: Text("section_header_period"),
+                            footer: Text("section_footer_period")
                         ) {
-                            Picker("section_header_update_time", selection: $updateTime) {
-                                ForEach(UpdateTime.allCases) { time in
+                            Picker("section_header_period", selection: $period) {
+                                ForEach(Period.allCases) { time in
                                     Text(time.localized)
                                         .tag(time)
                                 }
@@ -92,16 +103,18 @@ struct AddPasswordView: View {
                         }
                     } else {
                         Section(
-                            header: Text("section_header_password_counter"),
-                            footer: Text("section_footer_password_counter")
+                            header: Text("section_header_counter"),
+                            footer: Text("section_footer_counter")
                         ) {
                             #if os(iOS)
-                            Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 0 ... 1000)
+                            Stepper(value: $counter, in: 0 ... 1000) {
+                                Text("stepper_title_counter") + Text("\(counter)").fontWeight(.bold)
+                            }
                             #else
                             HStack {
-                                Text("stepper_title_password_counter \(passwordCounter)")
+                                Text("stepper_title_counter") + Text("\(counter)").fontWeight(.bold)
                                 Spacer()
-                                Stepper("", value: $passwordCounter, in: 0 ... 1000)
+                                Stepper("", value: $counter, in: 0 ... 1000)
                                     .labelsHidden()
                             }
                             #endif
@@ -111,8 +124,8 @@ struct AddPasswordView: View {
                         header: Text("section_header_encryption_type"),
                         footer: Text("section_footer_encryption_type")
                     ) {
-                        Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
-                            ForEach(PasswordAlgorithm.allCases) { algorithm in
+                        Picker("section_header_encryption_type", selection: $algorithm) {
+                            ForEach(OTPAlgorithm.allCases) { algorithm in
                                 Text(algorithm.rawValue)
                                     .tag(algorithm)
                             }
@@ -189,13 +202,13 @@ struct AddPasswordView: View {
         .sheet(isPresented: $isShowQRView) {
             #if os(iOS)
             QRView(
-                passwordName: $passwordName,
-                passwordSecret: $passwordSecret,
-                updateTime: $updateTime,
-                sizePassword: $sizePassword,
-                passwordAlgorithm: $passwordAlgorithm,
+                label: $label,
+                secret: $secret,
+                period: $period,
+                digits: $digits,
+                algorithm: $algorithm,
                 typeAlgorithm: $typeAlgorithm,
-                passwordCounter: $passwordCounter
+                counter: $counter
             )
             .accentColor(.purple)
             #endif
