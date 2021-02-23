@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomButtonStyle: ButtonStyle {
     var backgroundColor: Color = .accentColor
     var labelColor: Color = .white
-    
+
     func makeBody(configuration: Configuration) -> some View {
         HStack {
             Spacer()

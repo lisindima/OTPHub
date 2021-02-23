@@ -10,12 +10,12 @@ import SwiftUI
 
 struct ListItem: View {
     var account: Account
-    
+
     @State private var otpString: String?
     @State private var progress: Float = 0.0
-    
+
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+
     private func copyPasteboard() {
         if let otpString = otpString {
             #if os(macOS)
@@ -29,7 +29,7 @@ struct ListItem: View {
             #endif
         }
     }
-    
+
     private func generatePassword() {
         otpString = account.generate(time: Date())
     }
@@ -41,7 +41,7 @@ struct ListItem: View {
             totp
         }
     }
-    
+
     var password: some View {
         VStack(alignment: .leading) {
             Text(account.label)
@@ -55,7 +55,7 @@ struct ListItem: View {
             }
         }
     }
-    
+
     var hotp: some View {
         Button(action: copyPasteboard) {
             HStack {
@@ -73,7 +73,7 @@ struct ListItem: View {
         .macOS { $0.buttonStyle(PlainButtonStyle()) }
         .onAppear(perform: generatePassword)
     }
-    
+
     var totp: some View {
         Button(action: copyPasteboard) {
             HStack {

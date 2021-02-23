@@ -11,13 +11,13 @@ struct ContentView: View {
     @EnvironmentObject private var appStore: AppStore
 
     @State private var isPresented: SheetState?
-    
+
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { appStore.accounts[$0] }.forEach(appStore.removeAccount)
         }
     }
-    
+
     var body: some View {
         NavigationViewWrapper {
             List {

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct QRView: View {
     @Environment(\.presentationMode) private var presentationMode
-    
+
     @Binding var label: String
     @Binding var secret: String
     @Binding var period: Period
@@ -19,13 +19,13 @@ struct QRView: View {
     @Binding var algorithm: OTPAlgorithm
     @Binding var typeAlgorithm: TypeAlgorithm
     @Binding var counter: UInt64
-    
+
     private let simulatedData: String = "otpauth://totp/ACME%20Co:john@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA256&digits=7&period=60"
-    
+
     private func dismissView() {
         presentationMode.wrappedValue.dismiss()
     }
-    
+
     private func getURLComponents(_ string: String) {
         guard let url = URL(string: string) else { return }
         label = String(url.path.dropFirst())
@@ -36,7 +36,7 @@ struct QRView: View {
         period = url["period"].periodFromString()
         counter = url["counter"].counterFromString()
     }
-    
+
     var body: some View {
         NavigationView {
             ZStack {

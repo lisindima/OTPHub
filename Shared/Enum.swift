@@ -44,6 +44,6 @@ extension Period {
 enum SheetState: String, Identifiable {
     case settings
     case addpassword
-    
+
     var id: String { rawValue }
 }

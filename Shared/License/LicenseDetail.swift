@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LicenseDetail: View {
     var license: LicenseModel
-    
+
     var body: some View {
         ScrollView {
             Text(license.textLicenseFramework)

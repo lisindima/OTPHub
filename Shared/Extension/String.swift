@@ -11,7 +11,7 @@ extension String {
     func separated(separator: String = " ", stride: Int = 2) -> String {
         enumerated().map { $0.isMultiple(of: stride) && ($0 != 0) ? "\(separator)\($1)" : String($1) }.joined()
     }
-    
+
     func digitsFromString() -> Digits {
         switch self {
         case "6":
@@ -24,7 +24,7 @@ extension String {
             return .six
         }
     }
-    
+
     func periodFromString() -> Period {
         switch self {
         case "30":
@@ -35,7 +35,7 @@ extension String {
             return .thirty
         }
     }
-    
+
     func counterFromString() -> UInt64 {
         UInt64(self) ?? 0
     }

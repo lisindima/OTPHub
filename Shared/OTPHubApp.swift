@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct OTPHubApp: App {
     @StateObject private var appStore = AppStore.shared
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()

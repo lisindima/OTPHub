@@ -9,19 +9,19 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) private var presentationMode
-    
+
     @EnvironmentObject private var appStore: AppStore
-    
+
     var appVersion: Text {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         return Text("section_footer_app_version \(version) (\(build))")
     }
-    
+
     private func dismissView() {
         presentationMode.wrappedValue.dismiss()
     }
-    
+
     var body: some View {
         NavigationView {
             Form {

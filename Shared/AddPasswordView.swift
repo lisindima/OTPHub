@@ -10,9 +10,9 @@ import SwiftUI
 
 struct AddPasswordView: View {
     @Environment(\.presentationMode) private var presentationMode
-    
+
     @EnvironmentObject private var appStore: AppStore
-    
+
     @State private var label: String = ""
     @State private var secret: String = ""
     @State private var period: Period = .thirty
@@ -23,7 +23,7 @@ struct AddPasswordView: View {
     @State private var passwordColor: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
-    
+
     private func savePassword() {
         if label.isEmpty || secret.isEmpty {
             isShowAlert = true
@@ -32,7 +32,7 @@ struct AddPasswordView: View {
                 isShowAlert = true
                 return
             }
-            
+
             let generator = Generator(
                 algorithm: algorithm,
                 secret: secret,
@@ -41,7 +41,7 @@ struct AddPasswordView: View {
                     : .counter(counter),
                 digits: digits.rawValue
             )
-            
+
             let account = Account(
                 label: label,
                 issuer: nil,
@@ -49,21 +49,21 @@ struct AddPasswordView: View {
                 imageURL: nil,
                 generator: generator
             )
-            
+
             appStore.addAccount(account)
-            
+
             presentationMode.wrappedValue.dismiss()
         }
     }
-    
+
     private func showQRView() {
         isShowQRView = true
     }
-    
+
     private func dismissView() {
         presentationMode.wrappedValue.dismiss()
     }
-    
+
     var body: some View {
         NavigationViewWrapper {
             VStack {

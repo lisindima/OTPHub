@@ -11,16 +11,16 @@ import SwiftUI
 
 class AppStore: ObservableObject {
     @Published var accounts = [Account]()
-    
+
     static let shared = AppStore()
-    
+
     let keychain = Keychain(service: "com.darkfox.otphub")
         .synchronizable(true)
-    
+
     init() {
         accounts = try! loadAccountsFromKeychain()
     }
-    
+
     func addAccount(_ account: Account) {
         do {
             try account.save(to: keychain)
@@ -28,7 +28,7 @@ class AppStore: ObservableObject {
             print(error)
         }
     }
-    
+
     func removeAccount(account: Account) {
         do {
             try account.remove(from: keychain)
@@ -38,7 +38,7 @@ class AppStore: ObservableObject {
             print(error)
         }
     }
-    
+
     func loadAccountsFromKeychain() throws -> [Account] {
         try Account.loadAll(from: keychain)
     }
