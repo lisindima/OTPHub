@@ -12,7 +12,7 @@ extension String {
         enumerated().map { $0.isMultiple(of: stride) && ($0 != 0) ? "\(separator)\($1)" : String($1) }.joined()
     }
     
-    func digitFromString() -> SizePassword {
+    func digitsFromString() -> Digits {
         switch self {
         case "6":
             return .six

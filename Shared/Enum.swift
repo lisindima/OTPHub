@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum SizePassword: Int, CaseIterable, Identifiable {
+enum Digits: Int, CaseIterable, Identifiable {
     case six = 6
     case seven = 7
     case eight = 8
@@ -15,7 +15,7 @@ enum SizePassword: Int, CaseIterable, Identifiable {
     var id: Int { rawValue }
 }
 
-extension SizePassword {
+extension Digits {
     var localized: LocalizedStringKey {
         switch self {
         case .six: return "6_digits"

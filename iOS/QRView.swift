@@ -12,13 +12,13 @@ import SwiftUI
 struct QRView: View {
     @Environment(\.presentationMode) private var presentationMode
     
-    @Binding var passwordName: String
-    @Binding var passwordSecret: String
+    @Binding var label: String
+    @Binding var secret: String
     @Binding var period: Period
-    @Binding var sizePassword: SizePassword
-    @Binding var passwordAlgorithm: OTPAlgorithm
+    @Binding var digits: Digits
+    @Binding var algorithm: OTPAlgorithm
     @Binding var typeAlgorithm: TypeAlgorithm
-    @Binding var passwordCounter: UInt64
+    @Binding var counter: UInt64
     
     private let simulatedData: String = "otpauth://totp/ACME%20Co:john@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA256&digits=7&period=60"
     
@@ -28,13 +28,13 @@ struct QRView: View {
     
     private func getURLComponents(_ string: String) {
         guard let url = URL(string: string) else { return }
-        passwordName = String(url.path.dropFirst())
+        label = String(url.path.dropFirst())
         typeAlgorithm = url.host!.typeAlgorithmFromString()
-        passwordSecret = url["secret"]
-        passwordAlgorithm = url["algorithm"].algorithmFromString()
-        sizePassword = url["digits"].digitFromString()
+        secret = url["secret"]
+        algorithm = url["algorithm"].algorithmFromString()
+        digits = url["digits"].digitsFromString()
         period = url["period"].periodFromString()
-        passwordCounter = url["counter"].counterFromString()
+        counter = url["counter"].counterFromString()
     }
     
     var body: some View {

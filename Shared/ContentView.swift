@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         NavigationViewWrapper {
             List {
-                ForEach(appStore.accounts, content: ListItem.init)
+                ForEach(appStore.accounts, id: \.id, content: ListItem.init)
                     .onDelete(perform: deleteItems)
             }
             .customListStyle()

@@ -13,40 +13,41 @@ struct AddPasswordView: View {
     
     @EnvironmentObject private var appStore: AppStore
     
-    @State private var passwordName: String = ""
-    @State private var passwordSecret: String = ""
+    @State private var label: String = ""
+    @State private var secret: String = ""
     @State private var period: Period = .thirty
-    @State private var sizePassword: SizePassword = .six
-    @State private var passwordAlgorithm: OTPAlgorithm = .sha1
+    @State private var digits: Digits = .six
+    @State private var algorithm: OTPAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
-    @State private var passwordCounter: UInt64 = 0
+    @State private var counter: UInt64 = 0
     @State private var passwordColor: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
     
     private func savePassword() {
-        if passwordName.isEmpty || passwordSecret.isEmpty {
+        if label.isEmpty || secret.isEmpty {
             isShowAlert = true
         } else {
-            guard let secret = base32DecodeToData(passwordSecret) else {
+            guard let secret = base32DecodeToData(secret) else {
                 isShowAlert = true
                 return
             }
             
             let generator = Generator(
-                algorithm: passwordAlgorithm,
+                algorithm: algorithm,
                 secret: secret,
                 factor: typeAlgorithm == .totp
                     ? .timer(period: period.rawValue)
-                    : .counter(passwordCounter),
-                digits: sizePassword.rawValue
+                    : .counter(counter),
+                digits: digits.rawValue
             )
             
             let account = Account(
-                label: passwordName,
+                label: label,
                 issuer: nil,
                 color: passwordColor.hexStringFromColor(),
-                imageURL: nil, generator: generator
+                imageURL: nil,
+                generator: generator
             )
             
             appStore.addAccount(account)
@@ -68,17 +69,17 @@ struct AddPasswordView: View {
             VStack {
                 Form {
                     Section(header: Text("section_header_basic_information")) {
-                        TextField("textfield_name", text: $passwordName)
-                        TextField("textfield_secret", text: $passwordSecret)
+                        TextField("textfield_label", text: $label)
+                        TextField("textfield_secret", text: $secret)
                             .disableAutocorrection(true)
                     }
                     .macOS { $0.textFieldStyle(RoundedBorderTextFieldStyle()) }
                     Section(
-                        header: Text("section_header_password_length"),
-                        footer: Text("section_footer_password_length")
+                        header: Text("section_header_digits"),
+                        footer: Text("section_footer_digits")
                     ) {
-                        Picker("section_header_password_length", selection: $sizePassword) {
-                            ForEach(SizePassword.allCases) { size in
+                        Picker("section_header_digits", selection: $digits) {
+                            ForEach(Digits.allCases) { size in
                                 Text(size.localized)
                                     .tag(size)
                             }
@@ -88,10 +89,10 @@ struct AddPasswordView: View {
                     }
                     if typeAlgorithm == .totp {
                         Section(
-                            header: Text("section_header_update_time"),
-                            footer: Text("section_footer_update_time")
+                            header: Text("section_header_period"),
+                            footer: Text("section_footer_period")
                         ) {
-                            Picker("section_header_update_time", selection: $period) {
+                            Picker("section_header_period", selection: $period) {
                                 ForEach(Period.allCases) { time in
                                     Text(time.localized)
                                         .tag(time)
@@ -102,16 +103,18 @@ struct AddPasswordView: View {
                         }
                     } else {
                         Section(
-                            header: Text("section_header_password_counter"),
-                            footer: Text("section_footer_password_counter")
+                            header: Text("section_header_counter"),
+                            footer: Text("section_footer_counter")
                         ) {
                             #if os(iOS)
-                            Stepper("stepper_title_password_counter \(passwordCounter)", value: $passwordCounter, in: 0 ... 1000)
+                            Stepper(value: $counter, in: 0 ... 1000) {
+                                Text("stepper_title_counter") + Text("\(counter)").fontWeight(.bold)
+                            }
                             #else
                             HStack {
-                                Text("stepper_title_password_counter \(passwordCounter)")
+                                Text("stepper_title_counter") + Text("\(counter)").fontWeight(.bold)
                                 Spacer()
-                                Stepper("", value: $passwordCounter, in: 0 ... 1000)
+                                Stepper("", value: $counter, in: 0 ... 1000)
                                     .labelsHidden()
                             }
                             #endif
@@ -121,7 +124,7 @@ struct AddPasswordView: View {
                         header: Text("section_header_encryption_type"),
                         footer: Text("section_footer_encryption_type")
                     ) {
-                        Picker("section_header_encryption_type", selection: $passwordAlgorithm) {
+                        Picker("section_header_encryption_type", selection: $algorithm) {
                             ForEach(OTPAlgorithm.allCases) { algorithm in
                                 Text(algorithm.rawValue)
                                     .tag(algorithm)
@@ -199,13 +202,13 @@ struct AddPasswordView: View {
         .sheet(isPresented: $isShowQRView) {
             #if os(iOS)
             QRView(
-                passwordName: $passwordName,
-                passwordSecret: $passwordSecret,
+                label: $label,
+                secret: $secret,
                 period: $period,
-                sizePassword: $sizePassword,
-                passwordAlgorithm: $passwordAlgorithm,
+                digits: $digits,
+                algorithm: $algorithm,
                 typeAlgorithm: $typeAlgorithm,
-                passwordCounter: $passwordCounter
+                counter: $counter
             )
             .accentColor(.purple)
             #endif
