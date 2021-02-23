@@ -24,6 +24,7 @@ class AppStore: ObservableObject {
     func addAccount(_ account: Account) {
         do {
             try account.save(to: keychain)
+            accounts.append(account)
         } catch {
             print(error)
         }
