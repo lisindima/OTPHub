@@ -30,39 +30,9 @@ struct ListItem: View {
         }
     }
     
-    func generatePassword() {
+    private func generatePassword() {
         otpString = account.generate(time: Date())
     }
-    
-//    private func d() {
-//        guard let data = item.passwordSecret else { return }
-//        guard let secret = base32DecodeToData(data) else { return }
-//
-//        let digits = item.sizePassword.toInt()
-//        let timeInterval = item.updateTime.toInt()
-//        let algorithm = item.passwordAlgorithm!.algorithmFromString()
-//
-//        if item.typeAlgorithm == "HOTP" {
-//            item.passwordCounter += 1
-//            if let hotp = HOTP(
-//                secret: secret,
-//                digits: digits,
-//                algorithm: algorithm
-//            ) {
-//                otpString = hotp.generate(counter: UInt64(item.passwordCounter))
-//            }
-//            saveCounter()
-//        } else {
-//            if let totp = TOTP(
-//                secret: secret,
-//                digits: digits,
-//                timeInterval: timeInterval,
-//                algorithm: algorithm
-//            ) {
-//                otpString = totp.generate(time: Date())
-//            }
-//        }
-//    }
 
     var body: some View {
         if account.generator.factor.getTypeAlgorithm == .hotp {
