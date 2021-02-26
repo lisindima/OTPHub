@@ -14,13 +14,15 @@ struct AddPasswordView: View {
     @EnvironmentObject private var appStore: AppStore
 
     @State private var label: String = ""
+    @State private var issuer: String = ""
     @State private var secret: String = ""
+    @State private var image: URL?
     @State private var period: Period = .thirty
     @State private var digits: Digits = .six
     @State private var algorithm: OTPAlgorithm = .sha1
     @State private var typeAlgorithm: TypeAlgorithm = .totp
     @State private var counter: UInt64 = 0
-    @State private var passwordColor: Color = .black
+    @State private var color: Color = .black
     @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
 
@@ -44,9 +46,9 @@ struct AddPasswordView: View {
 
             let account = Account(
                 label: label,
-                issuer: nil,
-                color: passwordColor.hexStringFromColor(),
-                imageURL: nil,
+                issuer: issuer,
+                color: color.hexStringFromColor(),
+                image: image,
                 generator: generator
             )
 
@@ -137,7 +139,7 @@ struct AddPasswordView: View {
                         header: Text("section_header_customization"),
                         footer: Text("section_footer_customization")
                     ) {
-                        ColorPicker("colorpicker_title", selection: $passwordColor)
+                        ColorPicker("colorpicker_title", selection: $color)
                             .macOS { $0.labelsHidden() }
                             .macOS { $0.frame(height: 50) }
                     }
@@ -203,7 +205,9 @@ struct AddPasswordView: View {
             #if os(iOS)
             QRView(
                 label: $label,
+                issuer: $issuer,
                 secret: $secret,
+                image: $image,
                 period: $period,
                 digits: $digits,
                 algorithm: $algorithm,

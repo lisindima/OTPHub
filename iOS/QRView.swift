@@ -13,7 +13,9 @@ struct QRView: View {
     @Environment(\.presentationMode) private var presentationMode
 
     @Binding var label: String
+    @Binding var issuer: String
     @Binding var secret: String
+    @Binding var image: URL?
     @Binding var period: Period
     @Binding var digits: Digits
     @Binding var algorithm: OTPAlgorithm
@@ -29,8 +31,10 @@ struct QRView: View {
     private func getURLComponents(_ string: String) {
         guard let url = URL(string: string) else { return }
         label = String(url.path.dropFirst())
-        typeAlgorithm = url.host!.typeAlgorithmFromString()
+        issuer = url["issuer"]
         secret = url["secret"]
+        image = URL(string: url["image"])
+        typeAlgorithm = url.host!.typeAlgorithmFromString()
         algorithm = url["algorithm"].algorithmFromString()
         digits = url["digits"].digitsFromString()
         period = url["period"].periodFromString()

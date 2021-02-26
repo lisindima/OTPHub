@@ -45,8 +45,6 @@
 		CB35699225B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
 		CB35699625B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
 		CB35699725B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
-		CB37064F25D5378B006A4172 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB37064E25D5378B006A4172 /* SwiftOTP */; };
-		CB37065125D5379E006A4172 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB37065025D5379E006A4172 /* SwiftOTP */; };
 		CB39D0AC25CE648A0091F161 /* QRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39D0AB25CE648A0091F161 /* QRView.swift */; };
 		CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C69F225DE7F4B001E9369 /* SettingsView.swift */; };
 		CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
@@ -114,7 +112,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB25134325E40D1C001C2F0C /* OTP in Frameworks */,
-				CB37064F25D5378B006A4172 /* SwiftOTP in Frameworks */,
 				CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,7 +121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB25134525E40D26001C2F0C /* OTP in Frameworks */,
-				CB37065125D5379E006A4172 /* SwiftOTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +249,6 @@
 			name = "OTPHub (iOS)";
 			packageProductDependencies = (
 				CBBE8A6C25B6969300CE1DE8 /* CodeScanner */,
-				CB37064E25D5378B006A4172 /* SwiftOTP */,
 				CB25134225E40D1C001C2F0C /* OTP */,
 			);
 			productName = "2FAapp (iOS)";
@@ -274,7 +269,6 @@
 			);
 			name = "OTPHub (macOS)";
 			packageProductDependencies = (
-				CB37065025D5379E006A4172 /* SwiftOTP */,
 				CB25134425E40D26001C2F0C /* OTP */,
 			);
 			productName = "2FAapp (macOS)";
@@ -310,7 +304,6 @@
 			mainGroup = CB35693F25B53CEB00663B2E;
 			packageReferences = (
 				CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */,
-				CB37064D25D5378B006A4172 /* XCRemoteSwiftPackageReference "SwiftOTP" */,
 			);
 			productRefGroup = CB35695025B53CEC00663B2E /* Products */;
 			projectDirPath = "";
@@ -537,7 +530,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -546,7 +539,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
 				SDKROOT = iphoneos;
@@ -562,7 +555,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -571,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
 				SDKROOT = iphoneos;
@@ -589,7 +582,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -599,7 +592,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
 				SDKROOT = macosx;
@@ -615,7 +608,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -625,7 +618,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
 				SDKROOT = macosx;
@@ -666,14 +659,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CB37064D25D5378B006A4172 /* XCRemoteSwiftPackageReference "SwiftOTP" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lisindima/SwiftOTP";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -692,16 +677,6 @@
 		CB25134425E40D26001C2F0C /* OTP */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OTP;
-		};
-		CB37064E25D5378B006A4172 /* SwiftOTP */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CB37064D25D5378B006A4172 /* XCRemoteSwiftPackageReference "SwiftOTP" */;
-			productName = SwiftOTP;
-		};
-		CB37065025D5379E006A4172 /* SwiftOTP */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CB37064D25D5378B006A4172 /* XCRemoteSwiftPackageReference "SwiftOTP" */;
-			productName = SwiftOTP;
 		};
 		CBBE8A6C25B6969300CE1DE8 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
