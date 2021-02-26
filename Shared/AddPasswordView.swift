@@ -23,15 +23,17 @@ struct AddPasswordView: View {
     @State private var typeAlgorithm: TypeAlgorithm = .totp
     @State private var counter: UInt64 = 0
     @State private var color: Color = .black
-    @State private var isShowAlert: Bool = false
     @State private var isShowQRView: Bool = false
-
+    @State private var alertItem: AlertItem?
+    
     private func savePassword() {
-        if label.isEmpty || secret.isEmpty {
-            isShowAlert = true
+        if label.isEmpty {
+            alertItem = AlertItem(message: "alert_empty_label")
+        } else if secret.isEmpty {
+            alertItem = AlertItem(message: "alert_empty_secret")
         } else {
             guard let secret = base32DecodeToData(secret) else {
-                isShowAlert = true
+                alertItem = AlertItem(message: "alert_wrong_secret")
                 return
             }
 
@@ -164,13 +166,7 @@ struct AddPasswordView: View {
                 .padding(.vertical, 6)
                 #endif
             }
-            .alert(isPresented: $isShowAlert) {
-                Alert(
-                    title: Text("alert_error_title"),
-                    message: Text("alert_error_message"),
-                    dismissButton: .cancel()
-                )
-            }
+            .customAlert(item: $alertItem)
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     Picker("picker_title_type_algorithm", selection: $typeAlgorithm.animation()) {

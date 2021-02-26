@@ -49,6 +49,8 @@
 		CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C69F225DE7F4B001E9369 /* SettingsView.swift */; };
 		CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
 		CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
+		CB69306F25E9112E00E72870 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69306E25E9112E00E72870 /* Alert.swift */; };
+		CB69307025E9112E00E72870 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69306E25E9112E00E72870 /* Alert.swift */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB89B18C25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
@@ -101,6 +103,7 @@
 		CB6396FB25B7000100B7AAA0 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CB6396FE25B7000700B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB63970025B7007800B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		CB69306E25E9112E00E72870 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CB89B18D25B6C6B100B61B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB89B18F25B6C6B400B61B68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBF0652525E2A2350068DC44 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 				CB158E3F25C2AE15001627E4 /* Extension */,
 				CB178CEA25E13154000C845C /* License */,
 				CB35699025B566B900663B2E /* ListItem.swift */,
+				CB69306E25E9112E00E72870 /* Alert.swift */,
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
 				CBF0652525E2A2350068DC44 /* AppStore.swift */,
@@ -349,6 +353,7 @@
 				CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
 				CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */,
+				CB69306F25E9112E00E72870 /* Alert.swift in Sources */,
 				CB178CEC25E13165000C845C /* LicenseModel.swift in Sources */,
 				CB158E3825C2AE0C001627E4 /* Color.swift in Sources */,
 				CB35699625B568A700663B2E /* Enum.swift in Sources */,
@@ -375,6 +380,7 @@
 				CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */,
 				CB178CED25E13165000C845C /* LicenseModel.swift in Sources */,
 				CB158E5625C2AEEA001627E4 /* View.swift in Sources */,
+				CB69307025E9112E00E72870 /* Alert.swift in Sources */,
 				CB2280BE25E136E500938B84 /* LicenseDetail.swift in Sources */,
 				CB351D8725B95DEE006F6A8D /* String.swift in Sources */,
 				CB158E4E25C2AEA1001627E4 /* URL.swift in Sources */,

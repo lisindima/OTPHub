@@ -18,7 +18,9 @@
 "button_title_add_account" = "Add account";
 "navigation_title_new_account" = "New account";
 "alert_error_title" = "Error";
-"alert_error_message" = "Fill in all the fields";
+"alert_empty_label" = "Fill in the label field";
+"alert_empty_secret" = "Fill in the secret field";
+"alert_wrong_secret" = "The entered secret does not match the base32 encoding";
 "close_toolbar" = "Close";
 "help_title_add_button" = "Add new account";
 "navigation_title_scan_qr" = "Scan QR code";

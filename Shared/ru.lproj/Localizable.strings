@@ -18,7 +18,9 @@
 "button_title_add_account" = "Добавить аккаунт";
 "navigation_title_new_account" = "Новый аккаунт";
 "alert_error_title" = "Ошибка";
-"alert_error_message" = "Заполните все поля";
+"alert_empty_label" = "Заполните поле с названием";
+"alert_empty_secret" = "Заполните поле с секретом";
+"alert_wrong_secret" = "Введенный секрет не соответвует кодировке base32";
 "close_toolbar" = "Закрыть";
 "help_title_add_button" = "Добавить новый аккаунт";
 "navigation_title_scan_qr" = "Сканирование QR-кода";
