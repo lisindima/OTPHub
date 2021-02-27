@@ -12,7 +12,7 @@ struct SettingsView: View {
     @Environment(\.presentationMode) private var presentationMode
 
     @EnvironmentObject private var appStore: AppStore
-    
+
     @State private var isExporting: Bool = false
     @State private var isImporting: Bool = false
 
@@ -25,11 +25,11 @@ struct SettingsView: View {
     private func dismissView() {
         presentationMode.wrappedValue.dismiss()
     }
-    
+
     private func exporting() {
         isExporting = true
     }
-    
+
     private func importing() {
         isImporting = true
     }
@@ -62,7 +62,7 @@ struct SettingsView: View {
             }
             .fileExporter(
                 isPresented: $isExporting,
-                document: AccountDocument(message: "dss"),
+                document: AccountDocument(account: appStore.accounts),
                 contentType: UTType("com.darkfox.otphub.backup")!,
                 defaultFilename: "Backup"
             ) { result in
@@ -80,7 +80,7 @@ struct SettingsView: View {
             ) { result in
                 switch result {
                 case let .success(url):
-                    print(url)
+                    appStore.importAccountInKeychain(url.first)
                 case let .failure(error):
                     print(error)
                 }
@@ -88,32 +88,6 @@ struct SettingsView: View {
         }
     }
 }
-
-struct AccountDocument: FileDocument {
-    
-    static var readableContentTypes: [UTType] { [.init("com.darkfox.otphub.backup")!] }
-
-    var message: String
-
-    init(message: String) {
-        self.message = message
-    }
-
-    init(configuration: ReadConfiguration) throws {
-        guard let data = configuration.file.regularFileContents,
-              let string = String(data: data, encoding: .utf8)
-        else {
-            throw CocoaError(.fileReadCorruptFile)
-        }
-        message = string
-    }
-
-    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        return FileWrapper(regularFileWithContents: message.data(using: .utf8)!)
-    }
-    
-}
-
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     func customListStyle() -> some View {
-        self.modifier(ListStyle())
+        modifier(ListStyle())
     }
 
     func macOS<Content: View>(_ modifier: (Self) -> Content) -> some View {

@@ -25,7 +25,7 @@ struct AddPasswordView: View {
     @State private var color: Color = .black
     @State private var isShowQRView: Bool = false
     @State private var alertItem: AlertItem?
-    
+
     private func savePassword() {
         if label.isEmpty {
             alertItem = AlertItem(message: "alert_empty_label")

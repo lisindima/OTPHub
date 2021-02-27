@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0C5EF525EA024D0032E3F8 /* AccountDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C5EF425EA024D0032E3F8 /* AccountDocument.swift */; };
+		CB0C5EF625EA024D0032E3F8 /* AccountDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C5EF425EA024D0032E3F8 /* AccountDocument.swift */; };
 		CB158E3825C2AE0C001627E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E3725C2AE0C001627E4 /* Color.swift */; };
 		CB158E3925C2AE0C001627E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E3725C2AE0C001627E4 /* Color.swift */; };
 		CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E4C25C2AEA1001627E4 /* URL.swift */; };
@@ -72,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB0C5EF425EA024D0032E3F8 /* AccountDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDocument.swift; sourceTree = "<group>"; };
 		CB158E3725C2AE0C001627E4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CB158E4C25C2AEA1001627E4 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CB158E5425C2AEEA001627E4 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -196,6 +199,7 @@
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
 				CB35697425B5423500663B2E /* AddPasswordView.swift */,
 				CBF0652525E2A2350068DC44 /* AppStore.swift */,
+				CB0C5EF425EA024D0032E3F8 /* AccountDocument.swift */,
 				CB35699525B568A700663B2E /* Enum.swift */,
 				CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */,
 				CB35694A25B53CEC00663B2E /* Assets.xcassets */,
@@ -365,6 +369,7 @@
 				CB1B863225D2C04600EE2557 /* ListStyle.swift in Sources */,
 				CB178CE825E13129000C845C /* Bundle.swift in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
+				CB0C5EF525EA024D0032E3F8 /* AccountDocument.swift in Sources */,
 				CB158E7A25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
 				CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */,
@@ -379,6 +384,7 @@
 				CB178CE925E13129000C845C /* Bundle.swift in Sources */,
 				CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */,
 				CB178CED25E13165000C845C /* LicenseModel.swift in Sources */,
+				CB0C5EF625EA024D0032E3F8 /* AccountDocument.swift in Sources */,
 				CB158E5625C2AEEA001627E4 /* View.swift in Sources */,
 				CB69307025E9112E00E72870 /* Alert.swift in Sources */,
 				CB2280BE25E136E500938B84 /* LicenseDetail.swift in Sources */,

@@ -43,4 +43,12 @@ class AppStore: ObservableObject {
     func loadAccountsFromKeychain() throws -> [Account] {
         try Account.loadAll(from: keychain)
     }
+
+    func importAccountInKeychain(_ url: URL?) {
+        guard let url = url else { return }
+        let data = try! Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        let account = try! decoder.decode([Account].self, from: data)
+        print(account)
+    }
 }

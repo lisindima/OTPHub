@@ -16,7 +16,7 @@ struct AlertItem: Identifiable {
 
 struct CustomAlert: ViewModifier {
     @Binding var item: AlertItem?
-    
+
     func body(content: Content) -> some View {
         content
             .alert(item: $item) { item in
