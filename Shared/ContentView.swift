@@ -17,6 +17,18 @@ struct ContentView: View {
             offsets.map { appStore.accounts[$0] }.forEach(appStore.removeAccount)
         }
     }
+    
+    private func openSettings() {
+        #if os(macOS)
+        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+        #else
+        isPresented = .settings
+        #endif
+    }
+    
+    private func openAddPassword() {
+        isPresented = .addpassword
+    }
 
     var body: some View {
         NavigationViewWrapper {
@@ -27,20 +39,19 @@ struct ContentView: View {
             .customListStyle()
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button(action: { isPresented = .addpassword }) {
+                    Button(action: openAddPassword) {
                         Label("button_title_add_account", systemImage: "plus.circle.fill")
                     }
                     .keyboardShortcut("a", modifiers: .command)
                     .help("help_title_add_button")
                 }
-                #if os(iOS)
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(action: { isPresented = .settings }) {
+                    Button(action: openSettings) {
                         Label("button_title_settings", systemImage: "ellipsis")
                     }
                     .keyboardShortcut("s", modifiers: .command)
+                    .help("help_title_settings_button")
                 }
-                #endif
             }
             .navigationTitle("OTPHub")
         }

@@ -55,6 +55,7 @@
 		CB69307025E9112E00E72870 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69306E25E9112E00E72870 /* Alert.swift */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB89B18C25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
+		CB91856A25EA7AAD004143DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB91856925EA7AAD004143DD /* SettingsView.swift */; };
 		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
 		CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
 		CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
@@ -109,6 +110,7 @@
 		CB69306E25E9112E00E72870 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CB89B18D25B6C6B100B61B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB89B18F25B6C6B400B61B68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB91856925EA7AAD004143DD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CBF0652525E2A2350068DC44 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +234,7 @@
 		CB35695825B53CEC00663B2E /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				CB91856925EA7AAD004143DD /* SettingsView.swift */,
 				CB35695925B53CEC00663B2E /* Info.plist */,
 				CB35695A25B53CEC00663B2E /* macOS.entitlements */,
 			);
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB91856A25EA7AAD004143DD /* SettingsView.swift in Sources */,
 				CB35695E25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
 				CB178CE925E13129000C845C /* Bundle.swift in Sources */,
 				CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */,

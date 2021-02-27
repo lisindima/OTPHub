@@ -23,6 +23,7 @@
 "alert_wrong_secret" = "The entered secret does not match the base32 encoding";
 "close_toolbar" = "Close";
 "help_title_add_button" = "Add new account";
+"help_title_settings_button" = "Open settings";
 "navigation_title_scan_qr" = "Scan QR code";
 "bottom_title_scan_qr" = "Point the camera at the QR code";
 "picker_title_type_algorithm" = "Algorithm type";

@@ -23,6 +23,7 @@
 "alert_wrong_secret" = "Введенный секрет не соответвует кодировке base32";
 "close_toolbar" = "Закрыть";
 "help_title_add_button" = "Добавить новый аккаунт";
+"help_title_settings_button" = "Открыть настройки";
 "navigation_title_scan_qr" = "Сканирование QR-кода";
 "bottom_title_scan_qr" = "Наведите камеру на QR-код";
 "picker_title_type_algorithm" = "Тип алгоритма";

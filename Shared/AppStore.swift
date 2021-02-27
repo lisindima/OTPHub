@@ -18,7 +18,7 @@ class AppStore: ObservableObject {
         .synchronizable(true)
 
     init() {
-        accounts = try! loadAccountsFromKeychain()
+        accounts = Account.loadAll(from: keychain)
     }
 
     func addAccount(_ account: Account) {
@@ -40,15 +40,17 @@ class AppStore: ObservableObject {
         }
     }
 
-    func loadAccountsFromKeychain() throws -> [Account] {
-        try Account.loadAll(from: keychain)
-    }
-
     func importAccountInKeychain(_ url: URL?) {
         guard let url = url else { return }
-        let data = try! Data(contentsOf: url)
+        guard let data = try? Data(contentsOf: url) else { return }
+        
         let decoder = JSONDecoder()
-        let account = try! decoder.decode([Account].self, from: data)
-        print(account)
+        guard let accounts = try? decoder.decode([Account].self, from: data) else { return }
+        
+        try? keychain.removeAll()
+        
+        for account in accounts {
+            addAccount(account)
+        }
     }
 }
