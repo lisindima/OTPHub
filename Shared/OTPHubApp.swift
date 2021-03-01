@@ -17,5 +17,12 @@ struct OTPHubApp: App {
                 .environmentObject(appStore)
                 .accentColor(.purple)
         }
+        #if os(macOS)
+        Settings {
+            SettingsView()
+                .environmentObject(appStore)
+                .frame(minWidth: 300, idealWidth: 350, maxWidth: 350, minHeight: 400, idealHeight: 400, maxHeight: 500)
+        }
+        #endif
     }
 }

@@ -30,9 +30,19 @@
 "stepper_title_counter" = "Present value: ";
 "section_header_counter" = "Counter";
 "section_footer_counter" = "Set the initial value for the counter, if you are not sure with the choice, leave it at the default.";
+
+// SettingsView
+
 "button_title_settings" = "Settings";
 "navigation_title_settings" = "Settings";
+"alert_success_title" = "Success";
+"alert_success_create_backup" = "The backup was saved successfully.";
+"section_header_other" = "Other";
 "section_footer_app_version %@ (%@)" = "Version: %@ (%@)";
+"section_header_database" = "Database";
+"section_footer_database" = "Use this for backups or to move to other devices outside of your iCloud account.";
+"button_title_import_account" = "Import accounts";
+"button_title_export_account" = "Export accounts";
 "navigation_link_license" = "License";
 "navigation_title_license" = "License";
 "section_footer_license" = "Listed here are the open source libraries and frameworks that are used in this application.";

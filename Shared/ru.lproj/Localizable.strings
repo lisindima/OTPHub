@@ -30,9 +30,19 @@
 "stepper_title_counter" = "Текущее значение: ";
 "section_header_counter" = "Счетчик";
 "section_footer_counter" = "Установите начальное значение для счетчика, если вы не уверены с выбором оставьте его по умолчанию.";
+
+// SettingsView
+
 "button_title_settings" = "Настройки";
 "navigation_title_settings" = "Настройки";
+"alert_success_title" = "Успех";
+"alert_success_create_backup" = "Резервная копия успешно сохранена.";
+"section_header_other" = "Другое";
 "section_footer_app_version %@ (%@)" = "Версия: %@ (%@)";
+"section_header_database" = "База данных";
+"section_footer_database" = "Используйте это для резервного копирования или для перемещения на другие устройства за пределами вашей учетной записи iCloud.";
+"button_title_import_account" = "Импорт аккаунтов";
+"button_title_export_account" = "Экспорт аккаунтов";
 "navigation_link_license" = "Лицензии";
 "navigation_title_license" = "Лицензии";
 "section_footer_license" = "Здесь перечислены библиотеки и фреймворки с открытым исходным кодом, которые используются в этом приложении.";

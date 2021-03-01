@@ -15,8 +15,9 @@ struct SettingsView: View {
 
     @State private var isExporting: Bool = false
     @State private var isImporting: Bool = false
+    @State private var alertItem: AlertItem?
 
-    var appVersion: Text {
+    private var appVersion: Text {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         return Text("section_footer_app_version \(version) (\(build))")
@@ -37,21 +38,23 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
+                Section(header: Text("section_header_database"), footer: Text("section_footer_database")) {
                     Button(action: exporting) {
-                        Label("Резервное копирование", systemImage: "externaldrive.badge.timemachine")
+                        Label("button_title_export_account", systemImage: "externaldrive.badge.timemachine")
                     }
                     Button(action: importing) {
-                        Label("Восстановление", systemImage: "internaldrive")
+                        Label("button_title_import_account", systemImage: "internaldrive")
                     }
                 }
-                Section(footer: appVersion) {
+                .buttonStyle(PlainButtonStyle())
+                Section(header: Text("section_header_other"), footer: appVersion) {
                     NavigationLink(destination: License()) {
                         Label("navigation_link_license", systemImage: "doc.plaintext")
                     }
                 }
             }
             .navigationTitle("navigation_title_settings")
+            .customAlert(item: $alertItem)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(action: dismissView) {
@@ -67,8 +70,8 @@ struct SettingsView: View {
                 defaultFilename: "Backup"
             ) { result in
                 switch result {
-                case let .success(url):
-                    print(url)
+                case .success:
+                    alertItem = AlertItem(title: "alert_success_title", message: "alert_success_create_backup")
                 case let .failure(error):
                     print(error)
                 }
@@ -86,11 +89,5 @@ struct SettingsView: View {
                 }
             }
         }
-    }
-}
-
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
     }
 }
