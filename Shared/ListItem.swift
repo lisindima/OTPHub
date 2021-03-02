@@ -9,7 +9,7 @@ import OTP
 import SwiftUI
 
 struct ListItem: View {
-    var account: Account
+    @Binding var account: Account
 
     @State private var otpString: String?
     @State private var progress: Float = 0.0
@@ -32,6 +32,19 @@ struct ListItem: View {
 
     private func generatePassword() {
         otpString = account.generate(time: Date())
+    }
+
+    private func updateHOTP() {
+        account = account.updatedAccount()
+    }
+    
+    private func updateTOTP() {
+        if progress < Float(account.generator.factor.getValuePeriod) {
+            progress += 1
+        } else if progress == Float(account.generator.factor.getValuePeriod) {
+            progress = 0.0
+            generatePassword()
+        }
     }
 
     var body: some View {
@@ -61,7 +74,7 @@ struct ListItem: View {
             HStack {
                 password
                 Spacer()
-                Button(action: generatePassword) {
+                Button(action: updateHOTP) {
                     Image(systemName: "arrow.clockwise.circle.fill")
                         .font(.largeTitle)
                         .foregroundColor(Color(hex: account.color))
@@ -88,12 +101,7 @@ struct ListItem: View {
         .macOS { $0.buttonStyle(PlainButtonStyle()) }
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in
-            if progress < Float(account.generator.factor.getValuePeriod) {
-                progress += 1
-            } else if progress == Float(account.generator.factor.getValuePeriod) {
-                progress = 0.0
-                generatePassword()
-            }
+            updateTOTP()
         }
     }
 }

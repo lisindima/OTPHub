@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OTP
 
 struct ContentView: View {
     @EnvironmentObject private var appStore: AppStore
@@ -16,6 +17,13 @@ struct ContentView: View {
         withAnimation {
             offsets.map { appStore.accounts[$0] }.forEach(appStore.removeAccount)
         }
+    }
+    
+    private func binding(for account: Account) -> Binding<Account> {
+        guard let accountIndex = appStore.accounts.firstIndex(where: { $0.id == account.id }) else {
+            fatalError("Can't find scrum in array")
+        }
+        return $appStore.accounts[accountIndex]
     }
     
     private func openSettings() {
@@ -33,8 +41,10 @@ struct ContentView: View {
     var body: some View {
         NavigationViewWrapper {
             List {
-                ForEach(appStore.accounts, id: \.id, content: ListItem.init)
-                    .onDelete(perform: deleteItems)
+                ForEach(appStore.accounts, id: \.id) { account in
+                    ListItem(account: binding(for: account))
+                }
+                .onDelete(perform: deleteItems)
             }
             .customListStyle()
             .toolbar {

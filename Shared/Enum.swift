@@ -13,9 +13,6 @@ enum Digits: Int, CaseIterable, Identifiable {
     case eight = 8
 
     var id: Int { rawValue }
-}
-
-extension Digits {
     var localized: LocalizedStringKey {
         switch self {
         case .six: return "6_digits"
@@ -30,9 +27,6 @@ enum Period: TimeInterval, CaseIterable, Identifiable {
     case sixty = 60
 
     var id: TimeInterval { rawValue }
-}
-
-extension Period {
     var localized: LocalizedStringKey {
         switch self {
         case .thirty: return "30_seconds"
