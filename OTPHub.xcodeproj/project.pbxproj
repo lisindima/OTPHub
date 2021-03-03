@@ -39,8 +39,8 @@
 		CB35696025B53CEC00663B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694825B53CEB00663B2E /* ContentView.swift */; };
 		CB35696325B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
 		CB35696425B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
-		CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddPasswordView.swift */; };
-		CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddPasswordView.swift */; };
+		CB35697525B5423500663B2E /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddAccountView.swift */; };
+		CB35697625B5423500663B2E /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddAccountView.swift */; };
 		CB35697C25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */; };
 		CB35697D25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */; };
 		CB35699125B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
@@ -97,7 +97,7 @@
 		CB35695725B53CEC00663B2E /* OTPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB35695925B53CEC00663B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB35695A25B53CEC00663B2E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		CB35697425B5423500663B2E /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
+		CB35697425B5423500663B2E /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 		CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		CB35699025B566B900663B2E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		CB35699525B568A700663B2E /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 				CB35699025B566B900663B2E /* ListItem.swift */,
 				CB69306E25E9112E00E72870 /* Alert.swift */,
 				CB35694825B53CEB00663B2E /* ContentView.swift */,
-				CB35697425B5423500663B2E /* AddPasswordView.swift */,
+				CB35697425B5423500663B2E /* AddAccountView.swift */,
 				CBF0652525E2A2350068DC44 /* AppStore.swift */,
 				CB0C5EF425EA024D0032E3F8 /* AccountDocument.swift */,
 				CB35699525B568A700663B2E /* Enum.swift */,
@@ -374,7 +374,7 @@
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB0C5EF525EA024D0032E3F8 /* AccountDocument.swift in Sources */,
 				CB158E7A25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
-				CB35697525B5423500663B2E /* AddPasswordView.swift in Sources */,
+				CB35697525B5423500663B2E /* AddAccountView.swift in Sources */,
 				CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,7 +403,7 @@
 				CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */,
 				CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */,
 				CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
-				CB35697625B5423500663B2E /* AddPasswordView.swift in Sources */,
+				CB35697625B5423500663B2E /* AddAccountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

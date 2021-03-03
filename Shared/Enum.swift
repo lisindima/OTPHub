@@ -37,7 +37,7 @@ enum Period: TimeInterval, CaseIterable, Identifiable {
 
 enum SheetState: String, Identifiable {
     case settings
-    case addpassword
+    case addAccount
 
     var id: String { rawValue }
 }

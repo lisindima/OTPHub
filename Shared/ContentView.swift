@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import SwiftUI
 import OTP
+import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var appStore: AppStore
@@ -18,14 +18,14 @@ struct ContentView: View {
             offsets.map { appStore.accounts[$0] }.forEach(appStore.removeAccount)
         }
     }
-    
-    private func binding(for account: Account) -> Binding<Account> {
+
+    private func binding(_ account: Account) -> Binding<Account> {
         guard let accountIndex = appStore.accounts.firstIndex(where: { $0.id == account.id }) else {
-            fatalError("Can't find scrum in array")
+            fatalError("Can't find account in array")
         }
         return $appStore.accounts[accountIndex]
     }
-    
+
     private func openSettings() {
         #if os(macOS)
         NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
@@ -33,23 +33,23 @@ struct ContentView: View {
         isPresented = .settings
         #endif
     }
-    
-    private func openAddPassword() {
-        isPresented = .addpassword
+
+    private func openAddAccount() {
+        isPresented = .addAccount
     }
 
     var body: some View {
         NavigationViewWrapper {
             List {
-                ForEach(appStore.accounts, id: \.id) { account in
-                    ListItem(account: binding(for: account))
+                ForEach(appStore.accounts, id: \.self) { account in
+                    ListItem(account: binding(account))
                 }
                 .onDelete(perform: deleteItems)
             }
             .customListStyle()
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button(action: openAddPassword) {
+                    Button(action: openAddAccount) {
                         Label("button_title_add_account", systemImage: "plus.circle.fill")
                     }
                     .keyboardShortcut("a", modifiers: .command)
@@ -68,12 +68,10 @@ struct ContentView: View {
         .sheet(item: $isPresented) { view in
             switch view {
             case .settings:
-                #if os(iOS)
                 SettingsView()
                     .accentColor(.purple)
-                #endif
-            case .addpassword:
-                AddPasswordView()
+            case .addAccount:
+                AddAccountView()
                     .accentColor(.purple)
             }
         }

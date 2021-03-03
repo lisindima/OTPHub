@@ -35,9 +35,9 @@ struct ListItem: View {
     }
 
     private func updateHOTP() {
-        account = account.updatedAccount()
+        account = account.incrementCounter(keychain: AppStore.shared.keychain)
     }
-    
+
     private func updateTOTP() {
         if progress < Float(account.generator.factor.getValuePeriod) {
             progress += 1
@@ -100,8 +100,6 @@ struct ListItem: View {
         }
         .macOS { $0.buttonStyle(PlainButtonStyle()) }
         .onAppear(perform: generatePassword)
-        .onReceive(timer) { _ in
-            updateTOTP()
-        }
+        .onReceive(timer) { _ in updateTOTP() }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  AddPasswordView.swift
+//  AddAccountView.swift
 //  OTPHub
 //
 //  Created by Дмитрий Лисин on 18.01.2021.
@@ -8,7 +8,7 @@
 import OTP
 import SwiftUI
 
-struct AddPasswordView: View {
+struct AddAccountView: View {
     @Environment(\.presentationMode) private var presentationMode
 
     @EnvironmentObject private var appStore: AppStore

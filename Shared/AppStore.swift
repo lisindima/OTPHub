@@ -43,12 +43,13 @@ class AppStore: ObservableObject {
     func importAccountInKeychain(_ url: URL?) {
         guard let url = url else { return }
         guard let data = try? Data(contentsOf: url) else { return }
-        
+
         let decoder = JSONDecoder()
         guard let accounts = try? decoder.decode([Account].self, from: data) else { return }
-        
+
+        self.accounts.removeAll()
         try? keychain.removeAll()
-        
+
         for account in accounts {
             addAccount(account)
         }
