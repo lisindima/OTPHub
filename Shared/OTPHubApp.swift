@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct OTPHubApp: App {
-    @StateObject private var appStore = AppStore.shared
+    @StateObject private var appStore = AppStore()
 
     var body: some Scene {
         WindowGroup {

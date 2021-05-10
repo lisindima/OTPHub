@@ -18,6 +18,15 @@
           "revision": "84e546727d66f1adc5439debad16270d0fdd04e7",
           "version": "4.2.2"
         }
+      },
+      {
+        "package": "KeychainOTP",
+        "repositoryURL": "https://github.com/lisindima/KeychainOTP",
+        "state": {
+          "branch": null,
+          "revision": "bebbed25dc9abaa95dd5e4812a38cacd382f8856",
+          "version": "0.0.1"
+        }
       }
     ]
   },

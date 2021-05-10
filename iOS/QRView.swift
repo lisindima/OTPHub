@@ -6,7 +6,7 @@
 //
 
 import CodeScanner
-import OTP
+import KeychainOTP
 import SwiftUI
 
 struct QRView: View {

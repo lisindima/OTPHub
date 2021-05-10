@@ -29,8 +29,6 @@
 		CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B863125D2C04600EE2557 /* ListStyle.swift */; };
 		CB2280BD25E136E500938B84 /* LicenseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2280BC25E136E500938B84 /* LicenseDetail.swift */; };
 		CB2280BE25E136E500938B84 /* LicenseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2280BC25E136E500938B84 /* LicenseDetail.swift */; };
-		CB25134325E40D1C001C2F0C /* OTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB25134225E40D1C001C2F0C /* OTP */; };
-		CB25134525E40D26001C2F0C /* OTP in Frameworks */ = {isa = PBXBuildFile; productRef = CB25134425E40D26001C2F0C /* OTP */; };
 		CB351D8625B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
 		CB351D8725B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
 		CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35694725B53CEB00663B2E /* OTPHubApp.swift */; };
@@ -56,6 +54,8 @@
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB89B18C25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
 		CB91856A25EA7AAD004143DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB91856925EA7AAD004143DD /* SettingsView.swift */; };
+		CBAF9A30264919D20059A5D6 /* KeychainOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CBAF9A2F264919D20059A5D6 /* KeychainOTP */; };
+		CBAF9A3226491A3E0059A5D6 /* KeychainOTP in Frameworks */ = {isa = PBXBuildFile; productRef = CBAF9A3126491A3E0059A5D6 /* KeychainOTP */; };
 		CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CBBE8A6C25B6969300CE1DE8 /* CodeScanner */; };
 		CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
 		CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0652525E2A2350068DC44 /* AppStore.swift */; };
@@ -86,7 +86,6 @@
 		CB178CEE25E131A1000C845C /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		CB1B863125D2C04600EE2557 /* ListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyle.swift; sourceTree = "<group>"; };
 		CB2280BC25E136E500938B84 /* LicenseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetail.swift; sourceTree = "<group>"; };
-		CB25134125E40C1F001C2F0C /* OTP */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OTP; path = ../../OTP; sourceTree = "<group>"; };
 		CB2AA36125BF139C00D317DE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB351D8525B95DEE006F6A8D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CB35694725B53CEB00663B2E /* OTPHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPHubApp.swift; sourceTree = "<group>"; };
@@ -119,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB25134325E40D1C001C2F0C /* OTP in Frameworks */,
+				CBAF9A30264919D20059A5D6 /* KeychainOTP in Frameworks */,
 				CBBE8A6D25B6969300CE1DE8 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB25134525E40D26001C2F0C /* OTP in Frameworks */,
+				CBAF9A3226491A3E0059A5D6 /* KeychainOTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +190,6 @@
 		CB35694425B53CEB00663B2E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CB25134125E40C1F001C2F0C /* OTP */,
 				CB35694725B53CEB00663B2E /* OTPHubApp.swift */,
 				CB158E6025C2B02E001627E4 /* ViewModifier */,
 				CB158E3F25C2AE15001627E4 /* Extension */,
@@ -260,7 +258,7 @@
 			name = "OTPHub (iOS)";
 			packageProductDependencies = (
 				CBBE8A6C25B6969300CE1DE8 /* CodeScanner */,
-				CB25134225E40D1C001C2F0C /* OTP */,
+				CBAF9A2F264919D20059A5D6 /* KeychainOTP */,
 			);
 			productName = "2FAapp (iOS)";
 			productReference = CB35694F25B53CEC00663B2E /* OTPHub.app */;
@@ -280,7 +278,7 @@
 			);
 			name = "OTPHub (macOS)";
 			packageProductDependencies = (
-				CB25134425E40D26001C2F0C /* OTP */,
+				CBAF9A3126491A3E0059A5D6 /* KeychainOTP */,
 			);
 			productName = "2FAapp (macOS)";
 			productReference = CB35695725B53CEC00663B2E /* OTPHub.app */;
@@ -315,6 +313,7 @@
 			mainGroup = CB35693F25B53CEB00663B2E;
 			packageReferences = (
 				CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				CBAF9A2E264919D20059A5D6 /* XCRemoteSwiftPackageReference "KeychainOTP" */,
 			);
 			productRefGroup = CB35695025B53CEC00663B2E /* Products */;
 			projectDirPath = "";
@@ -675,6 +674,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CBAF9A2E264919D20059A5D6 /* XCRemoteSwiftPackageReference "KeychainOTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lisindima/KeychainOTP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 		CBBE8A6B25B6969300CE1DE8 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -686,13 +693,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CB25134225E40D1C001C2F0C /* OTP */ = {
+		CBAF9A2F264919D20059A5D6 /* KeychainOTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = OTP;
+			package = CBAF9A2E264919D20059A5D6 /* XCRemoteSwiftPackageReference "KeychainOTP" */;
+			productName = KeychainOTP;
 		};
-		CB25134425E40D26001C2F0C /* OTP */ = {
+		CBAF9A3126491A3E0059A5D6 /* KeychainOTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = OTP;
+			package = CBAF9A2E264919D20059A5D6 /* XCRemoteSwiftPackageReference "KeychainOTP" */;
+			productName = KeychainOTP;
 		};
 		CBBE8A6C25B6969300CE1DE8 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;

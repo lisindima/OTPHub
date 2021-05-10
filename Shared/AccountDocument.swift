@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лисин on 27.02.2021.
 //
 
-import OTP
+import KeychainOTP
 import SwiftUI
 import UniformTypeIdentifiers
 

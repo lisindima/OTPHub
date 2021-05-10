@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лисин on 18.01.2021.
 //
 
-import OTP
+import KeychainOTP
 import SwiftUI
 
 struct AddAccountView: View {
