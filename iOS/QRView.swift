@@ -61,7 +61,7 @@ struct QRView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(action: dismiss.callAsFunction) {
-                        Image(systemName: "xmark")
+                        Text("close_toolbar")
                     }
                     .keyboardShortcut(.cancelAction)
                 }

@@ -35,8 +35,6 @@
 		CB35696425B53CEC00663B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB35694A25B53CEC00663B2E /* Assets.xcassets */; };
 		CB35697525B5423500663B2E /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddAccountView.swift */; };
 		CB35697625B5423500663B2E /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697425B5423500663B2E /* AddAccountView.swift */; };
-		CB35697C25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */; };
-		CB35697D25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */; };
 		CB35699125B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
 		CB35699225B566B900663B2E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699025B566B900663B2E /* ListItem.swift */; };
 		CB35699625B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
@@ -89,7 +87,6 @@
 		CB35695925B53CEC00663B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB35695A25B53CEC00663B2E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		CB35697425B5423500663B2E /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
-		CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		CB35699025B566B900663B2E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		CB35699525B568A700663B2E /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CB39D0AB25CE648A0091F161 /* QRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRView.swift; sourceTree = "<group>"; };
@@ -136,14 +133,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		CB158E6025C2B02E001627E4 /* ViewModifier */ = {
-			isa = PBXGroup;
-			children = (
-				CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */,
-			);
-			path = ViewModifier;
-			sourceTree = "<group>";
-		};
 		CB168FDD25B5DE24000DC544 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				CB35694725B53CEB00663B2E /* OTPHubApp.swift */,
-				CB158E6025C2B02E001627E4 /* ViewModifier */,
 				CB158E3F25C2AE15001627E4 /* Extension */,
 				CB178CEA25E13154000C845C /* License */,
 				CB35699025B566B900663B2E /* ListItem.swift */,
@@ -353,7 +341,6 @@
 				CB2280BD25E136E500938B84 /* LicenseDetail.swift in Sources */,
 				CB178CEF25E131A1000C845C /* License.swift in Sources */,
 				CB351D8625B95DEE006F6A8D /* String.swift in Sources */,
-				CB35697C25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */,
 				CB178CE825E13129000C845C /* Bundle.swift in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB0C5EF525EA024D0032E3F8 /* AccountDocument.swift in Sources */,
@@ -380,7 +367,6 @@
 				CB35699225B566B900663B2E /* ListItem.swift in Sources */,
 				CB158E3925C2AE0C001627E4 /* Color.swift in Sources */,
 				CB35699725B568A700663B2E /* Enum.swift in Sources */,
-				CB35697D25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */,
 				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
 				CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */,
 				CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,

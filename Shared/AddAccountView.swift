@@ -102,15 +102,17 @@ struct AddAccountView: View {
                         Image(systemName: "qrcode")
                             .imageScale(.large)
                     }
-                    .buttonStyle(
-                        CustomButtonStyle(
-                            backgroundColor: .accentColor.opacity(0.2),
-                            labelColor: .accentColor
-                        )
-                    )
+                    .buttonStyle(.bordered)
+                    .controlSize(.large)
                     .frame(width: 80)
-                    Button("button_title_add_account", action: savePassword)
-                        .buttonStyle(CustomButtonStyle())
+                    Button(action: savePassword) {
+                        Text("button_title_add_account")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.large)
+                    .controlProminence(.increased)
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 6)
