@@ -210,7 +210,6 @@ struct AddAccountView: View {
                 typeAlgorithm: $typeAlgorithm,
                 counter: $counter
             )
-            .accentColor(.purple)
             #endif
         }
     }

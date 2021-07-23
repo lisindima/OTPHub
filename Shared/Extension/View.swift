@@ -8,10 +8,6 @@
 import SwiftUI
 
 extension View {
-    func customListStyle() -> some View {
-        modifier(ListStyle())
-    }
-
     func macOS<Content: View>(_ modifier: (Self) -> Content) -> some View {
         #if os(macOS)
         modifier(self)

@@ -25,8 +25,6 @@
 		CB178CED25E13165000C845C /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178CEB25E13165000C845C /* LicenseModel.swift */; };
 		CB178CEF25E131A1000C845C /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178CEE25E131A1000C845C /* License.swift */; };
 		CB178CF025E131A1000C845C /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178CEE25E131A1000C845C /* License.swift */; };
-		CB1B863225D2C04600EE2557 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B863125D2C04600EE2557 /* ListStyle.swift */; };
-		CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B863125D2C04600EE2557 /* ListStyle.swift */; };
 		CB2280BD25E136E500938B84 /* LicenseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2280BC25E136E500938B84 /* LicenseDetail.swift */; };
 		CB2280BE25E136E500938B84 /* LicenseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2280BC25E136E500938B84 /* LicenseDetail.swift */; };
 		CB351D8625B95DEE006F6A8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB351D8525B95DEE006F6A8D /* String.swift */; };
@@ -84,7 +82,6 @@
 		CB178CE725E13129000C845C /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		CB178CEB25E13165000C845C /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
 		CB178CEE25E131A1000C845C /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
-		CB1B863125D2C04600EE2557 /* ListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyle.swift; sourceTree = "<group>"; };
 		CB2280BC25E136E500938B84 /* LicenseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetail.swift; sourceTree = "<group>"; };
 		CB2AA36125BF139C00D317DE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB351D8525B95DEE006F6A8D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -151,7 +148,6 @@
 			children = (
 				CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */,
 				CB49478625CC314C0062FBBE /* CustomLabel.swift */,
-				CB1B863125D2C04600EE2557 /* ListStyle.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -368,7 +364,6 @@
 				CB178CEF25E131A1000C845C /* License.swift in Sources */,
 				CB351D8625B95DEE006F6A8D /* String.swift in Sources */,
 				CB35697C25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */,
-				CB1B863225D2C04600EE2557 /* ListStyle.swift in Sources */,
 				CB178CE825E13129000C845C /* Bundle.swift in Sources */,
 				CB35695F25B53CEC00663B2E /* ContentView.swift in Sources */,
 				CB0C5EF525EA024D0032E3F8 /* AccountDocument.swift in Sources */,
@@ -399,7 +394,6 @@
 				CB35699725B568A700663B2E /* Enum.swift in Sources */,
 				CB35697D25B55F1D00663B2E /* CustomButtonStyle.swift in Sources */,
 				CB35696025B53CEC00663B2E /* ContentView.swift in Sources */,
-				CB1B863325D2C04600EE2557 /* ListStyle.swift in Sources */,
 				CBF0652725E2A2350068DC44 /* AppStore.swift in Sources */,
 				CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */,
 				CB35697625B5423500663B2E /* AddAccountView.swift in Sources */,
@@ -549,7 +543,7 @@
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,7 +568,7 @@
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,7 +600,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;
@@ -632,7 +626,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.otphub;
 				PRODUCT_NAME = OTPHub;

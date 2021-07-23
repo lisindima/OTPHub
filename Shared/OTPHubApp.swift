@@ -15,7 +15,6 @@ struct OTPHubApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(appStore)
-                .accentColor(.purple)
         }
         #if os(macOS)
         Settings {

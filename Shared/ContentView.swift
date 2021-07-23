@@ -12,51 +12,34 @@ struct ContentView: View {
     @EnvironmentObject private var appStore: AppStore
 
     @State private var isPresented: SheetState?
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { appStore.accounts[$0] }.forEach(appStore.removeAccount)
-        }
-    }
-
-    private func binding(_ account: Account) -> Binding<Account> {
-        guard let accountIndex = appStore.accounts.firstIndex(where: { $0.id == account.id }) else {
-            fatalError("Can't find account in array")
-        }
-        return $appStore.accounts[accountIndex]
-    }
-
-    private func openSettings() {
-        #if os(macOS)
-        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
-        #else
-        isPresented = .settings
-        #endif
-    }
-
-    private func openAddAccount() {
-        isPresented = .addAccount
-    }
+    @State private var showSettings: Bool = false
+    @State private var showAccount: Bool = false
+    @State private var text: String = ""
 
     var body: some View {
         NavigationViewWrapper {
             List {
-                ForEach(appStore.accounts, id: \.self) { account in
-                    ListItem(account: binding(account))
+                ForEach($appStore.accounts) { $account in
+                    ListItem(account: $account)
                 }
                 .onDelete(perform: deleteItems)
             }
-            .customListStyle()
+            .environment(\.defaultMinListRowHeight, 70)
+            .searchable(text: $text)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button(action: openAddAccount) {
+                    Button {
+                        showAccount = true
+                    } label: {
                         Label("button_title_add_account", systemImage: "plus.circle.fill")
                     }
                     .keyboardShortcut("a", modifiers: .command)
                     .help("help_title_add_button")
                 }
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(action: openSettings) {
+                    Button {
+                        openSettings()
+                    } label: {
                         Label("button_title_settings", systemImage: "ellipsis")
                     }
                     .keyboardShortcut("s", modifiers: .command)
@@ -64,16 +47,26 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("OTPHub")
-        }
-        .sheet(item: $isPresented) { view in
-            switch view {
-            case .settings:
+            .sheet(isPresented: $showSettings) {
                 SettingsView()
-                    .accentColor(.purple)
-            case .addAccount:
+            }
+            .sheet(isPresented: $showAccount) {
                 AddAccountView()
-                    .accentColor(.purple)
             }
         }
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { appStore.accounts[$0] }.forEach(appStore.removeAccount)
+        }
+    }
+
+    private func openSettings() {
+        #if os(macOS)
+        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+        #else
+        showSettings = true
+        #endif
     }
 }
