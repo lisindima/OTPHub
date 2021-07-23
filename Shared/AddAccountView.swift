@@ -129,8 +129,7 @@ struct AddAccountView: View {
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button(action: dismiss.callAsFunction) {
-                        Label("close_toolbar", systemImage: "xmark")
-                            .labelStyle(CustomLabelStyle())
+                        Text("close_toolbar")
                     }
                     .keyboardShortcut(.cancelAction)
                 }

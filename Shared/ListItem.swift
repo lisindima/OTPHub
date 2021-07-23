@@ -16,37 +16,6 @@ struct ListItem: View {
 
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
-    private func copyPasteboard() {
-        if let otpString = otpString {
-            #if os(macOS)
-            let pasteBoard = NSPasteboard.general
-            pasteBoard.clearContents()
-            pasteBoard.setString(otpString, forType: .string)
-            #else
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.success)
-            UIPasteboard.general.string = otpString
-            #endif
-        }
-    }
-
-    private func generatePassword() {
-        otpString = account.generate(time: Date())
-    }
-
-    private func updateHOTP() {
-        account = account.incrementCounter(keychain: AppStore.shared.keychain)
-    }
-
-    private func updateTOTP() {
-        if progress < Float(account.generator.factor.getValuePeriod) {
-            progress += 1
-        } else if progress == Float(account.generator.factor.getValuePeriod) {
-            progress = 0.0
-            generatePassword()
-        }
-    }
-
     var body: some View {
         if account.generator.factor.getTypeAlgorithm == .hotp {
             hotp
@@ -107,5 +76,36 @@ struct ListItem: View {
         #endif
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in updateTOTP() }
+    }
+    
+    private func copyPasteboard() {
+        if let otpString = otpString {
+            #if os(macOS)
+            let pasteBoard = NSPasteboard.general
+            pasteBoard.clearContents()
+            pasteBoard.setString(otpString, forType: .string)
+            #else
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+            UIPasteboard.general.string = otpString
+            #endif
+        }
+    }
+
+    private func generatePassword() {
+        otpString = account.generate(time: Date())
+    }
+
+    private func updateHOTP() {
+        account = account.incrementCounter(keychain: AppStore.shared.keychain)
+    }
+
+    private func updateTOTP() {
+        if progress < Float(account.generator.factor.getValuePeriod) {
+            progress += 1
+        } else if progress == Float(account.generator.factor.getValuePeriod) {
+            progress = 0.0
+            generatePassword()
+        }
     }
 }

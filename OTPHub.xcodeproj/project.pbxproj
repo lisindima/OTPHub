@@ -43,8 +43,6 @@
 		CB35699725B568A700663B2E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35699525B568A700663B2E /* Enum.swift */; };
 		CB39D0AC25CE648A0091F161 /* QRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39D0AB25CE648A0091F161 /* QRView.swift */; };
 		CB3C69F325DE7F4B001E9369 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C69F225DE7F4B001E9369 /* SettingsView.swift */; };
-		CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
-		CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49478625CC314C0062FBBE /* CustomLabel.swift */; };
 		CB69306F25E9112E00E72870 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69306E25E9112E00E72870 /* Alert.swift */; };
 		CB69307025E9112E00E72870 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69306E25E9112E00E72870 /* Alert.swift */; };
 		CB89B18B25B6C6B100B61B68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB89B18E25B6C6B100B61B68 /* Localizable.strings */; };
@@ -96,7 +94,6 @@
 		CB35699525B568A700663B2E /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CB39D0AB25CE648A0091F161 /* QRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRView.swift; sourceTree = "<group>"; };
 		CB3C69F225DE7F4B001E9369 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		CB49478625CC314C0062FBBE /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		CB6396FB25B7000100B7AAA0 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CB6396FE25B7000700B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB63970025B7007800B7AAA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -143,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				CB35697B25B55F1D00663B2E /* CustomButtonStyle.swift */,
-				CB49478625CC314C0062FBBE /* CustomLabel.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -346,7 +342,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
-				CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */,
 				CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
 				CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */,
@@ -375,7 +370,6 @@
 				CB91856A25EA7AAD004143DD /* SettingsView.swift in Sources */,
 				CB35695E25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
 				CB178CE925E13129000C845C /* Bundle.swift in Sources */,
-				CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */,
 				CB178CED25E13165000C845C /* LicenseModel.swift in Sources */,
 				CB0C5EF625EA024D0032E3F8 /* AccountDocument.swift in Sources */,
 				CB69307025E9112E00E72870 /* Alert.swift in Sources */,
