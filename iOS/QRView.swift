@@ -10,7 +10,7 @@ import KeychainOTP
 import SwiftUI
 
 struct QRView: View {
-    @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.dismiss) private var dismiss
 
     @Binding var label: String
     @Binding var issuer: String
@@ -24,23 +24,6 @@ struct QRView: View {
 
     private let simulatedData: String = "otpauth://totp/ACME%20Co:john@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA256&digits=7&period=60"
 
-    private func dismissView() {
-        presentationMode.wrappedValue.dismiss()
-    }
-
-    private func getURLComponents(_ string: String) {
-        guard let url = URL(string: string) else { return }
-        label = String(url.path.dropFirst())
-        issuer = url["issuer"]
-        secret = url["secret"]
-        image = URL(string: url["image"])
-        typeAlgorithm = url.host!.typeAlgorithmFromString()
-        algorithm = url["algorithm"].algorithmFromString()
-        digits = url["digits"].digitsFromString()
-        period = url["period"].periodFromString()
-        counter = url["counter"].counterFromString()
-    }
-
     var body: some View {
         NavigationView {
             ZStack {
@@ -51,7 +34,7 @@ struct QRView: View {
                     switch result {
                     case let .success(code):
                         getURLComponents(code)
-                        dismissView()
+                        dismiss()
                     case let .failure(error):
                         print(error.localizedDescription)
                     }
@@ -77,12 +60,25 @@ struct QRView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(action: dismissView) {
+                    Button(action: dismiss.callAsFunction) {
                         Image(systemName: "xmark")
                     }
                     .keyboardShortcut(.cancelAction)
                 }
             }
         }
+    }
+    
+    private func getURLComponents(_ string: String) {
+        guard let url = URL(string: string) else { return }
+        label = String(url.path.dropFirst())
+        issuer = url["issuer"]
+        secret = url["secret"]
+        image = URL(string: url["image"])
+        typeAlgorithm = url.host!.typeAlgorithmFromString()
+        algorithm = url["algorithm"].algorithmFromString()
+        digits = url["digits"].digitsFromString()
+        period = url["period"].periodFromString()
+        counter = url["counter"].counterFromString()
     }
 }

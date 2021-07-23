@@ -9,7 +9,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct SettingsView: View {
-    @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.dismiss) private var dismiss
 
     @EnvironmentObject private var appStore: AppStore
 
@@ -23,42 +23,41 @@ struct SettingsView: View {
         return Text("section_footer_app_version \(version) (\(build))")
     }
 
-    private func dismissView() {
-        presentationMode.wrappedValue.dismiss()
-    }
-
-    private func exporting() {
-        isExporting = true
-    }
-
-    private func importing() {
-        isImporting = true
-    }
-
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("section_header_database"), footer: Text("section_footer_database")) {
-                    Button(action: exporting) {
+                Section {
+                    Button {
+                        isExporting = true
+                    } label: {
                         Label("button_title_export_account", systemImage: "externaldrive.badge.timemachine")
                     }
-                    Button(action: importing) {
+                    Button {
+                        isImporting = true
+                    } label: {
                         Label("button_title_import_account", systemImage: "internaldrive")
                     }
+                } header: {
+                    Text("section_header_database")
+                } footer: {
+                    Text("section_footer_database")
                 }
-                .buttonStyle(PlainButtonStyle())
-                Section(header: Text("section_header_other"), footer: appVersion) {
+                Section {
                     NavigationLink(destination: License()) {
                         Label("navigation_link_license", systemImage: "doc.plaintext")
                     }
+                } header: {
+                    Text("section_header_other")
+                } footer: {
+                    appVersion
                 }
             }
             .navigationTitle("navigation_title_settings")
             .customAlert(item: $alertItem)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(action: dismissView) {
-                        Label("close_toolbar", systemImage: "xmark")
+                    Button(action: dismiss.callAsFunction) {
+                        Text("close_toolbar")
                     }
                     .keyboardShortcut(.cancelAction)
                 }

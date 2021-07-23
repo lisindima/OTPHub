@@ -11,9 +11,13 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             Text("Главная")
-                .tabItem { Label("Главная", systemImage: "house") }
+                .tabItem {
+                    Label("Главная", systemImage: "house")
+                }
             Text("База данных")
-                .tabItem { Label("База данных", systemImage: "house") }
+                .tabItem {
+                    Label("База данных", systemImage: "house")
+                }
         }
     }
 }

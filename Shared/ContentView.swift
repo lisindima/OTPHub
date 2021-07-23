@@ -11,10 +11,9 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject private var appStore: AppStore
 
-    @State private var isPresented: SheetState?
     @State private var showSettings: Bool = false
     @State private var showAccount: Bool = false
-    @State private var text: String = ""
+    @State private var search: String = ""
 
     var body: some View {
         NavigationViewWrapper {
@@ -25,7 +24,7 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
             }
             .environment(\.defaultMinListRowHeight, 70)
-            .searchable(text: $text)
+            .searchable(text: $search)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
