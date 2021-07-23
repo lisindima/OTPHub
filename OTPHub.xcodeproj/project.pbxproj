@@ -13,8 +13,6 @@
 		CB158E3925C2AE0C001627E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E3725C2AE0C001627E4 /* Color.swift */; };
 		CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E4C25C2AEA1001627E4 /* URL.swift */; };
 		CB158E4E25C2AEA1001627E4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E4C25C2AEA1001627E4 /* URL.swift */; };
-		CB158E5525C2AEEA001627E4 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E5425C2AEEA001627E4 /* View.swift */; };
-		CB158E5625C2AEEA001627E4 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E5425C2AEEA001627E4 /* View.swift */; };
 		CB158E7A25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */; };
 		CB158E7B25C2B0C9001627E4 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */; };
 		CB178CE525E130DD000C845C /* license.json in Resources */ = {isa = PBXBuildFile; fileRef = CB178CE425E130DD000C845C /* license.json */; };
@@ -76,7 +74,6 @@
 		CB0C5EF425EA024D0032E3F8 /* AccountDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDocument.swift; sourceTree = "<group>"; };
 		CB158E3725C2AE0C001627E4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CB158E4C25C2AEA1001627E4 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
-		CB158E5425C2AEEA001627E4 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		CB158E7925C2B0C9001627E4 /* NavigationViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewWrapper.swift; sourceTree = "<group>"; };
 		CB178CE425E130DD000C845C /* license.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = license.json; sourceTree = "<group>"; };
 		CB178CE725E13129000C845C /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -136,7 +133,6 @@
 			children = (
 				CB158E3725C2AE0C001627E4 /* Color.swift */,
 				CB158E4C25C2AEA1001627E4 /* URL.swift */,
-				CB158E5425C2AEEA001627E4 /* View.swift */,
 				CB351D8525B95DEE006F6A8D /* String.swift */,
 				CB178CE725E13129000C845C /* Bundle.swift */,
 			);
@@ -351,7 +347,6 @@
 			files = (
 				CB35695D25B53CEC00663B2E /* OTPHubApp.swift in Sources */,
 				CB49478725CC314C0062FBBE /* CustomLabel.swift in Sources */,
-				CB158E5525C2AEEA001627E4 /* View.swift in Sources */,
 				CB158E4D25C2AEA1001627E4 /* URL.swift in Sources */,
 				CB35699125B566B900663B2E /* ListItem.swift in Sources */,
 				CBF0652625E2A2350068DC44 /* AppStore.swift in Sources */,
@@ -383,7 +378,6 @@
 				CB49478825CC314C0062FBBE /* CustomLabel.swift in Sources */,
 				CB178CED25E13165000C845C /* LicenseModel.swift in Sources */,
 				CB0C5EF625EA024D0032E3F8 /* AccountDocument.swift in Sources */,
-				CB158E5625C2AEEA001627E4 /* View.swift in Sources */,
 				CB69307025E9112E00E72870 /* Alert.swift in Sources */,
 				CB2280BE25E136E500938B84 /* LicenseDetail.swift in Sources */,
 				CB351D8725B95DEE006F6A8D /* String.swift in Sources */,

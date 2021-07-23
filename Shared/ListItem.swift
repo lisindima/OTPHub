@@ -79,11 +79,15 @@ struct ListItem: View {
                         .font(.largeTitle)
                         .foregroundColor(Color(hex: account.color))
                 }
-                .macOS { $0.buttonStyle(PlainButtonStyle()) }
+                #if os(macOS)
+                .buttonStyle(.plain)
+                #endif
                 .frame(width: 60)
             }
         }
-        .macOS { $0.buttonStyle(PlainButtonStyle()) }
+        #if os(macOS)
+        .buttonStyle(.plain)
+        #endif
         .onAppear(perform: generatePassword)
     }
 
@@ -93,12 +97,14 @@ struct ListItem: View {
                 password
                 Spacer()
                 ProgressView(value: progress, total: Float(account.generator.factor.getValuePeriod))
-                    .macOS { $0.progressViewStyle(CircularProgressViewStyle()) }
+                    .progressViewStyle(.circular)
                     .accentColor(Color(hex: account.color))
                     .frame(width: 60)
             }
         }
-        .macOS { $0.buttonStyle(PlainButtonStyle()) }
+        #if os(macOS)
+        .buttonStyle(.plain)
+        #endif
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in updateTOTP() }
     }
