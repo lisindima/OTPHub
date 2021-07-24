@@ -15,7 +15,6 @@ struct QRView: View {
     @Binding var label: String
     @Binding var issuer: String
     @Binding var secret: String
-    @Binding var image: URL?
     @Binding var period: Period
     @Binding var digits: Digits
     @Binding var algorithm: OTPAlgorithm
@@ -74,7 +73,6 @@ struct QRView: View {
         label = String(url.path.dropFirst())
         issuer = url["issuer"]
         secret = url["secret"]
-        image = URL(string: url["image"])
         typeAlgorithm = url.host!.typeAlgorithmFromString()
         algorithm = url["algorithm"].algorithmFromString()
         digits = url["digits"].digitsFromString()

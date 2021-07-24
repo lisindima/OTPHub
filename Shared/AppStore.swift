@@ -20,6 +20,10 @@ class AppStore: ObservableObject {
     init() {
         accounts = Account.loadAll(from: keychain)
     }
+    
+    func refresh() {
+        accounts = Account.loadAll(from: keychain)
+    }
 
     func addAccount(_ account: Account) {
         do {

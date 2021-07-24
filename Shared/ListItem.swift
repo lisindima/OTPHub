@@ -46,7 +46,6 @@ struct ListItem: View {
                 Button(action: updateHOTP) {
                     Image(systemName: "arrow.clockwise.circle.fill")
                         .font(.largeTitle)
-                        .foregroundColor(Color(hex: account.color))
                 }
                 #if os(macOS)
                 .buttonStyle(.plain)
@@ -69,7 +68,6 @@ struct ListItem: View {
                     #if os(macOS)
                     .progressViewStyle(.circular)
                     #endif
-                    .accentColor(Color(hex: account.color))
                     .frame(width: 60)
             }
         }

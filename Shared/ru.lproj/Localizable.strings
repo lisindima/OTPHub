@@ -26,12 +26,6 @@
 
 "Select the type of encryption, if you are not sure with the choice, leave it as default." = "Выберите тип шифрования, если вы не уверены с выбором оставьте его по умолчанию.";
 
-"Customization" = "Кастомизация";
-
-"Choose a color for your password to make it easier to find." = "Выберите цвет для своего пароля, чтобы его было легче найти.";
-
-"Password color" = "Цвет пароля";
-
 "Add account" = "Добавить аккаунт";
 
 "New account" = "Новый аккаунт";
@@ -56,7 +50,7 @@
 
 "Algorithm type" = "Тип алгоритма";
 
-"Present value: " = "Текущее значение: ";
+"Present value: %lld" = "Текущее значение: %lld";
 
 "Counter" = "Счетчик";
 

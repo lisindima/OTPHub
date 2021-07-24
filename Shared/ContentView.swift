@@ -25,6 +25,9 @@ struct ContentView: View {
             }
             .environment(\.defaultMinListRowHeight, 70)
             .searchable(text: $search)
+            .refreshable {
+                appStore.refresh()
+            }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
