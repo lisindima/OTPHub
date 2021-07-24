@@ -31,14 +31,14 @@ struct AddAccountView: View {
             VStack {
                 Form {
                     Section {
-                        TextField("textfield_label", text: $label)
-                        TextField("textfield_secret", text: $secret)
+                        TextField("Label", text: $label)
+                        TextField("Secret", text: $secret)
                             .disableAutocorrection(true)
                     } header: {
-                        Text("section_header_basic_information")
+                        Text("Basic information")
                     }
                     Section {
-                        Picker("section_header_digits", selection: $digits) {
+                        Picker("Password length", selection: $digits) {
                             ForEach(Digits.allCases) { size in
                                 Text(size.localized)
                                     .tag(size)
@@ -46,13 +46,13 @@ struct AddAccountView: View {
                         }
                         .pickerStyle(.segmented)
                     } header: {
-                        Text("section_header_digits")
+                        Text("Password length")
                     } footer: {
-                        Text("section_footer_digits")
+                        Text("Select the length of the generated password, the longer the password, the more secure it is.")
                     }
                     if typeAlgorithm == .totp {
                         Section {
-                            Picker("section_header_period", selection: $period) {
+                            Picker("Period", selection: $period) {
                                 ForEach(Period.allCases) { time in
                                     Text(time.localized)
                                         .tag(time)
@@ -60,21 +60,21 @@ struct AddAccountView: View {
                             }
                             .pickerStyle(.segmented)
                         } header: {
-                            Text("section_header_period")
+                            Text("Period")
                         } footer: {
-                            Text("section_footer_period")
+                            Text("Select a period to update your password.")
                         }
                     } else {
                         Section {
-                            Stepper("stepper_title_counter", value: $counter, in: 0 ... 1000)
+                            Stepper("Present value: ", value: $counter, in: 0 ... 1000)
                         } header: {
-                            Text("section_header_counter")
+                            Text("Counter")
                         } footer: {
-                            Text("section_footer_counter")
+                            Text("Set the initial value for the counter, if you are not sure with the choice, leave it at the default.")
                         }
                     }
                     Section {
-                        Picker("section_header_encryption_type", selection: $algorithm) {
+                        Picker("Encryption type", selection: $algorithm) {
                             ForEach(OTPAlgorithm.allCases) { algorithm in
                                 Text(algorithm.rawValue)
                                     .tag(algorithm)
@@ -82,16 +82,16 @@ struct AddAccountView: View {
                         }
                         .pickerStyle(.segmented)
                     } header: {
-                        Text("section_header_encryption_type")
+                        Text("Encryption type")
                     } footer: {
-                        Text("section_footer_encryption_type")
+                        Text("Select the type of encryption, if you are not sure with the choice, leave it as default.")
                     }
                     Section {
-                        ColorPicker("colorpicker_title", selection: $color)
+                        ColorPicker("Password color", selection: $color)
                     } header: {
-                        Text("section_header_customization")
+                        Text("Customization")
                     } footer: {
-                        Text("section_footer_customization")
+                        Text("Choose a color for your password to make it easier to find.")
                     }
                 }
                 #if os(iOS)
@@ -106,7 +106,7 @@ struct AddAccountView: View {
                     .controlSize(.large)
                     .frame(width: 80)
                     Button(action: savePassword) {
-                        Text("button_title_add_account")
+                        Text("Add account")
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity)
                     }
@@ -121,7 +121,7 @@ struct AddAccountView: View {
             .customAlert(item: $alertItem)
             .toolbar {
                 ToolbarItem(placement: .automatic) {
-                    Picker("picker_title_type_algorithm", selection: $typeAlgorithm.animation()) {
+                    Picker("Algorithm type", selection: $typeAlgorithm.animation()) {
                         ForEach(TypeAlgorithm.allCases) { type in
                             Text(type.rawValue)
                                 .tag(type)
@@ -131,18 +131,18 @@ struct AddAccountView: View {
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button(action: dismiss.callAsFunction) {
-                        Text("close_toolbar")
+                        Text("Close")
                     }
                     .keyboardShortcut(.cancelAction)
                 }
                 #if os(macOS)
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("button_title_add_account", action: savePassword)
+                    Button("Add account", action: savePassword)
                         .keyboardShortcut(.defaultAction)
                 }
                 #endif
             }
-            .navigationTitle("navigation_title_new_account")
+            .navigationTitle("New account")
             #if os(iOS)
             .sheet(isPresented: $isShowQRView) {
                 QRView(
@@ -166,15 +166,15 @@ struct AddAccountView: View {
             print(url)
         }
     }
-    
+
     private func savePassword() {
         if label.isEmpty {
-            alertItem = AlertItem(message: "alert_empty_label")
+            alertItem = AlertItem(message: "Fill in the label field")
         } else if secret.isEmpty {
-            alertItem = AlertItem(message: "alert_empty_secret")
+            alertItem = AlertItem(message: "Fill in the secret field")
         } else {
             guard let secret = base32DecodeToData(secret) else {
-                alertItem = AlertItem(message: "alert_wrong_secret")
+                alertItem = AlertItem(message: "The entered secret does not match the base32 encoding")
                 return
             }
 

@@ -49,26 +49,26 @@ struct QRView: View {
                         .padding(.top)
                         .frame(width: 300, height: 300)
                     Spacer()
-                    Text("bottom_title_scan_qr")
+                    Text("Point the camera at the QR code")
                         .fontWeight(.bold)
                         .font(.system(.title3, design: .rounded))
                         .foregroundColor(.white)
                         .padding(.bottom, 30)
                 }
             }
-            .navigationTitle("navigation_title_scan_qr")
+            .navigationTitle("Scan QR code")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(action: dismiss.callAsFunction) {
-                        Text("close_toolbar")
+                        Text("Close")
                     }
                     .keyboardShortcut(.cancelAction)
                 }
             }
         }
     }
-    
+
     private func getURLComponents(_ string: String) {
         guard let url = URL(string: string) else { return }
         label = String(url.path.dropFirst())

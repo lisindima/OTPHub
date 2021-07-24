@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AlertItem: Identifiable {
     var id = UUID()
-    var title: LocalizedStringKey = "alert_error_title"
+    var title: LocalizedStringKey = "Error"
     var message: LocalizedStringKey
     var action: (() -> Void)? = {}
 }
@@ -30,7 +30,7 @@ extension ViewModifier {
         Alert(
             title: Text(title),
             message: Text(message),
-            dismissButton: .cancel(Text("Закрыть"), action: action)
+            dismissButton: .cancel(Text("Close"), action: action)
         )
     }
 }

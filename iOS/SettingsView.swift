@@ -20,7 +20,7 @@ struct SettingsView: View {
     private var appVersion: Text {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-        return Text("section_footer_app_version \(version) (\(build))")
+        return Text("Version: \(version) (\(build))")
     }
 
     var body: some View {
@@ -30,34 +30,34 @@ struct SettingsView: View {
                     Button {
                         isExporting = true
                     } label: {
-                        Label("button_title_export_account", systemImage: "externaldrive.badge.timemachine")
+                        Label("Export accounts", systemImage: "externaldrive.badge.timemachine")
                     }
                     Button {
                         isImporting = true
                     } label: {
-                        Label("button_title_import_account", systemImage: "internaldrive")
+                        Label("Import accounts", systemImage: "internaldrive")
                     }
                 } header: {
-                    Text("section_header_database")
+                    Text("Database")
                 } footer: {
-                    Text("section_footer_database")
+                    Text("Use this for backups or to move to other devices outside of your iCloud account.")
                 }
                 Section {
                     NavigationLink(destination: License()) {
-                        Label("navigation_link_license", systemImage: "doc.plaintext")
+                        Label("License", systemImage: "doc.plaintext")
                     }
                 } header: {
-                    Text("section_header_other")
+                    Text("Other")
                 } footer: {
                     appVersion
                 }
             }
-            .navigationTitle("navigation_title_settings")
+            .navigationTitle("Settings")
             .customAlert(item: $alertItem)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(action: dismiss.callAsFunction) {
-                        Text("close_toolbar")
+                        Text("Close")
                     }
                     .keyboardShortcut(.cancelAction)
                 }
@@ -70,7 +70,7 @@ struct SettingsView: View {
             ) { result in
                 switch result {
                 case .success:
-                    alertItem = AlertItem(title: "alert_success_title", message: "alert_success_create_backup")
+                    alertItem = AlertItem(title: "Success", message: "The backup was saved successfully.")
                 case let .failure(error):
                     print(error)
                 }

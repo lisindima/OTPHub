@@ -1,49 +1,7 @@
-"section_header_basic_information" = "Basic information";
-"textfield_label" = "Label";
-"textfield_secret" = "Secret";
-"section_header_digits" = "Password length";
-"section_footer_digits" = "Select the length of the generated password, the longer the password, the more secure it is.";
-"6_digits" = "6 digits";
-"7_digits" = "7 digits";
-"8_digits" = "8 digits";
-"section_header_period" = "Period";
-"section_footer_period" = "Select a period to update your password.";
-"30_seconds" = "30 seconds";
-"60_seconds" = "60 seconds";
-"section_header_encryption_type" = "Encryption type";
-"section_footer_encryption_type" = "Select the type of encryption, if you are not sure with the choice, leave it as default.";
-"section_header_customization" = "Customization";
-"section_footer_customization" = "Choose a color for your password to make it easier to find.";
-"colorpicker_title" = "Password color";
-"button_title_add_account" = "Add account";
-"navigation_title_new_account" = "New account";
-"alert_error_title" = "Error";
-"alert_empty_label" = "Fill in the label field";
-"alert_empty_secret" = "Fill in the secret field";
-"alert_wrong_secret" = "The entered secret does not match the base32 encoding";
-"close_toolbar" = "Close";
-"help_title_add_button" = "Add new account";
-"help_title_settings_button" = "Open settings";
-"navigation_title_scan_qr" = "Scan QR code";
-"bottom_title_scan_qr" = "Point the camera at the QR code";
-"picker_title_type_algorithm" = "Algorithm type";
-"stepper_title_counter" = "Present value: ";
-"section_header_counter" = "Counter";
-"section_footer_counter" = "Set the initial value for the counter, if you are not sure with the choice, leave it at the default.";
+/*
+  Localizable.strings
+  OTPHub
 
-// SettingsView
-
-"button_title_settings" = "Settings";
-"navigation_title_settings" = "Settings";
-"alert_success_title" = "Success";
-"alert_success_create_backup" = "The backup was saved successfully.";
-"section_header_other" = "Other";
-"section_footer_app_version %@ (%@)" = "Version: %@ (%@)";
-"section_header_database" = "Database";
-"section_footer_database" = "Use this for backups or to move to other devices outside of your iCloud account.";
-"button_title_import_account" = "Import accounts";
-"button_title_export_account" = "Export accounts";
-"navigation_link_license" = "License";
-"navigation_title_license" = "License";
-"section_footer_license" = "Listed here are the open source libraries and frameworks that are used in this application.";
-"toolbar_link_license" = "Open link";
+  Note: Development language strings are automatically extracted from code.
+  
+*/

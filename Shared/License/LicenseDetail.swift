@@ -20,7 +20,7 @@ struct LicenseDetail: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Link(destination: license.urlFramework) {
-                    Label("toolbar_link_license", systemImage: "safari")
+                    Label("Open link", systemImage: "safari")
                 }
             }
         }

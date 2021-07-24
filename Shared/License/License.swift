@@ -12,7 +12,7 @@ struct License: View {
 
     var body: some View {
         Form {
-            Section(footer: Text("section_footer_license")) {
+            Section(footer: Text("Listed here are the open source libraries and frameworks that are used in this application.")) {
                 ForEach(licenseModel.sorted { $0.nameFramework < $1.nameFramework }, id: \.id) { license in
                     NavigationLink(destination: LicenseDetail(license: license)) {
                         Text(license.nameFramework)
@@ -20,6 +20,6 @@ struct License: View {
                 }
             }
         }
-        .navigationTitle("navigation_title_license")
+        .navigationTitle("License")
     }
 }

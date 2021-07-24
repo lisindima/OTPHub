@@ -1,49 +1,89 @@
-"section_header_basic_information" = "Основная информация";
-"textfield_label" = "Название";
-"textfield_secret" = "Секрет";
-"section_header_digits" = "Длина пароля";
-"section_footer_digits" = "Выберите длину генерируемого пароля, чем пароль длиннее - тем он надежнее.";
-"6_digits" = "6 цифр";
-"7_digits" = "7 цифр";
-"8_digits" = "8 цифр";
-"section_header_period" = "Период";
-"section_footer_period" = "Выберите период обновления пароля.";
-"30_seconds" = "30 секунд";
-"60_seconds" = "60 секунд";
-"section_header_encryption_type" = "Тип шифрования";
-"section_footer_encryption_type" = "Выберите тип шифрования, если вы не уверены с выбором оставьте его по умолчанию.";
-"section_header_customization" = "Кастомизация";
-"section_footer_customization" = "Выберите цвет для своего пароля, чтобы его было легче найти.";
-"colorpicker_title" = "Цвет пароля";
-"button_title_add_account" = "Добавить аккаунт";
-"navigation_title_new_account" = "Новый аккаунт";
-"alert_error_title" = "Ошибка";
-"alert_empty_label" = "Заполните поле с названием";
-"alert_empty_secret" = "Заполните поле с секретом";
-"alert_wrong_secret" = "Введенный секрет не соответвует кодировке base32";
-"close_toolbar" = "Закрыть";
-"help_title_add_button" = "Добавить новый аккаунт";
-"help_title_settings_button" = "Открыть настройки";
-"navigation_title_scan_qr" = "Сканирование QR-кода";
-"bottom_title_scan_qr" = "Наведите камеру на QR-код";
-"picker_title_type_algorithm" = "Тип алгоритма";
-"stepper_title_counter" = "Текущее значение: ";
-"section_header_counter" = "Счетчик";
-"section_footer_counter" = "Установите начальное значение для счетчика, если вы не уверены с выбором оставьте его по умолчанию.";
+"Basic information" = "Основная информация";
+
+"Label" = "Название";
+
+"Secret" = "Секрет";
+
+"Password length" = "Длина пароля";
+
+"Select the length of the generated password, the longer the password, the more secure it is." = "Выберите длину генерируемого пароля, чем пароль длиннее - тем он надежнее.";
+
+"6 digits" = "6 цифр";
+
+"7 digits" = "7 цифр";
+
+"8 digits" = "8 цифр";
+
+"Period" = "Период";
+
+"Select a period to update your password." = "Выберите период обновления пароля.";
+
+"30 seconds" = "30 секунд";
+
+"60 seconds" = "60 секунд";
+
+"Encryption type" = "Тип шифрования";
+
+"Select the type of encryption, if you are not sure with the choice, leave it as default." = "Выберите тип шифрования, если вы не уверены с выбором оставьте его по умолчанию.";
+
+"Customization" = "Кастомизация";
+
+"Choose a color for your password to make it easier to find." = "Выберите цвет для своего пароля, чтобы его было легче найти.";
+
+"Password color" = "Цвет пароля";
+
+"Add account" = "Добавить аккаунт";
+
+"New account" = "Новый аккаунт";
+
+"Error" = "Ошибка";
+
+"Fill in the label field" = "Заполните поле с названием";
+
+"Fill in the secret field" = "Заполните поле с секретом";
+
+"The entered secret does not match the base32 encoding" = "Введенный секрет не соответвует кодировке base32";
+
+"Close" = "Закрыть";
+
+"Add new account" = "Добавить новый аккаунт";
+
+"Open settings" = "Открыть настройки";
+
+"Scan QR code" = "Сканирование QR-кода";
+
+"Point the camera at the QR code" = "Наведите камеру на QR-код";
+
+"Algorithm type" = "Тип алгоритма";
+
+"Present value: " = "Текущее значение: ";
+
+"Counter" = "Счетчик";
+
+"Set the initial value for the counter, if you are not sure with the choice, leave it at the default." = "Установите начальное значение для счетчика, если вы не уверены с выбором оставьте его по умолчанию.";
 
 // SettingsView
 
-"button_title_settings" = "Настройки";
-"navigation_title_settings" = "Настройки";
-"alert_success_title" = "Успех";
-"alert_success_create_backup" = "Резервная копия успешно сохранена.";
-"section_header_other" = "Другое";
-"section_footer_app_version %@ (%@)" = "Версия: %@ (%@)";
-"section_header_database" = "База данных";
-"section_footer_database" = "Используйте это для резервного копирования или для перемещения на другие устройства за пределами вашей учетной записи iCloud.";
-"button_title_import_account" = "Импорт аккаунтов";
-"button_title_export_account" = "Экспорт аккаунтов";
-"navigation_link_license" = "Лицензии";
-"navigation_title_license" = "Лицензии";
-"section_footer_license" = "Здесь перечислены библиотеки и фреймворки с открытым исходным кодом, которые используются в этом приложении.";
-"toolbar_link_license" = "Открыть ссылку";
+"Settings" = "Настройки";
+
+"Success" = "Успех";
+
+"The backup was saved successfully." = "Резервная копия успешно сохранена.";
+
+"Other" = "Другое";
+
+"Version: %@ (%@)" = "Версия: %@ (%@)";
+
+"Database" = "База данных";
+
+"Use this for backups or to move to other devices outside of your iCloud account." = "Используйте это для резервного копирования или для перемещения на другие устройства за пределами вашей учетной записи iCloud.";
+
+"Import accounts" = "Импорт аккаунтов";
+
+"Export accounts" = "Экспорт аккаунтов";
+
+"License" = "Лицензии";
+
+"Listed here are the open source libraries and frameworks that are used in this application." = "Здесь перечислены библиотеки и фреймворки с открытым исходным кодом, которые используются в этом приложении.";
+
+"Open link" = "Открыть ссылку";

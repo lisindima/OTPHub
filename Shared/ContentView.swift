@@ -30,19 +30,19 @@ struct ContentView: View {
                     Button {
                         showAccount = true
                     } label: {
-                        Label("button_title_add_account", systemImage: "plus.circle.fill")
+                        Label("Add account", systemImage: "plus.circle.fill")
                     }
                     .keyboardShortcut("a", modifiers: .command)
-                    .help("help_title_add_button")
+                    .help("Add new account")
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
                         openSettings()
                     } label: {
-                        Label("button_title_settings", systemImage: "ellipsis")
+                        Label("Settings", systemImage: "ellipsis")
                     }
                     .keyboardShortcut("s", modifiers: .command)
-                    .help("help_title_settings_button")
+                    .help("Open settings")
                 }
             }
             .navigationTitle("OTPHub")
@@ -54,7 +54,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { appStore.accounts[$0] }.forEach(appStore.removeAccount)

@@ -66,7 +66,9 @@ struct ListItem: View {
                 password
                 Spacer()
                 ProgressView(value: progress, total: Float(account.generator.factor.getValuePeriod))
+                    #if os(macOS)
                     .progressViewStyle(.circular)
+                    #endif
                     .accentColor(Color(hex: account.color))
                     .frame(width: 60)
             }
@@ -77,7 +79,7 @@ struct ListItem: View {
         .onAppear(perform: generatePassword)
         .onReceive(timer) { _ in updateTOTP() }
     }
-    
+
     private func copyPasteboard() {
         if let otpString = otpString {
             #if os(macOS)
